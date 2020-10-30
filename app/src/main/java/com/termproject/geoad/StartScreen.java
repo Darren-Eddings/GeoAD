@@ -27,17 +27,14 @@ public class StartScreen extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.patientButton) {
         }
         else if (buttonId == R.id.caretakerButton) {
-            Fragment caretaker = new CaretakerRegisterOrLogin();
-            moveToFragment(caretaker);
+            nextFragment = new CaretakerRegisterOrLogin();
         }
-    }
-
-    private void moveToFragment(Fragment fragment) {
         MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.replaceFragments(fragment);
+        mainActivity.replaceFragments(nextFragment);
     }
 }
