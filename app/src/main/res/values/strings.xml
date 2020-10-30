@@ -10,4 +10,10 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_nav_home">Map</string>
+    <string name="start_screen_text">Are you a ..?</string>
+    <string name="patient_button_text">Patient</string>
+    <string name="caretaker_button_text">Caretaker</string>
+    <string name="caretaker_welcome_text">Welcome, Caretaker!</string>
+    <string name="register_text">Register</string>
+    <string name="login_text">Login</string>
 </resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startScreenDestination">
+    <activity
+        android:id="@+id/startScreenDestination"
+        android:name="com.termproject.geoad.StartScreen"
+        android:label="StartScreen"
+        tools:layout="@layout/activity_start_screen" />
+    <fragment
+        android:id="@+id/caretakerRegisterOrLoginDestination"
+        android:name="com.termproject.geoad.CaretakerRegisterOrLogin"
+        android:label="CaretakerRegisterOrLogin"
+        tools:layout="@layout/fragment_caretaker_register_or_login"/>
+
+</navigation>
