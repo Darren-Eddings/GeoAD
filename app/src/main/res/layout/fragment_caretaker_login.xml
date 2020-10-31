@@ -21,8 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/caretakerLoginText"
-        android:layout_marginStart="100sp"
         android:layout_marginTop="50sp"
+        android:layout_alignStart="@id/emailTextBox"
         android:text="@string/email_text"
         />
 
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/emailText"
-        android:layout_marginStart="100sp"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="@string/email_text_box_hint"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/emailTextBox"
-        android:layout_marginStart="100sp"
+        android:layout_alignStart="@id/passwordTextBox"
         android:text="@string/password_text"
         />
 
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordText"
-        android:layout_marginStart="100sp"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPassword"
         android:hint="@string/password_text_box_hint"
