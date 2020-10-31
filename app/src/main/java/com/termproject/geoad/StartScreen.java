@@ -18,8 +18,8 @@ public class StartScreen extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_start_screen, container, false);
-        patientButton = (Button) view.findViewById(R.id.patientButton);
-        caretakerButton = (Button) view.findViewById(R.id.caretakerButton);
+        patientButton = view.findViewById(R.id.patientButton);
+        caretakerButton = view.findViewById(R.id.caretakerButton);
         patientButton.setOnClickListener(this);
         caretakerButton.setOnClickListener(this);
         return view;
@@ -32,9 +32,13 @@ public class StartScreen extends Fragment implements View.OnClickListener {
         if (buttonId == R.id.patientButton) {
         }
         else if (buttonId == R.id.caretakerButton) {
-            nextFragment = new CaretakerRegisterOrLogin();
+            nextFragment = new CaretakerLogin();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.replaceFragments(nextFragment);
+        try {
+            mainActivity.replaceFragments(nextFragment);
+        }catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 }

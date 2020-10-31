@@ -13,7 +13,15 @@
     <string name="start_screen_text">Are you a ..?</string>
     <string name="patient_button_text">Patient</string>
     <string name="caretaker_button_text">Caretaker</string>
-    <string name="caretaker_welcome_text">Welcome, Caretaker!</string>
+    <string name="caretaker_new_registration_text">New to GeoAD? Register here!</string>
+    <string name="caretaker_registration_text">Caretaker Registration</string>
+    <string name="caretaker_login_text">Caretaker Login</string>
+    <string name="full_name_text">Full Name</string>
+    <string name="date_of_birth_text">Date of Birth</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Password</string>
     <string name="register_text">Register</string>
     <string name="login_text">Login</string>
+    <string name="email_text_box_hint">Type your email address here..</string>
+    <string name="password_text_box_hint">Type your password here..</string>
 </resources>
