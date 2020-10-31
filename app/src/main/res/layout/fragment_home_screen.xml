@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp"
+        android:text="Map" />
+
+    <Button
+        android:id="@+id/emergencyButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/careButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:text="Call 911" />
+
+    <Button
+        android:id="@+id/careButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/mapButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:text="Call Caretaker" />
+
+    <Button
+        android:id="@+id/requestButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/emergencyButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="118dp"
+        android:text="Request Geofence Change" />
+</RelativeLayout>
