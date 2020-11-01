@@ -1,0 +1,43 @@
+com/termproject/geoad/ui/login/LoginViewModel.java
+ com.termproject.geoad.ui.login.LoginViewModel
+com/termproject/geoad/CaretakerRegistration.java
+ com.termproject.geoad.CaretakerRegistration
+com/termproject/geoad/HomeScreenPanel.java
+ com.termproject.geoad.HomeScreenPanel
+ com.termproject.geoad.HomeScreenPanel$1
+com/termproject/geoad/MainActivity.java
+ com.termproject.geoad.MainActivity
+com/termproject/geoad/BuildConfig.java
+ com.termproject.geoad.BuildConfig
+com/termproject/geoad/ui/login/LoginViewModelFactory.java
+ com.termproject.geoad.ui.login.LoginViewModelFactory
+com/termproject/geoad/NavHome.java
+ com.termproject.geoad.NavHome
+com/termproject/geoad/data/Result.java
+ com.termproject.geoad.data.Result
+ com.termproject.geoad.data.Result$1
+ com.termproject.geoad.data.Result$Error
+ com.termproject.geoad.data.Result$Success
+com/termproject/geoad/data/model/LoggedInUser.java
+ com.termproject.geoad.data.model.LoggedInUser
+com/termproject/geoad/data/LoginRepository.java
+ com.termproject.geoad.data.LoginRepository
+com/termproject/geoad/StartScreen.java
+ com.termproject.geoad.StartScreen
+com/termproject/geoad/ui/login/LoginResult.java
+ com.termproject.geoad.ui.login.LoginResult
+com/termproject/geoad/ui/login/LoginFormState.java
+ com.termproject.geoad.ui.login.LoginFormState
+com/termproject/geoad/data/LoginDataSource.java
+ com.termproject.geoad.data.LoginDataSource
+com/termproject/geoad/CaretakerLogin.java
+ com.termproject.geoad.CaretakerLogin
+com/termproject/geoad/ui/login/LoggedInUserView.java
+ com.termproject.geoad.ui.login.LoggedInUserView
+com/termproject/geoad/ui/login/LoginActivity.java
+ com.termproject.geoad.ui.login.LoginActivity
+ com.termproject.geoad.ui.login.LoginActivity$1
+ com.termproject.geoad.ui.login.LoginActivity$2
+ com.termproject.geoad.ui.login.LoginActivity$3
+ com.termproject.geoad.ui.login.LoginActivity$4
+ com.termproject.geoad.ui.login.LoginActivity$5
