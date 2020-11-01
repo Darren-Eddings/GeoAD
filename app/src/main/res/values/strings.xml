@@ -21,10 +21,11 @@
     <string name="date_of_birth_text">Date of Birth</string>
     <string name="phone_text">Phone</string>
     <string name="password_text">Password</string>
-    <string name="registration_text">Register</string>
+    <string name="register_text">Register</string>
     <string name="login_text">Login</string>
     <string name="full_name_text_box_hint">Your Full Name</string>
     <string name="date_of_birth_text_box_hint">Your Date of Birth</string>
     <string name="phone_text_box_hint">Your Phone</string>
     <string name="password_text_box_hint">Your Password</string>
+    <string name="hello_blank_fragment"></string>
 </resources>

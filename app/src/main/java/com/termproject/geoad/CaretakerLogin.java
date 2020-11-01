@@ -17,7 +17,7 @@ public class CaretakerLogin extends Fragment implements View.OnClickListener{
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_caretaker_login, container, false);
         loginButton = view.findViewById(R.id.caretakerLoginButton);
         registerHere = view.findViewById(R.id.inkRegister);

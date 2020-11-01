@@ -104,7 +104,7 @@
         android:layout_below="@id/passwordTextBox"
         android:layout_marginTop="40sp"
         android:layout_centerHorizontal="true"
-        android:text="@string/registration_text"
+        android:text="@string/register_text"
         />
 
     <TextView
