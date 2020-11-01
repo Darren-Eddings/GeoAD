@@ -6,22 +6,62 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/caretakerLoginText"
+        android:id="@+id/caretakerRegistrationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100sp"
         android:layout_centerHorizontal="true"
-        android:text="@string/caretaker_login_text"
+        android:text="@string/caretaker_registration_text"
         android:textSize="30sp"
         android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/fullNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/caretakerRegistrationText"
+        android:layout_marginTop="50sp"
+        android:layout_alignStart="@id/fullNameTextBox"
+        android:text="@string/full_name_text"
+        />
+
+    <EditText
+        android:id="@+id/fullNameTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullNameText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textCapWords"
+        android:hint="@string/full_name_text_box_hint"
+        />
+
+    <TextView
+        android:id="@+id/dateOfBirthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullNameTextBox"
+        android:layout_alignStart="@id/dateOfBirthTextBox"
+        android:text="@string/date_of_birth_text"
+        />
+
+    <EditText
+        android:id="@+id/dateOfBirthTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateOfBirthText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="@string/date_of_birth_text_box_hint"
         />
 
     <TextView
         android:id="@+id/phoneText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/caretakerLoginText"
-        android:layout_marginTop="50sp"
+        android:layout_below="@id/dateOfBirthTextBox"
         android:layout_alignStart="@id/phoneTextBox"
         android:text="@string/phone_text"
         />
@@ -36,6 +76,7 @@
         android:inputType="phone"
         android:hint="@string/phone_text_box_hint"
         />
+
     <TextView
         android:id="@+id/passwordText"
         android:layout_width="wrap_content"
@@ -57,23 +98,23 @@
         />
 
     <Button
-        android:id="@+id/caretakerLoginButton"
+        android:id="@+id/caretakerRegistrationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordTextBox"
         android:layout_marginTop="40sp"
         android:layout_centerHorizontal="true"
-        android:text="@string/login_text"
+        android:text="@string/registration_text"
         />
 
     <TextView
-        android:id="@+id/inkRegister"
+        android:id="@+id/inkLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/caretakerLoginButton"
+        android:layout_below="@id/caretakerRegistrationButton"
         android:layout_marginTop="40sp"
         android:layout_centerHorizontal="true"
-        android:text="@string/caretaker_new_registration_text"
+        android:text="@string/caretaker_new_login_text"
         android:textSize="20sp"
         android:textColor="#3F51B5"
         />
