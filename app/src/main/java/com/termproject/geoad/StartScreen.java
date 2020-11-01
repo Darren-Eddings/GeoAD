@@ -30,6 +30,7 @@ public class StartScreen extends Fragment implements View.OnClickListener {
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.patientButton) {
+            nextFragment = new PatientRegisterOrLogin();
         }
         else if (buttonId == R.id.caretakerButton) {
             nextFragment = new CaretakerLogin();
