@@ -1785,7 +1785,6 @@ id caretakerLoginButton
 id caretakerLoginText
 id caretakerRegistrationButton
 id caretakerRegistrationText
-id caretaker_id
 id center
 id center_horizontal
 id center_vertical
@@ -1869,6 +1868,7 @@ id fullNameTextBox
 id ghost_view
 id ghost_view_holder
 id gone
+id google_map
 id graph
 id graph_wrap
 id group_divider
@@ -1904,9 +1904,6 @@ id line3
 id linear
 id listMode
 id list_item
-id loading
-id login
-id map
 id mapButton
 id masked
 id media_actions
@@ -1942,7 +1939,6 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
-id name
 id nav_controller_view_tag
 id nav_host_fragment_container
 id navigation_header_container
@@ -1968,6 +1964,8 @@ id password_toggle
 id path
 id pathRelative
 id patientButton
+id patientLoginButton
+id patientRegisterButton
 id peekHeight
 id percent
 id phoneText
@@ -2095,6 +2093,7 @@ id useLogo
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
+id welcomeText
 id wide
 id withText
 id withinBounds
@@ -2163,10 +2162,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_home_screen_panel
-layout activity_login
 layout activity_main
-layout activity_nav_home
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2185,6 +2181,10 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_caretaker_login
 layout fragment_caretaker_registration
+layout fragment_home_screen
+layout fragment_map
+layout fragment_patient_register_or_login
+layout fragment_request
 layout fragment_start_screen
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -2319,6 +2319,7 @@ string fab_transformation_sheet_behavior
 string full_name_text
 string full_name_text_box_hint
 string google_maps_key
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string invalid_password
@@ -2377,7 +2378,7 @@ string phone_text
 string phone_text_box_hint
 string prompt_email
 string prompt_password
-string registration_text
+string register_text
 string search_menu_title
 string start_screen_text
 string status_bar_notification_info_overflow

@@ -32,7 +32,7 @@ public class CaretakerLogin extends Fragment implements View.OnClickListener{
         if (buttonId == R.id.caretakerLoginButton) {
         }
         else if (buttonId == R.id.inkRegister) {
-
+            nextFragment = new CaretakerRegistration();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
         try {
