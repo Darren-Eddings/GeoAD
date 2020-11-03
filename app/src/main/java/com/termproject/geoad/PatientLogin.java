@@ -15,8 +15,6 @@ import android.widget.TextView;
 
 public class PatientLogin extends Fragment implements View.OnClickListener{
 
-    private EditText idTextBox;
-    private EditText passwordTextBox;
     private Button loginButton;
     private TextView goToRegister;
 
@@ -24,8 +22,6 @@ public class PatientLogin extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_patient_login, container, false);
-        idTextBox = (EditText) view.findViewById(R.id.idTextBox);
-        passwordTextBox = (EditText) view.findViewById(R.id.passwordTextBox);
         loginButton = (Button) view.findViewById(R.id.patientLoginButton);
         goToRegister = view.findViewById(R.id.linkRegister);
         loginButton.setOnClickListener(this);
@@ -39,8 +35,14 @@ public class PatientLogin extends Fragment implements View.OnClickListener{
         int buttonID = v.getId();
         if (buttonID == R.id.linkRegister) {
             newFragment = new PatientRegister();
+        } else if (buttonID == R.id.patientLoginButton) {
+            newFragment = new PatientHomeScreen();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.replaceFragments(newFragment);
+        try {
+            mainActivity.replaceFragments(newFragment);
+        }catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 }

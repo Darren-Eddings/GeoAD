@@ -33,8 +33,8 @@
     <string name="patient_id_text_hint">Enter Patient ID</string>
     <string name="patient_register_text">Create New Account</string>
     <string name="patient_phone_text">Phone Number</string>
-    <string name="patient_phone_text_hint">Enter Your Phone Number</string>
-    <string name="new_password_text_box_hint">Enter Your Password</string>
+    <string name="patient_phone_text_hint">Your Phone Number</string>
+    <string name="new_password_text_box_hint">Create Password</string>
     <string name="patient_existing_account_text">Already registered? Login Here!</string>
     <string name="patient_new_registration_text">New to GeoAD? Register Here!</string>
     <string name="new_account_text">Success!</string>

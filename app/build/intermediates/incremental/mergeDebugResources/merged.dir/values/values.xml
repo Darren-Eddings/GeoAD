@@ -998,14 +998,20 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="address_text">Geofence Location</string>
+    <string name="alternate_text">Or</string>
     <string name="app_name">GeoAD</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="begin_text">Begin</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
+    <string name="call_caretaker">Call Caretaker</string>
+    <string name="call_emergency_services">Call 911</string>
     <string name="caretaker_button_text">Caretaker</string>
     <string name="caretaker_login_text">Caretaker Login</string>
-    <string name="caretaker_new_login_text">Already Registered? Login here!</string>
+    <string name="caretaker_new_login_text">Already registered? Login here!</string>
     <string name="caretaker_new_registration_text">New to GeoAD? Register here!</string>
     <string name="caretaker_registration_text">Caretaker Registration</string>
+    <string name="change_type_text">New Geofence Type</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
@@ -1029,8 +1035,10 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="continue_text">Press the button below to being using GeoAD</string>
     <string name="date_of_birth_text">Date of Birth</string>
     <string name="date_of_birth_text_box_hint">Your Date of Birth</string>
+    <string name="delivery_text">Your request has been submitted</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
@@ -1040,12 +1048,14 @@
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD9JB_ZXiY6gdBahAY85W4ruxUgO_z1Aw8</string>
     <string name="hello_blank_fragment"/>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="home_text">Home</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="item_view_role_description">Tab</string>
     <string name="login_failed">"Login failed"</string>
     <string name="login_text">Login</string>
+    <string name="map_text">Map</string>
     <string description="Content description for the thumb with the maximum value in a Range slider. [CHAR_LIMIT=NONE]" name="material_slider_range_end">Range end, </string>
     <string description="Content description for the thumb with the minimum value in a Range slider. [CHAR_LIMIT=NONE]" name="material_slider_range_start">Range start, </string>
     <string description="Content description for new notification (no number count) [CHAR_LIMIT=NONE]" name="mtrl_badge_numberless_content_description">New notification</string>
@@ -1085,6 +1095,14 @@
     <string description="a11y string to indicate this button switches the user to choosing a year [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_year_selection">Tap to switch to selecting a year</string>
     <string name="nav_app_bar_navigate_up_description">Navigate up</string>
     <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
+    <string name="new_account_text">Success!</string>
+    <string name="new_address_text_hint">1234 Name ST. City, Provence, Zip Code</string>
+    <string name="new_fence_name_text">Rename Geofence</string>
+    <string name="new_fence_size_text">New Geofence Size</string>
+    <string name="new_name_text_hint">("My House", "The Park", etc.)</string>
+    <string name="new_password_text_box_hint">Create Password</string>
+    <string name="new_size_text_hint">(In Meters)</string>
+    <string name="new_type_text_hint">(Store, Home, Doctor, etc.)</string>
     <string name="password_text">Password</string>
     <string name="password_text_box_hint">Your Password</string>
     <string name="password_toggle_content_description">Show password</string>
@@ -1093,17 +1111,30 @@
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="patient_button_text">Patient</string>
+    <string name="patient_existing_account_text">Already registered? Login Here!</string>
     <string name="patient_id_text">Patient ID</string>
     <string name="patient_id_text_hint">Enter Patient ID</string>
     <string name="patient_login_text">Patient Login</string>
+    <string name="patient_new_registration_text">New to GeoAD? Register Here!</string>
+    <string name="patient_phone_text">Phone Number</string>
+    <string name="patient_phone_text_hint">Your Phone Number</string>
+    <string name="patient_register_text">Create New Account</string>
     <string name="phone_text">Phone</string>
     <string name="phone_text_box_hint">Your Phone</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="register_text">Register</string>
+    <string name="request_change_text">Request Geofence Change</string>
+    <string name="request_confirm_text">All Done!</string>
+    <string name="request_fence_size_text">Geofence Size</string>
+    <string name="request_fence_type_text">Geofence Type</string>
+    <string name="request_new_text">Request New Geofence</string>
+    <string name="request_text">Requests Page</string>
     <string name="search_menu_title">Search</string>
     <string name="start_screen_text">Are you a ..?</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="submit_text">Submit Request</string>
+    <string name="title_activity_maps">Map</string>
     <string name="title_activity_nav_home">Map</string>
     <string name="welcome">"Welcome !"</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

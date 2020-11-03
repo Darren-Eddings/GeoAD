@@ -16,11 +16,12 @@ import android.widget.TextView;
 public class NewAccountSuccess extends Fragment implements View.OnClickListener{
 
     private Button goToHomePage;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_patient_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_new_account_success, container, false);
         goToHomePage = view.findViewById(R.id.accountSuccessButton);
         goToHomePage.setOnClickListener(this);
         return view;
@@ -35,7 +36,16 @@ public class NewAccountSuccess extends Fragment implements View.OnClickListener{
 
             newFragment = new PatientHomeScreen();
         }
+
         MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.replaceFragments(newFragment);
+
+        try {
+
+            mainActivity.replaceFragments(newFragment);
+
+        }catch (NullPointerException e) {
+
+            e.printStackTrace();
+        }
     }
 }
