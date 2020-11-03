@@ -27,7 +27,7 @@
     <string name="date_of_birth_text_box_hint">Your Date of Birth</string>
     <string name="phone_text_box_hint">Your Phone</string>
     <string name="password_text_box_hint">Your Password</string>
-    <string name="hello_blank_fragment"></string>
+    <string name="hello_blank_fragment">hello</string>
     <string name="patient_id_text">Patient ID</string>
     <string name="patient_login_text">Patient Login</string>
     <string name="patient_id_text_hint">Enter Patient ID</string>
@@ -62,4 +62,5 @@
     <string name="delivery_text">Your request has been submitted</string>
     <string name="home_text">Home</string>
     <string name="title_activity_maps">Map</string>
+    <string name="patient_list_text">Patient List</string>
 </resources>
