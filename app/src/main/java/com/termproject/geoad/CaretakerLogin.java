@@ -30,6 +30,7 @@ public class CaretakerLogin extends Fragment implements View.OnClickListener{
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.caretakerLoginButton) {
+            nextFragment = new CaretakerPatientList();
         }
         else if (buttonId == R.id.inkRegister) {
             nextFragment = new CaretakerRegistration();
