@@ -61,4 +61,8 @@
     <string name="request_confirm_text">All Done!</string>
     <string name="delivery_text">Your request has been submitted</string>
     <string name="home_text">Home</string>
+    <string name="patient_list_text">Patient List</string>
+    <string name="check_patient_location_text">Check Patient Location</string>
+    <string name="manage_geofence_text">Manage Geofence</string>
+    <string name="delete_patient">Delete Patient</string>
 </resources>
