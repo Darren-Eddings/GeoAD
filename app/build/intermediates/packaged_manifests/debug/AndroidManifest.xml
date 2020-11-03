@@ -14,6 +14,7 @@
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -47,6 +48,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity
+            android:name="com.termproject.geoad.MapsActivity"
+            android:label="@string/title_activity_maps" />
         <activity
             android:name="com.termproject.geoad.MainActivity"
             android:label="MainActivity" >

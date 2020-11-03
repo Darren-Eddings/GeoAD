@@ -29,10 +29,12 @@ public class PatientRegisterOrLogin extends Fragment implements View.OnClickList
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.patientRegisterButton) {
+
+            nextFragment = new PatientRegister();
         }
         else if (buttonId == R.id.patientLoginButton) {
 
-            nextFragment = new PatientHomeScreenFragment();
+            nextFragment = new PatientLogin();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.replaceFragments(nextFragment);

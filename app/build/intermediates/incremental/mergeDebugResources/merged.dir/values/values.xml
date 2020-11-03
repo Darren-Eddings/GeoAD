@@ -1093,6 +1093,9 @@
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="patient_button_text">Patient</string>
+    <string name="patient_id_text">Patient ID</string>
+    <string name="patient_id_text_hint">Enter Patient ID</string>
+    <string name="patient_login_text">Patient Login</string>
     <string name="phone_text">Phone</string>
     <string name="phone_text_box_hint">Your Phone</string>
     <string name="prompt_email">Email</string>

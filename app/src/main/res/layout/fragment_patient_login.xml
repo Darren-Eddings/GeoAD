@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/patientLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100sp"
+        android:text="@string/patient_login_text"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/patientIDText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/patientLoginText"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="35sp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/patient_id_text" />
+
+    <EditText
+        android:id="@+id/idTextBox"
+        android:layout_width="275dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/patientIDText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/patient_id_text_hint"
+        android:inputType="textNoSuggestions" />
+    <TextView
+        android:id="@+id/passwordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTextBox"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="35sp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/password_text"
+        />
+
+    <EditText
+        android:id="@+id/passwordTextBox"
+        android:layout_width="275dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/passwordText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/password_text_box_hint"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/patientLoginButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/passwordTextBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55sp"
+        android:text="@string/login_text" />
+
+    <TextView
+        android:id="@+id/linkRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/patientLoginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55sp"
+        android:text="@string/patient_new_registration_text"
+        android:textColor="#3F51B5"
+        android:textSize="24sp" />
+</RelativeLayout>
