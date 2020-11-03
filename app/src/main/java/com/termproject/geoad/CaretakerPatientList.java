@@ -21,10 +21,10 @@ public class CaretakerPatientList extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_caretaker_patient_list, container, false);
-        patientListAdapter = new ArrayAdapter<>(getActivity(), R.layout.patient_list_item, array);
+        /*patientListAdapter = new ArrayAdapter<>(getActivity(), R.layout.patient_list_item, array);
         patientList = view.findViewById(R.id.patientList);
         patientList.setAdapter(patientListAdapter);
-        patientList.setOnItemClickListener(patientListClick);
+        patientList.setOnItemClickListener(patientListClick);*/
 
         return view;
     }
