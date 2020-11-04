@@ -65,4 +65,8 @@
     <string name="home_text">Home</string>
     <string name="title_activity_maps">Map</string>
     <string name="patient_list_text">Patient List</string>
+    <string name="caretaker_id_note_text">Here is your assigned Caretaker ID that will be used for logging in. Make sure to remember it!</string>
+    <string name="caretaker_id_placeholder">000000</string>
+    <string name="continue_button_text">Continue</string>
+    <string name="add_patient_button_text">Add Patient</string>
 </resources>
