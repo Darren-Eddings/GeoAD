@@ -39,7 +39,7 @@
         />
 
     <Button
-        android:id="@+id/accountSuccessButton"
+        android:id="@+id/continueButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"

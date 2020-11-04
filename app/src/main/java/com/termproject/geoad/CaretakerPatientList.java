@@ -6,15 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class CaretakerPatientList extends Fragment {
+public class CaretakerPatientList extends Fragment implements View.OnClickListener {
 
     private ArrayAdapter<String> patientListAdapter;
     private ListView patientList;
+    private Button addPatient;
     private final String[] array = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
 
     @Nullable
@@ -25,6 +27,8 @@ public class CaretakerPatientList extends Fragment {
         patientList = view.findViewById(R.id.patientList);
         patientList.setAdapter(patientListAdapter);
         patientList.setOnItemClickListener(patientListClick);
+        addPatient = view.findViewById(R.id.addPatientButton);
+        addPatient.setOnClickListener(this);
 
         return view;
     }
@@ -33,4 +37,11 @@ public class CaretakerPatientList extends Fragment {
 
     };
 
+    @Override public void onClick(View v) {
+        Fragment nextFragment = null;
+        int buttonId = v.getId();
+        if (buttonId == R.id.addPatientButton) {
+
+        }
+    }
 }

@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.termproject.geoad.ui.login.CaretakerRegistrationSuccess;
+
 public class CaretakerRegistration extends Fragment implements View.OnClickListener {
 
     private Button registerButton;
@@ -30,7 +32,7 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.caretakerRegistrationButton) {
-
+            nextFragment = new CaretakerRegistrationSuccess();
         }
         else if (buttonId == R.id.inkLogin) {
             nextFragment = new CaretakerLogin();
