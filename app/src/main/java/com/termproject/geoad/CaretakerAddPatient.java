@@ -24,6 +24,7 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
         cancel = view.findViewById(R.id.cancelButton);
         add.setOnClickListener(this);
         cancel.setOnClickListener(this);
+
         return view;
     }
 
