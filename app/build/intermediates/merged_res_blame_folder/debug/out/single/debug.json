@@ -16,12 +16,12 @@
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_register_success.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_patient_list.xml.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_patient_list.xml"
+    },
+    {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home_screen.xml.flat",

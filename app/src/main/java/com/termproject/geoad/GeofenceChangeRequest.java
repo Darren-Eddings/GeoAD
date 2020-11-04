@@ -33,6 +33,8 @@ public class GeofenceChangeRequest extends Fragment implements View.OnClickListe
         nameAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_list, android.R.layout.simple_spinner_item);
         typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         nameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        typeSpin = view.findViewById(R.id.typeSpinner);
+        nameSpin = view.findViewById(R.id.nameSpinner);
         typeSpin.setAdapter(typeAdapter);
         nameSpin.setAdapter(nameAdapter);
         typeSpin.setOnItemSelectedListener(this);
@@ -58,7 +60,7 @@ public class GeofenceChangeRequest extends Fragment implements View.OnClickListe
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
+        //String text = parent.getItemAtPosition(position).toString();
     }
 
     @Override
