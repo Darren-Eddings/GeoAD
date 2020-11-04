@@ -69,4 +69,8 @@
     <string name="caretaker_id_placeholder">000000</string>
     <string name="continue_button_text">Continue</string>
     <string name="add_patient_button_text">Add Patient</string>
+    <string name="patient_information_button_text">Patient Information</string>
+    <string name="check_patient_location_button_text">Check Patient Location</string>
+    <string name="manage_geofence_button_text">Manage Geofence</string>
+    <string name="remove_patient_button_text">Remove Patient</string>
 </resources>

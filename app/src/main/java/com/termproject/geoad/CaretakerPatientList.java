@@ -34,7 +34,9 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
     }
 
     private AdapterView.OnItemClickListener patientListClick = (parent, v, position, id) -> {
-
+        Fragment nextFragment = new CaretakerHomeScreen();
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.replaceFragments(nextFragment);
     };
 
     @Override public void onClick(View v) {
@@ -42,6 +44,12 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
         int buttonId = v.getId();
         if (buttonId == R.id.addPatientButton) {
 
+        }
+        MainActivity mainActivity = (MainActivity) getActivity();
+        try {
+            mainActivity.replaceFragments(nextFragment);
+        }catch (NullPointerException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -12,8 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.termproject.geoad.ui.login.CaretakerRegistrationSuccess;
-
 public class CaretakerRegistration extends Fragment implements View.OnClickListener {
 
     private Button registerButton;
