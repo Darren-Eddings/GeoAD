@@ -60,6 +60,8 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+array change_type
+array geofence_list
 attr action
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1767,7 +1769,6 @@ id adjust_width
 id alertTitle
 id aligned
 id all
-id alternateText
 id always
 id animateToEnd
 id animateToStart
@@ -1786,7 +1787,6 @@ id bottom
 id bounce
 id buttonPanel
 id cache_measures
-id callToRequest
 id cancelButton
 id cancel_action
 id cancel_button
@@ -1965,6 +1965,7 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
+id nameSpinner
 id nameTextBox
 id nav_controller_view_tag
 id nav_host_fragment_container
@@ -2006,7 +2007,6 @@ id patientListText
 id patientLoginButton
 id patientLoginText
 id patientPhoneText
-id patientRegisterButton
 id patientRegisterText
 id peekHeight
 id percent
@@ -2134,6 +2134,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id typeSpinner
 id typeText
 id typeTextBox
 id unchecked
@@ -2144,7 +2145,6 @@ id useLogo
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
-id welcomeText
 id wide
 id withText
 id withinBounds
@@ -2246,7 +2246,6 @@ layout fragment_map
 layout fragment_new_account_success
 layout fragment_patient_login
 layout fragment_patient_register
-layout fragment_patient_register_or_login
 layout fragment_request
 layout fragment_request_confirm
 layout fragment_request_new_geofence
@@ -2347,7 +2346,6 @@ string action_sign_in_short
 string add_button_text
 string add_patient_button_text
 string add_patient_info_text
-string address_text
 string alternate_text
 string app_name
 string appbar_scrolling_view_behavior
@@ -2365,6 +2363,7 @@ string caretaker_login_text
 string caretaker_new_login_text
 string caretaker_new_registration_text
 string caretaker_registration_text
+string change_text
 string change_type_text
 string character_counter_content_description
 string character_counter_overflowed_content_description
@@ -2488,8 +2487,7 @@ string remove_patient_button_text
 string remove_patient_warning_text
 string request_change_text
 string request_confirm_text
-string request_fence_size_text
-string request_fence_type_text
+string request_edit_type_text
 string request_new_text
 string request_text
 string return_button_text
@@ -2500,6 +2498,7 @@ string submit_text
 string title_activity_maps
 string title_activity_nav_home
 string welcome
+string which_fence_text
 string yes_text
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

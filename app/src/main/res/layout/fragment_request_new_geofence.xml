@@ -10,9 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="75sp"
         android:textStyle="bold"
-        android:text="Change Request"
+        android:text="Request New Geofence"
         android:textSize="36sp"/>
     <TextView
         android:id="@+id/fenceNameText"

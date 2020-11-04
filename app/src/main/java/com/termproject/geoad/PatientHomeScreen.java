@@ -54,6 +54,14 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         }
 
         MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.replaceFragments(newFragment);
+
+        try {
+
+            mainActivity.replaceFragments(newFragment);
+
+        } catch (NullPointerException e) {
+
+            e.printStackTrace();
+        }
     }
 }

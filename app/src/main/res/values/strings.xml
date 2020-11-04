@@ -56,10 +56,10 @@
     <string name="new_size_text_hint">(In Meters)</string>
     <string name="new_type_text_hint">(Store, Home, Doctor, etc.)</string>
     <string name="new_fence_size_text">New Geofence Size</string>
-    <string name="request_fence_type_text">Geofence Type</string>
+    <string name="which_fence_text">Which Geofence would you like to change?</string>
     <string name="new_address_text_hint">1234 Name ST. City, Provence, Zip Code</string>
-    <string name="address_text">Geofence Location</string>
-    <string name="request_fence_size_text">Geofence Size</string>
+    <string name="change_text">What would you like to change it to?</string>
+    <string name="request_edit_type_text">What would you like to change?</string>
     <string name="request_confirm_text">All Done!</string>
     <string name="delivery_text">Your request has been submitted</string>
     <string name="home_text">Home</string>
@@ -80,4 +80,18 @@
     <string name="add_button_text">Add</string>
     <string name="cancel_button_text">Cancel</string>
     <string name="return_button_text">Return</string>
+    <string-array name="geofence_list">
+        <item>Select</item>
+        <item>Home</item>
+        <item>Store</item>
+        <item>Park</item>
+        <item>Doctor\'s Office</item>
+    </string-array>
+    <string-array name="change_type">
+        <item>Select</item>
+        <item>Name</item>
+        <item>Size</item>
+        <item>Type</item>
+        <item>Address</item>
+    </string-array>
 </resources>
