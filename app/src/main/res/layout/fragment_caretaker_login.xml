@@ -17,30 +17,31 @@
         />
 
     <TextView
-        android:id="@+id/phoneText"
+        android:id="@+id/caretakerIdText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/caretakerLoginText"
         android:layout_marginTop="50sp"
-        android:layout_alignStart="@id/phoneTextBox"
-        android:text="@string/phone_text"
+        android:layout_alignStart="@id/caretakerIdTextBox"
+        android:text="@string/caretaker_id_text"
         />
 
     <EditText
-        android:id="@+id/phoneTextBox"
+        android:id="@+id/caretakerIdTextBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/phoneText"
+        android:layout_below="@id/caretakerIdText"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="phone"
-        android:hint="@string/phone_text_box_hint"
+        android:inputType="number"
+        android:hint="@string/caretaker_id_text_hint"
         />
+
     <TextView
         android:id="@+id/passwordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/phoneTextBox"
+        android:layout_below="@id/caretakerIdTextBox"
         android:layout_alignStart="@id/passwordTextBox"
         android:text="@string/password_text"
         />
