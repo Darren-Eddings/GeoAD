@@ -17,13 +17,13 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
     private ArrayAdapter<String> patientListAdapter;
     private ListView patientList;
     private Button addPatient;
-    private final String[] array = new String[]{"John Doe"};
+    private final String[] patientListArray = new String[]{"John Doe"};
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_caretaker_patient_list, container, false);
-        patientListAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, array);
+        patientListAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, patientListArray);
         patientList = view.findViewById(R.id.patientList);
         patientList.setAdapter(patientListAdapter);
         patientList.setOnItemClickListener(patientListClick);

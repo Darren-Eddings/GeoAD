@@ -79,4 +79,5 @@
     <string name="add_patient_info_text">Please enter the Patient ID of your new patient:</string>
     <string name="add_button_text">Add</string>
     <string name="cancel_button_text">Cancel</string>
+    <string name="return_button_text">Return</string>
 </resources>
