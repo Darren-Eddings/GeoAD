@@ -9,7 +9,6 @@
         android:id="@+id/patientInformationButton"
         android:layout_width="275sp"
         android:layout_height="60sp"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150sp"
         android:text="@string/patient_information_button_text"

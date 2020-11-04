@@ -73,4 +73,7 @@
     <string name="check_patient_location_button_text">Check Patient Location</string>
     <string name="manage_geofence_button_text">Manage Geofence</string>
     <string name="remove_patient_button_text">Remove Patient</string>
+    <string name="remove_patient_warning_text">Are you sure you want to remove "John Doe" from your patient list?</string>
+    <string name="yes_text">Yes</string>
+    <string name="no_text">No</string>
 </resources>
