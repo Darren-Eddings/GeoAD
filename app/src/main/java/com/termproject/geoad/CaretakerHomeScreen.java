@@ -45,7 +45,7 @@ public class CaretakerHomeScreen extends Fragment implements View.OnClickListene
 
         }
         else if (buttonId == R.id.removePatientButton) {
-
+            nextFragment = new CaretakerRemovePatient();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
         try {
