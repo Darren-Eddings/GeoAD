@@ -15,7 +15,7 @@ public class CaretakerPatientList extends Fragment {
 
     private ArrayAdapter<String> patientListAdapter;
     private ListView patientList;
-    private final String[] array = new String[]{"a", "b", "c", "d", "e"};
+    private final String[] array = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"};
 
     @Nullable
     @Override
