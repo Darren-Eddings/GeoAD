@@ -22,15 +22,15 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/accountSuccessText"
         android:layout_marginTop="10sp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="50sp"
         android:gravity="center"
         android:text="@string/delivery_text"
         android:textSize="24sp" />
 
     <Button
         android:id="@+id/accountSuccessButton"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_width="150sp"
+        android:layout_height="60sp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/home_text" />

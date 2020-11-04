@@ -7,39 +7,39 @@
 
     <Button
         android:id="@+id/mapButton"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="118dp"
+        android:layout_marginTop="118sp"
         android:text="@string/map_text" />
 
     <Button
         android:id="@+id/emergencyButton"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/careButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="85sp"
         android:text="@string/call_emergency_services" />
 
     <Button
         android:id="@+id/careButton"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/mapButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="85sp"
         android:text="@string/call_caretaker" />
 
     <Button
         android:id="@+id/requestButton"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/emergencyButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"
-        android:layout_marginBottom="118dp"
+        android:layout_marginTop="85sp"
+        android:layout_marginBottom="118sp"
         android:text="@string/request_text" />
 </RelativeLayout>

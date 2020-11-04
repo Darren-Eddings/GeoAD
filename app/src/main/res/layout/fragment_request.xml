@@ -7,8 +7,8 @@
 
     <Button
         android:id="@+id/callToRequest"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="175sp"
         android:text="@string/call_caretaker" />
@@ -26,17 +26,17 @@
 
     <Button
         android:id="@+id/requestNew"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/alternateText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="45sp"
         android:text="@string/request_change_text" />
 
     <Button
         android:id="@+id/requestChange"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/requestNew"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75sp"

@@ -23,13 +23,13 @@ android:layout_height="match_parent">
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginTop="35sp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="10sp"
         android:text="@string/patient_id_text" />
 
     <EditText
         android:id="@+id/idTextBox"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/patientIDText"
         android:layout_centerHorizontal="true"
         android:ems="10"
@@ -43,14 +43,14 @@ android:layout_height="match_parent">
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginTop="35sp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="10sp"
         android:text="@string/password_text"
         />
 
     <EditText
         android:id="@+id/passwordTextBox"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/passwordText"
         android:layout_centerHorizontal="true"
         android:ems="10"
@@ -59,8 +59,8 @@ android:layout_height="match_parent">
 
     <Button
         android:id="@+id/patientLoginButton"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_width="150sp"
+        android:layout_height="60sp"
         android:layout_below="@id/passwordTextBox"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55sp"

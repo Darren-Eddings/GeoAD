@@ -27,8 +27,8 @@
 
     <EditText
         android:id="@+id/fullNameTextBox"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/fullNameText"
         android:layout_centerHorizontal="true"
         android:ems="10"
@@ -43,14 +43,14 @@
         android:layout_below="@id/fullNameTextBox"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="10sp"
         android:text="@string/date_of_birth_text"
         />
 
     <EditText
         android:id="@+id/dateOfBirthTextBox"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/dateOfBirthText"
         android:layout_centerHorizontal="true"
         android:ems="10"
@@ -69,8 +69,8 @@
 
     <EditText
         android:id="@+id/newPhoneTextBox"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/patientPhoneText"
         android:layout_centerHorizontal="true"
         android:ems="10"
@@ -89,8 +89,8 @@
 
     <EditText
         android:id="@+id/passwordTextBox"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/newPasswordText"
         android:layout_centerHorizontal="true"
         android:ems="10"
@@ -99,11 +99,11 @@
 
     <Button
         android:id="@+id/accountRegisterButton"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_width="150sp"
+        android:layout_height="60sp"
         android:layout_below="@id/passwordTextBox"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="45sp"
         android:text="@string/register_text" />
 
     <TextView
