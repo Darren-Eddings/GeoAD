@@ -8,7 +8,7 @@
         android:id="@+id/patientInformationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="125sp"
         android:layout_centerHorizontal="true"
         android:text="@string/patient_information_button_text"
         android:textSize="30sp"
@@ -18,16 +18,16 @@
     <ListView
         android:id="@+id/patientInformationFields"
         android:layout_width="200sp"
-        android:layout_height="520sp"
-        android:layout_below="@id/patientInformationText"
+        android:layout_height="260sp"
+        android:layout_centerVertical="true"
         android:divider="#00000000"
         />
 
     <ListView
         android:id="@+id/patientInformationList"
         android:layout_width="wrap_content"
-        android:layout_height="520sp"
-        android:layout_below="@id/patientInformationText"
+        android:layout_height="260sp"
+        android:layout_centerVertical="true"
         android:layout_toEndOf="@id/patientInformationFields"
         android:divider="#00000000"
     />
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/patientInformationFields"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="50sp"
         android:text="@string/return_button_text"
         />
 
