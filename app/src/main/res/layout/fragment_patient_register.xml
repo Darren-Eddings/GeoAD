@@ -10,18 +10,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="75sp"
         android:text="@string/patient_register_text"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
+    <TextView
+        android:id="@+id/fullNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/patientRegisterText"
+        android:layout_marginTop="20sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/full_name_text"
+        />
 
+    <EditText
+        android:id="@+id/fullNameTextBox"
+        android:layout_width="275dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/fullNameText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textCapWords"
+        android:hint="@string/full_name_text_box_hint"
+        />
+
+    <TextView
+        android:id="@+id/dateOfBirthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullNameTextBox"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/date_of_birth_text"
+        />
+
+    <EditText
+        android:id="@+id/dateOfBirthTextBox"
+        android:layout_width="275dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/dateOfBirthText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="@string/date_of_birth_text_box_hint"
+        />
     <TextView
         android:id="@+id/patientPhoneText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/patientRegisterText"
-        android:layout_alignStart="@id/newPhoneTextBox"
-        android:layout_marginTop="55sp"
+        android:layout_below="@id/dateOfBirthTextBox"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
         android:text="@string/patient_phone_text" />
 
     <EditText
@@ -38,7 +81,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/newPhoneTextBox"
-        android:layout_alignStart="@id/newPhoneTextBox"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:layout_marginTop="10sp"
         android:text="@string/password_text"
         />
@@ -59,7 +103,7 @@
         android:layout_height="60dp"
         android:layout_below="@id/passwordTextBox"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55sp"
+        android:layout_marginTop="45dp"
         android:text="@string/register_text" />
 
     <TextView
@@ -68,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/accountRegisterButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55sp"
+        android:layout_marginTop="45sp"
         android:text="@string/patient_existing_account_text"
         android:textColor="#3F51B5"
         android:textSize="24sp" />
