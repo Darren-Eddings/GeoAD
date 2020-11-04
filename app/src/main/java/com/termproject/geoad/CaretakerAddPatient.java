@@ -20,7 +20,7 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_caretaker_add_patient, container, false);
-        add = view.findViewById(R.id.addPatientButton);
+        add = view.findViewById(R.id.addButton);
         cancel = view.findViewById(R.id.cancelButton);
         add.setOnClickListener(this);
         cancel.setOnClickListener(this);
@@ -30,7 +30,7 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
     @Override public void onClick(View v) {
         Fragment nextFragment = null;
         int buttonId = v.getId();
-        if (buttonId == R.id.addPatientButton) {
+        if (buttonId == R.id.addButton) {
             nextFragment = new CaretakerPatientList();
 
             Context context = getActivity();
