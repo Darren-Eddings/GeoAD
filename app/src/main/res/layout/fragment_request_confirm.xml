@@ -28,7 +28,7 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/accountSuccessButton"
+        android:id="@+id/submitConfirmButton"
         android:layout_width="150sp"
         android:layout_height="60sp"
         android:layout_centerHorizontal="true"

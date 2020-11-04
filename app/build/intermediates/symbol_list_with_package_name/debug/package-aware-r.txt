@@ -2089,6 +2089,7 @@ id stop
 id stretch
 id submenuarrow
 id submitChangeButton
+id submitConfirmButton
 id submit_area
 id tabMode
 id tag_accessibility_actions
