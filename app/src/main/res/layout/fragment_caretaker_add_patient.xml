@@ -39,13 +39,22 @@
         />
 
     <Button
-        android:id="@+id/addPatientButton"
+        android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/patientIdTextBox"
         android:layout_marginTop="20sp"
-        android:text="@string/add_patient_button_text"
+        android:text="@string/add_button_text"
         />
 
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/addButton"
+        android:layout_marginTop="20sp"
+        android:text="@string/cancel_button_text"
+        />
 </RelativeLayout>

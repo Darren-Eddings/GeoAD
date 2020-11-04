@@ -77,4 +77,6 @@
     <string name="yes_text">Yes</string>
     <string name="no_text">No</string>
     <string name="add_patient_info_text">Please enter the Patient ID of your new patient:</string>
+    <string name="add_button_text">Add</string>
+    <string name="cancel_button_text">Cancel</string>
 </resources>

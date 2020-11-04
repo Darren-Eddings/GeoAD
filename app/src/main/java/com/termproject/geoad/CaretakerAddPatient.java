@@ -13,14 +13,17 @@ import androidx.fragment.app.Fragment;
 
 public class CaretakerAddPatient extends Fragment implements View.OnClickListener {
 
-    private Button addPatient;
+    private Button add;
+    private Button cancel;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_caretaker_add_patient, container, false);
-        addPatient = view.findViewById(R.id.addPatientButton);
-        addPatient.setOnClickListener(this);
+        add = view.findViewById(R.id.addPatientButton);
+        cancel = view.findViewById(R.id.cancelButton);
+        add.setOnClickListener(this);
+        cancel.setOnClickListener(this);
         return view;
     }
 
@@ -36,6 +39,9 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
 
             Toast patientAdded = Toast.makeText(context, text, duration);
             patientAdded.show();
+        }
+        else if (buttonId == R.id.cancelButton) {
+            nextFragment = new CaretakerPatientList();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
         try {
