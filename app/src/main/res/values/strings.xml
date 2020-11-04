@@ -20,6 +20,7 @@
     <string name="full_name_text">Full Name</string>
     <string name="date_of_birth_text">Date of Birth</string>
     <string name="phone_text">Phone</string>
+    <string name="caretaker_id_text">Caretaker ID</string>
     <string name="password_text">Password</string>
     <string name="register_text">Register</string>
     <string name="login_text">Login</string>
@@ -31,6 +32,7 @@
     <string name="patient_id_text">Patient ID</string>
     <string name="patient_login_text">Patient Login</string>
     <string name="patient_id_text_hint">Enter Patient ID</string>
+    <string name="caretaker_id_text_hint">Your Caretaker ID</string>
     <string name="patient_register_text">Create New Account</string>
     <string name="patient_phone_text">Phone Number</string>
     <string name="patient_phone_text_hint">Enter Your Phone Number</string>
