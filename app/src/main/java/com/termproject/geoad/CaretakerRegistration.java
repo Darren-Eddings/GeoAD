@@ -25,6 +25,7 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
         loginHere = view.findViewById(R.id.inkLogin);
         registerButton.setOnClickListener(this);
         loginHere.setOnClickListener(this);
+
         return view;
     }
 
