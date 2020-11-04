@@ -17,7 +17,7 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
     private ArrayAdapter<String> patientListAdapter;
     private ListView patientList;
     private Button addPatient;
-    private final String[] array = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+    private final String[] array = new String[]{"John Doe"};
 
     @Nullable
     @Override
@@ -43,7 +43,7 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.addPatientButton) {
-
+            nextFragment = new CaretakerAddPatient();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
         try {
