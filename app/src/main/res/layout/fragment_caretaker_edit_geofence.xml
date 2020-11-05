@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/editGeofenceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150sp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/edit_geofence_button_text"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editGeofenceText"
+        android:layout_marginTop="50sp"
+        android:layout_alignStart="@id/nameTextBox"
+        android:text="@string/name_text"
+        />
+
+    <EditText
+        android:id="@+id/nameTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/geofence_name_hint"
+        />
+
+    <TextView
+        android:id="@+id/sizeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameTextBox"
+        android:layout_alignStart="@id/sizeTextBox"
+        android:text="@string/size_text"
+        />
+
+    <EditText
+        android:id="@+id/sizeTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sizeText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="@string/size_text_box_hint"
+        />
+
+    <Spinner
+        android:id="@+id/sizeUnitSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="45sp"
+        android:layout_below="@id/sizeText"
+        android:layout_toEndOf="@id/sizeTextBox"
+        />
+
+    <TextView
+        android:id="@+id/typeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sizeTextBox"
+        android:layout_alignStart="@id/typeSpinner"
+        android:text="@string/type_text"
+        />
+
+    <Spinner
+        android:id="@+id/typeSpinner"
+        android:layout_width="210sp"
+        android:layout_height="45sp"
+        android:layout_below="@id/typeText"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/addressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/typeSpinner"
+        android:layout_alignStart="@id/addressTextBox"
+        android:text="@string/address_text"
+        />
+
+    <EditText
+        android:id="@+id/addressTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/address_text_box_hint"
+        />
+
+    <Button
+        android:id="@+id/saveChangesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressTextBox"
+        android:layout_marginTop="40sp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/save_changes_button_text"
+        />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/saveChangesButton"
+        android:layout_marginTop="20sp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/cancel_button_text"
+        />
+
+</RelativeLayout>

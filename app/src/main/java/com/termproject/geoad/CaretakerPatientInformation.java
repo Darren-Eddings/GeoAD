@@ -13,25 +13,28 @@ import androidx.fragment.app.Fragment;
 
 public class CaretakerPatientInformation extends Fragment implements View.OnClickListener {
 
-    private ArrayAdapter<String> patientInformationFieldsAdapter;
-    private ArrayAdapter<String> patientInformationListAdapter;
+    private ArrayAdapter<CharSequence> patientInformationFieldsAdapter;
+    private ArrayAdapter<CharSequence> patientInformationListAdapter;
     private ListView patientInformationFields;
     private ListView patientInformationList;
     private Button returnButton;
-    private final String[] patientInformationFieldsArray = new String[]{"Patient ID", "Name", "Phone Number", "Address"};
-    private final String[] patientInformationListArray = new String[]{"000000", "John Doe", "111 111 1111", "22500 University Drive, Langley, BC, Canada | V2Y 1Y1"};
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_caretaker_patient_information, container, false);
-        patientInformationFieldsAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, patientInformationFieldsArray);
-        patientInformationListAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, patientInformationListArray);
+
+        patientInformationFieldsAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.patient_information_fields, android.R.layout.simple_list_item_1);
+        patientInformationListAdapter = ArrayAdapter.createFromResource(getActivity(), R. array.patient_information_list_dummy, android.R.layout.simple_list_item_1);
+
         patientInformationFields = view.findViewById(R.id.patientInformationFields);
         patientInformationList = view.findViewById(R.id.patientInformationList);
+
         patientInformationFields.setAdapter(patientInformationFieldsAdapter);
         patientInformationList.setAdapter(patientInformationListAdapter);
+
         returnButton = view.findViewById(R.id.returnButton);
+
         returnButton.setOnClickListener(this);
 
         return view;

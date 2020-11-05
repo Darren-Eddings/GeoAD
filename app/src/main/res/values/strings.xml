@@ -18,6 +18,7 @@
     <string name="caretaker_registration_text">Caretaker Registration</string>
     <string name="caretaker_login_text">Caretaker Login</string>
     <string name="full_name_text">Full Name</string>
+    <string name="name_text">Name</string>
     <string name="date_of_birth_text">Date of Birth</string>
     <string name="phone_text">Phone</string>
     <string name="caretaker_id_text">Caretaker ID</string>
@@ -80,6 +81,16 @@
     <string name="add_button_text">Add</string>
     <string name="cancel_button_text">Cancel</string>
     <string name="return_button_text">Return</string>
+    <string name="add_geofence_button_text">Add Geofence</string>
+    <string name="geofence_information_text">Geofence Information</string>
+    <string name="edit_geofence_button_text">Edit Geofence</string>
+    <string name="geofence_name_hint">Geofence Name</string>
+    <string name="size_text">Size</string>
+    <string name="size_text_box_hint">Geofence radius size</string>
+    <string name="type_text">Type</string>
+    <string name="address_text">Address</string>
+    <string name="address_text_box_hint">Geofence address</string>
+    <string name="save_changes_button_text">Save Changes</string>
     <string-array name="geofence_list">
         <item>Select</item>
         <item>Home</item>
@@ -93,5 +104,50 @@
         <item>Size</item>
         <item>Type</item>
         <item>Address</item>
+    </string-array>
+    <string-array name="caretaker_patient_list_dummy">
+        <item>John Doe</item>
+    </string-array>
+    <string-array name="caretaker_manage_geofence_dummy">
+        <item>Trinity Western University</item>
+    </string-array>
+    <string-array name="patient_information_fields">
+        <item>Patient ID</item>
+        <item>Name</item>
+        <item>Phone Number</item>
+        <item>Address</item>
+    </string-array>
+    <string-array name="patient_information_list_dummy">
+        <item>000000</item>
+        <item>John Doe</item>
+        <item>111 111 1111</item>
+        <item>22500 University Drive, Langley, BC, Canada | V2Y 1Y1</item>
+    </string-array>
+    <string-array name="geofence_information_fields">
+        <item>Name</item>
+        <item>Size</item>
+        <item>Type</item>
+        <item>Address</item>
+    </string-array>
+    <string-array name="geofence_information_list_dummy">
+        <item>Trinity Western University</item>
+        <item>10 km radius</item>
+        <item>Home</item>
+        <item>22500 University Drive, Langley, BC, Canada | V2Y 1Y1</item>
+    </string-array>
+    <string-array name="geofence_list_without_select">
+        <item>Home</item>
+        <item>Store</item>
+        <item>Park</item>
+        <item>Doctor\'s Office</item>
+    </string-array>
+    <string-array name="geofence_size_unit">
+        <item>m</item>
+        <item>km</item>
+    </string-array>
+    <string-array name="geofence_size_unit_with_select">
+        <item>Select</item>
+        <item>m</item>
+        <item>km</item>
     </string-array>
 </resources>

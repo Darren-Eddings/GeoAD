@@ -42,7 +42,7 @@ public class CaretakerHomeScreen extends Fragment implements View.OnClickListene
 
         }
         else if (buttonId == R.id.manageGeofenceButton) {
-
+            nextFragment = new CaretakerManageGeofence();
         }
         else if (buttonId == R.id.removePatientButton) {
             nextFragment = new CaretakerRemovePatient();

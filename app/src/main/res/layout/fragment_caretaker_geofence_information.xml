@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/geofenceInformationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125sp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/geofence_information_text"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <ListView
+        android:id="@+id/geofenceInformationFields"
+        android:layout_width="200sp"
+        android:layout_height="260sp"
+        android:layout_centerVertical="true"
+        android:divider="#00000000"
+        />
+
+    <ListView
+        android:id="@+id/geofenceInformationList"
+        android:layout_width="wrap_content"
+        android:layout_height="260sp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/geofenceInformationFields"
+        android:divider="#00000000"
+        />
+
+    <Button
+        android:id="@+id/editGeofenceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/geofenceInformationFields"
+        android:layout_marginTop="50sp"
+        android:text="@string/edit_geofence_button_text"
+        />
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editGeofenceButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        android:text="@string/return_button_text"
+        />
+
+</RelativeLayout>
