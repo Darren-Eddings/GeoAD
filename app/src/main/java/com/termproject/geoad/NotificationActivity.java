@@ -1,30 +1,32 @@
 /**package com.termproject.geoad;
 
+import android.app.Activity;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
-public class NotificationActivity extends AppCompatActivity {
+public class NotificationActivity extends AppCompatAcitity{
 
     private static final String CHANNEL_ID = "channel_id01";
     public static final int NOTIFICATION_ID =1;
 
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle saveInstanceState){
+        super.onCreate(savedInsatnceState);
         setContentView(R.layout.activity_main);
 
-        //Button showNotificationBtn = findViewById(R.id.showNotificationBtn);
-        /*showNotificationBtn.setOnClickListener((v) -> {
+        Button showNotificationBtn = findViewById(R.id.showNotificationBtn);
+        showNotificationBtn.setOnClickListener((v) -> {
 
             //click button to show notification
-            //showNotificationBtn();
+            showNotificationBtn();
         });
     }
     private void showNotification() {
@@ -36,7 +38,7 @@ public class NotificationActivity extends AppCompatActivity {
         PendingIntent mainPIntent = PendingIntent.getActivity(this, 0, mainIntent, PendingIntent.FLAG_ONE_SHOT);
 
         // click open app button to open app
-        Intent openIntent = new Intent(this, PatientHomeScreen.class);
+        Intent openIntent = new Intent(this, PatientHomeScreenFragment.class);
         openIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent openPIntent = PendingIntent.getActivity(this, 0, openIntent, PendingIntent.FLAG_ONE_SHOT);
 
@@ -48,7 +50,7 @@ public class NotificationActivity extends AppCompatActivity {
         //creating notification
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
         //icon
-        //builder.setSmallIcon(R.drawable.ic_message);
+        builder.setSmallIcon(R.drawable.ic_message);
         //title
         builder.setContentTitle("GeoAD");
         //description
@@ -60,8 +62,8 @@ public class NotificationActivity extends AppCompatActivity {
         //start intent on notification tap (PatientHomeScreenFragment)
         builder.setContentIntent(mainPIntent);
         //add action buttons to notification
-        //builder.addAction(R.drawable.ic_open, "Open APP",openPIntent);
-        //builder.addAction(R.drawable.ic_dismiss, "Dismiss",disMissPIntent);
+        builder.addAction(R.drawable.ic_open, "Open APP",openPIntent);
+        builder.addAction(R.drawable.ic_dismiss, "Dismiss",disMissPIntent);
 
         //notification manager
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
@@ -85,4 +87,4 @@ public class NotificationActivity extends AppCompatActivity {
     }
 }
 
-*/
+**/

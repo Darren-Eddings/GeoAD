@@ -4,6 +4,10 @@
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_field_manager.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_geofence_field_manager.xml"
+    },
+    {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
@@ -12,16 +16,24 @@
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_login.xml"
     },
     {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_add_geofence.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_add_geofence.xml"
+    },
+    {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_register_success.xml.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_register_success.xml"
+    },
+    {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_patient_list.xml.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_patient_list.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_edit_geofence.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_edit_geofence.xml"
     },
     {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home_screen.xml.flat",
@@ -34,6 +46,10 @@
     {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_home_screen.xml.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_home_screen.xml"
+    },
+    {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_manage_geofence.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_manage_geofence.xml"
     },
     {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_patient_information.xml.flat",
@@ -84,6 +100,14 @@
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_patient_login.xml"
     },
     {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_dismiss.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\ic_dismiss.xml"
+    },
+    {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_alert_dialog_bg.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\alert_dialog_bg.xml"
+    },
+    {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_request_confirm.xml.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_request_confirm.xml"
     },
@@ -112,6 +136,10 @@
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_request_new_geofence.xml"
     },
     {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_open.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\ic_open.xml"
+    },
+    {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_new_account_success.xml.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_new_account_success.xml"
     },
@@ -120,8 +148,16 @@
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_remove_patient.xml"
     },
     {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_geofence_information.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_geofence_information.xml"
+    },
+    {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_timed_field_manager.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_geofence_timed_field_manager.xml"
     },
     {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",

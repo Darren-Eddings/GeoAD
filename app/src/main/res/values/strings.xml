@@ -91,8 +91,6 @@
     <string name="address_text">Address</string>
     <string name="address_text_box_hint">Geofence address</string>
     <string name="save_changes_button_text">Save Changes</string>
-    <string name="remove_geofence_text">Remove Geofence</string>
-    <string name="remove_geofence_text_dummy">Are you sure you want to remove "Trinity Western University" from this patient\'s geofence list?</string>
     <string-array name="geofence_list">
         <item>Select</item>
         <item>Home</item>
