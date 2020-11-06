@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
@@ -24,6 +25,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
 
@@ -39,6 +41,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private int BACKGROUND_LOCATION_ACCESS_REQUEST_CODE = 10002;
 
     private String GEOFENCE_ID = "Placeholder";
+
+    private int geofenceType = -1;
+
+    private String[] geofenceTypes = new String[]{
+            "Classic",
+            "Point-of-Interest",
+            "Timed"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +134,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //We need background permission
             if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED){
+                userInputGeofenceType();
+                userInputGeofenceName();
                 tryAddingGeofence(latLng);
             }
             else{
@@ -186,5 +198,36 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         circleOptions.fillColor(Color.argb(64,255,0,0));
         circleOptions.strokeWidth(4);
         mMap.addCircle(circleOptions);
+    }
+
+    private void userInputGeofenceType(){
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(MapsActivity.this);
+        builder.setTitle("Geofence Type ");
+        builder.setSingleChoiceItems(geofenceTypes, geofenceType, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(MapsActivity.this, geofenceTypes[i] + " was chosen", Toast.LENGTH_SHORT).show();
+                geofenceType = i;
+            }
+        });
+        builder.setBackground(getResources().getDrawable(R.drawable.alert_dialog_bg, null));
+        builder.setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(MapsActivity.this,"Adding Cancelled", Toast.LENGTH_SHORT).show();
+                geofenceType = -1;
+            }
+        });
+        builder.show();
+    }
+
+    private void userInputGeofenceName(){
+
     }
 }
