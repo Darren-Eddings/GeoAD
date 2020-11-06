@@ -4,6 +4,10 @@
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_field_manager.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_geofence_field_manager.xml"
+    },
+    {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
@@ -100,6 +104,10 @@
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\ic_dismiss.xml"
     },
     {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_alert_dialog_bg.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\alert_dialog_bg.xml"
+    },
+    {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_request_confirm.xml.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_request_confirm.xml"
     },
@@ -146,6 +154,10 @@
     {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_timed_field_manager.xml.flat",
+        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_geofence_timed_field_manager.xml"
     },
     {
         "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",

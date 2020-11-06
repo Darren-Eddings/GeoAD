@@ -71,7 +71,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30sp"
         android:ems="10"
-        android:hint="@string/new_address_text_hint"
+        android:hint="Enter Change Here"
         android:inputType="textNoSuggestions" />
 
     <Button

@@ -49,6 +49,7 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         } else if (buttonId == R.id.careButton) {
 
             //implement call caretaker
+
         } else if (buttonId == R.id.requestButton){
             newFragment = new RequestChangeOrNew();
         }
