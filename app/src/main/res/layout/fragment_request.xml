@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/requestNew"
+        android:id="@+id/requestChange"
         android:layout_width="275sp"
         android:layout_height="60sp"
         android:layout_alignParentTop="true"
@@ -15,10 +15,10 @@
         android:text="@string/request_change_text" />
 
     <Button
-        android:id="@+id/requestChange"
+        android:id="@+id/requestNew"
         android:layout_width="275sp"
         android:layout_height="60sp"
-        android:layout_below="@id/requestNew"
+        android:layout_below="@id/requestChange"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="175sp"
         android:text="@string/request_new_text" />

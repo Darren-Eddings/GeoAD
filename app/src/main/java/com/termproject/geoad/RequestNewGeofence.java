@@ -22,7 +22,7 @@ public class RequestNewGeofence extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_geofence_change_request, container, false);
+        View view = inflater.inflate(R.layout.fragment_request_new_geofence, container, false);
         submitButton = view.findViewById(R.id.submitChangeButton);
         submitButton.setOnClickListener(this);
         return view;
