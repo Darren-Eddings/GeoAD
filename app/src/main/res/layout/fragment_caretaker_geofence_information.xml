@@ -38,15 +38,25 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/geofenceInformationFields"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="30sp"
         android:text="@string/edit_geofence_button_text"
+        />
+
+    <Button
+        android:id="@+id/removeGeofenceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/editGeofenceButton"
+        android:layout_marginTop="20sp"
+        android:text="@string/remove_geofence_text"
         />
 
     <Button
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editGeofenceButton"
+        android:layout_below="@id/removeGeofenceButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
         android:text="@string/return_button_text"
