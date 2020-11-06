@@ -18,6 +18,7 @@ public class CaretakerGeofenceInformation extends Fragment implements View.OnCli
     private ListView geofenceInformationFields;
     private ListView geofenceInformationList;
     private Button editGeofenceButton;
+    private Button removeGeofenceButton;
     private Button returnButton;
 
     @Nullable
@@ -35,9 +36,11 @@ public class CaretakerGeofenceInformation extends Fragment implements View.OnCli
         geofenceInformationList.setAdapter(geofenceInformationListAdapter);
 
         editGeofenceButton = view.findViewById(R.id.editGeofenceButton);
+        removeGeofenceButton = view.findViewById(R.id.removeGeofenceButton);
         returnButton = view.findViewById(R.id.returnButton);
 
         editGeofenceButton.setOnClickListener(this);
+        removeGeofenceButton.setOnClickListener(this);
         returnButton.setOnClickListener(this);
 
         return view;
@@ -48,6 +51,9 @@ public class CaretakerGeofenceInformation extends Fragment implements View.OnCli
         int buttonId = v.getId();
         if (buttonId == R.id.editGeofenceButton) {
             nextFragment = new CaretakerEditGeofence();
+        }
+        else if (buttonId == R.id.removeGeofenceButton) {
+            nextFragment = new CaretakerRemoveGeofence();
         }
         else if (buttonId == R.id.returnButton) {
             nextFragment = new CaretakerManageGeofence();
