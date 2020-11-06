@@ -1,11 +1,13 @@
 package com.termproject.geoad;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -30,6 +32,14 @@ public class CaretakerLogin extends Fragment implements View.OnClickListener{
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.caretakerLoginButton) {
+            nextFragment = new CaretakerPatientList();
+
+            Context context = getActivity();
+            CharSequence text = "Login Successful!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast loginSuccessful = Toast.makeText(context, text, duration);
+            loginSuccessful.show();
         }
         else if (buttonId == R.id.inkRegister) {
             nextFragment = new CaretakerRegistration();

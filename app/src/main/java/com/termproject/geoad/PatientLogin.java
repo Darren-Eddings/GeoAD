@@ -1,6 +1,7 @@
 package com.termproject.geoad;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,11 +13,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PatientLogin extends Fragment implements View.OnClickListener{
 
-    private EditText idTextBox;
-    private EditText passwordTextBox;
     private Button loginButton;
     private TextView goToRegister;
 
@@ -24,8 +24,6 @@ public class PatientLogin extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_patient_login, container, false);
-        idTextBox = (EditText) view.findViewById(R.id.idTextBox);
-        passwordTextBox = (EditText) view.findViewById(R.id.passwordTextBox);
         loginButton = (Button) view.findViewById(R.id.patientLoginButton);
         goToRegister = view.findViewById(R.id.linkRegister);
         loginButton.setOnClickListener(this);
@@ -39,8 +37,21 @@ public class PatientLogin extends Fragment implements View.OnClickListener{
         int buttonID = v.getId();
         if (buttonID == R.id.linkRegister) {
             newFragment = new PatientRegister();
+        } else if (buttonID == R.id.patientLoginButton) {
+            newFragment = new PatientHomeScreen();
+
+            Context context = getActivity();
+            CharSequence text = "Login Successful!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast loginSuccessful = Toast.makeText(context, text, duration);
+            loginSuccessful.show();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.replaceFragments(newFragment);
+        try {
+            mainActivity.replaceFragments(newFragment);
+        }catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 }

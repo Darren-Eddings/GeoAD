@@ -21,7 +21,8 @@ public class RequestConfirm extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_geofence_change_request, container, false);
+        View view = inflater.inflate(R.layout.fragment_request_confirm, container, false);
+        goToHomePage = (Button) view.findViewById(R.id.submitConfirmButton);
         goToHomePage.setOnClickListener(this);
         return view;
     }
@@ -32,12 +33,19 @@ public class RequestConfirm extends Fragment implements View.OnClickListener {
         Fragment newFragment = null;
         int buttonID = v.getId();
 
-        if (buttonID == R.id.submitChangeButton) {
+        if (buttonID == R.id.submitConfirmButton) {
 
             newFragment = new PatientHomeScreen();
         }
 
         MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.replaceFragments(newFragment);
+        try {
+
+            mainActivity.replaceFragments(newFragment);
+
+        } catch (NullPointerException e) {
+
+            e.printStackTrace();
+        }
     }
 }

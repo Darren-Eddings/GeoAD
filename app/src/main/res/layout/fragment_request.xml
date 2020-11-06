@@ -6,40 +6,21 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/callToRequest"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="175sp"
-        android:text="@string/call_caretaker" />
-
-    <TextView
-        android:id="@+id/alternateText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/callToRequest"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45sp"
-        android:gravity="center"
-        android:text="@string/alternate_text"
-        android:textSize="24sp" />
-
-    <Button
         android:id="@+id/requestNew"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
-        android:layout_below="@id/alternateText"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="218dp"
         android:text="@string/request_change_text" />
 
     <Button
         android:id="@+id/requestChange"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/requestNew"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75sp"
+        android:layout_marginTop="175sp"
         android:text="@string/request_new_text" />
 
 </RelativeLayout>

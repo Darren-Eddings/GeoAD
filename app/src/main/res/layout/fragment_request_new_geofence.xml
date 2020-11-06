@@ -10,9 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75sp"
         android:textStyle="bold"
-        android:text="Change Request"
+        android:text="Request New Geofence"
         android:textSize="36sp"/>
     <TextView
         android:id="@+id/fenceNameText"
@@ -21,17 +21,17 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_below="@id/changeRequestTitle"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="40sp"
         android:text="@string/new_fence_name_text"
         android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/nameTextBox"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/fenceNameText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="10sp"
         android:ems="10"
         android:hint="@string/new_name_text_hint"
         android:inputType="textNoSuggestions" />
@@ -49,11 +49,11 @@
 
     <EditText
         android:id="@+id/typeTextBox"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/typeText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="10sp"
         android:ems="10"
         android:hint="@string/new_type_text_hint"
         android:inputType="textNoSuggestions" />
@@ -65,17 +65,17 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_below="@id/typeTextBox"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="30sp"
         android:text="@string/new_fence_size_text"
         android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/sizeTextBox"
-        android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_width="275sp"
+        android:layout_height="60sp"
         android:layout_below="@id/fenceSizeText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="10sp"
         android:ems="10"
         android:hint="@string/new_size_text_hint"
         android:inputType="number" />
@@ -83,7 +83,7 @@
     <Button
         android:id="@+id/submitChangeButton"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="60sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40sp"
         android:layout_below="@id/sizeTextBox"
