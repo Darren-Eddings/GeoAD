@@ -82,5 +82,8 @@ public class NotificationActivity extends AppCompatAcitity{
             notificationManager.createNotificationChannel((notificationChannel));
         }
     }
+    public void dismiss() {
+        notificationManager.cancel(NOTIFICATION_ID);
+    }
 }
 
