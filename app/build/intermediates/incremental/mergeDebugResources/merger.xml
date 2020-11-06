@@ -6025,6 +6025,42 @@
         <item>Size</item>
         <item>Type</item>
         <item>Address</item>
+    </string-array><string-array name="caretaker_manage_geofence_dummy">
+        <item>Trinity Western University</item>
+    </string-array><string-array name="geofence_information_fields">
+        <item>Name</item>
+        <item>Size</item>
+        <item>Type</item>
+        <item>Address</item>
+    </string-array><string name="geofence_name_hint">Geofence Name</string><string-array name="patient_information_fields">
+        <item>Patient ID</item>
+        <item>Name</item>
+        <item>Phone Number</item>
+        <item>Address</item>
+    </string-array><string-array name="geofence_information_list_dummy">
+        <item>Trinity Western University</item>
+        <item>10 km radius</item>
+        <item>Home</item>
+        <item>22500 University Drive, Langley, BC, Canada | V2Y 1Y1</item>
+    </string-array><string-array name="patient_information_list_dummy">
+        <item>000000</item>
+        <item>John Doe</item>
+        <item>111 111 1111</item>
+        <item>22500 University Drive, Langley, BC, Canada | V2Y 1Y1</item>
+    </string-array><string-array name="geofence_list_without_select">
+        <item>Home</item>
+        <item>Store</item>
+        <item>Park</item>
+        <item>Doctor\'s Office</item>
+    </string-array><string name="size_text">Size</string><string name="type_text">Type</string><string-array name="geofence_size_unit">
+        <item>m</item>
+        <item>km</item>
+    </string-array><string name="geofence_information_text">Geofence Information</string><string name="address_text_box_hint">Geofence address</string><string name="save_changes_button_text">Save Changes</string><string name="add_geofence_button_text">Add Geofence</string><string-array name="caretaker_patient_list_dummy">
+        <item>John Doe</item>
+    </string-array><string name="edit_geofence_button_text">Edit Geofence</string><string name="name_text">Name</string><string name="size_text_box_hint">Geofence radius size</string><string name="address_text">Address</string><string-array name="geofence_size_unit_with_select">
+        <item>Select</item>
+        <item>m</item>
+        <item>km</item>
     </string-array></file><file path="D:\ASProjects\TermProject\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.GeoAD" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>
@@ -6049,7 +6085,7 @@
         
         <item name="android:statusBarColor" ns2:targetApi="l">?attr/colorPrimaryVariant</item>
         
-    </style></file></source><source path="D:\ASProjects\TermProject\app\build\generated\res\rs\debug"/><source path="D:\ASProjects\TermProject\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\ASProjects\TermProject\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\ASProjects\TermProject\app\src\debug\res"><file path="D:\ASProjects\TermProject\app\src\debug\res\values\google_maps_api.xml" qualifiers=""><string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD9JB_ZXiY6gdBahAY85W4ruxUgO_z1Aw8</string></file></source></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
+    </style></file><file name="ic_open" path="D:\ASProjects\TermProject\app\src\main\res\drawable\ic_open.xml" qualifiers="" type="drawable"/><file name="ic_dismiss" path="D:\ASProjects\TermProject\app\src\main\res\drawable\ic_dismiss.xml" qualifiers="" type="drawable"/><file name="fragment_caretaker_add_geofence" path="D:\ASProjects\TermProject\app\src\main\res\layout\fragment_caretaker_add_geofence.xml" qualifiers="" type="layout"/><file name="fragment_caretaker_manage_geofence" path="D:\ASProjects\TermProject\app\src\main\res\layout\fragment_caretaker_manage_geofence.xml" qualifiers="" type="layout"/><file name="fragment_caretaker_edit_geofence" path="D:\ASProjects\TermProject\app\src\main\res\layout\fragment_caretaker_edit_geofence.xml" qualifiers="" type="layout"/><file name="fragment_caretaker_geofence_information" path="D:\ASProjects\TermProject\app\src\main\res\layout\fragment_caretaker_geofence_information.xml" qualifiers="" type="layout"/></source><source path="D:\ASProjects\TermProject\app\build\generated\res\rs\debug"/><source path="D:\ASProjects\TermProject\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\ASProjects\TermProject\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\ASProjects\TermProject\app\src\debug\res"><file path="D:\ASProjects\TermProject\app\src\debug\res\values\google_maps_api.xml" qualifiers=""><string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD9JB_ZXiY6gdBahAY85W4ruxUgO_z1Aw8</string></file></source></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
         <attr format="reference" name="listLayout"/>

@@ -27,28 +27,32 @@ com/termproject/geoad/data/model/LoggedInUser.java
  com.termproject.geoad.data.model.LoggedInUser
 com/termproject/geoad/data/LoginDataSource.java
  com.termproject.geoad.data.LoginDataSource
-com/termproject/geoad/CaretakerHomeScreen.java
- com.termproject.geoad.CaretakerHomeScreen
+com/termproject/geoad/RequestChangeOrNew.java
+ com.termproject.geoad.RequestChangeOrNew
 com/termproject/geoad/CaretakerRemovePatient.java
  com.termproject.geoad.CaretakerRemovePatient
+com/termproject/geoad/CaretakerGeofenceInformation.java
+ com.termproject.geoad.CaretakerGeofenceInformation
 com/termproject/geoad/GeofenceBroadcastReceiver.java
  com.termproject.geoad.GeofenceBroadcastReceiver
 com/termproject/geoad/CaretakerRegistration.java
  com.termproject.geoad.CaretakerRegistration
-com/termproject/geoad/ui/login/LoggedInUserView.java
- com.termproject.geoad.ui.login.LoggedInUserView
+com/termproject/geoad/RequestNewGeofence.java
+ com.termproject.geoad.RequestNewGeofence
 com/termproject/geoad/BuildConfig.java
  com.termproject.geoad.BuildConfig
-com/termproject/geoad/CaretakerLogin.java
- com.termproject.geoad.CaretakerLogin
+com/termproject/geoad/RequestConfirm.java
+ com.termproject.geoad.RequestConfirm
+com/termproject/geoad/CaretakerManageGeofence.java
+ com.termproject.geoad.CaretakerManageGeofence
 com/termproject/geoad/MapFragment.java
  com.termproject.geoad.MapFragment
  com.termproject.geoad.MapFragment$1
  com.termproject.geoad.MapFragment$1$1
 com/termproject/geoad/CaretakerRegistrationSuccess.java
  com.termproject.geoad.CaretakerRegistrationSuccess
-com/termproject/geoad/CaretakerAddPatient.java
- com.termproject.geoad.CaretakerAddPatient
+com/termproject/geoad/GeofenceChangeRequest.java
+ com.termproject.geoad.GeofenceChangeRequest
 com/termproject/geoad/GeofenceHelper.java
  com.termproject.geoad.GeofenceHelper
 com/termproject/geoad/data/LoginRepository.java
@@ -57,17 +61,21 @@ com/termproject/geoad/CaretakerPatientList.java
  com.termproject.geoad.CaretakerPatientList
 com/termproject/geoad/NewAccountSuccess.java
  com.termproject.geoad.NewAccountSuccess
+com/termproject/geoad/CaretakerAddGeofence.java
+ com.termproject.geoad.CaretakerAddGeofence
+com/termproject/geoad/CaretakerEditGeofence.java
+ com.termproject.geoad.CaretakerEditGeofence
 com/termproject/geoad/StartScreen.java
  com.termproject.geoad.StartScreen
 com/termproject/geoad/ui/login/LoginResult.java
  com.termproject.geoad.ui.login.LoginResult
 com/termproject/geoad/ui/login/LoginFormState.java
  com.termproject.geoad.ui.login.LoginFormState
-com/termproject/geoad/RequestNewGeofence.java
- com.termproject.geoad.RequestNewGeofence
-com/termproject/geoad/RequestConfirm.java
- com.termproject.geoad.RequestConfirm
-com/termproject/geoad/RequestChangeOrNew.java
- com.termproject.geoad.RequestChangeOrNew
-com/termproject/geoad/GeofenceChangeRequest.java
- com.termproject.geoad.GeofenceChangeRequest
+com/termproject/geoad/CaretakerAddPatient.java
+ com.termproject.geoad.CaretakerAddPatient
+com/termproject/geoad/CaretakerHomeScreen.java
+ com.termproject.geoad.CaretakerHomeScreen
+com/termproject/geoad/CaretakerLogin.java
+ com.termproject.geoad.CaretakerLogin
+com/termproject/geoad/ui/login/LoggedInUserView.java
+ com.termproject.geoad.ui.login.LoggedInUserView
