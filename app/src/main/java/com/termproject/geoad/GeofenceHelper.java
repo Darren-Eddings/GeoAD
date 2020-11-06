@@ -25,7 +25,7 @@ public class GeofenceHelper extends ContextWrapper{
         return new GeofencingRequest.Builder()
                 //Can pass in a list, likely useful for us later on
                 .addGeofence(geofence)
-                .setInitialTrigger((GeofencingRequest.INITIAL_TRIGGER_ENTER))
+                .setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
                 .build();
     }
 
@@ -34,7 +34,6 @@ public class GeofenceHelper extends ContextWrapper{
                 .setCircularRegion(latLng.latitude, latLng.longitude, radius)
                 .setRequestId(ID)
                 .setTransitionTypes(transitionTypes)
-                .setLoiteringDelay(5000)
                 .setExpirationDuration(duration)
                 .build();
     }

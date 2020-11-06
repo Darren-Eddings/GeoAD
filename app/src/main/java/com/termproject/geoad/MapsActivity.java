@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -19,6 +20,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.common.util.Strings;
 import com.google.android.gms.location.*;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -32,6 +34,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -40,9 +43,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Random;
+
+import static java.lang.Double.parseDouble;
+import static java.lang.Float.parseFloat;
+import static java.lang.Integer.parseInt;
+import static java.lang.Long.parseLong;
+import static java.lang.String.valueOf;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
 
@@ -52,9 +64,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GeofencingClient geofencingClient;
     private GeofenceHelper geofenceHelper;
 
-    private LatLng fenceLoc;
+    private LatLng fenceLoc = new LatLng(0,0);
 
-    private int GEOFENCE_RADIUS = 200;
+    private float GEOFENCE_RADIUS = 100;
 
     private int FINE_LOCATION_ACCESS_REQUEST_CODE = 10001;
     private int BACKGROUND_LOCATION_ACCESS_REQUEST_CODE = 10002;
@@ -81,6 +93,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         geofencingClient = LocationServices.getGeofencingClient(this);
         geofenceHelper = new GeofenceHelper(this);
+
+
     }
 
     /**
@@ -103,6 +117,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         enableUserLocation();
 
         mMap.setOnMapLongClickListener(this);
+
+        fenceUpdate();
+
     }
 
     private void enableUserLocation(){
@@ -124,6 +141,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == FINE_LOCATION_ACCESS_REQUEST_CODE) {
@@ -155,8 +173,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //We need background permission
             if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED){
-                userInputGeofenceType();
                 fenceLoc = latLng;
+                userInputGeofenceType();
+                //tryAddingGeofence(latLng);
             }
             else{
                 if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION)){
@@ -171,34 +190,37 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
         else {
+            fenceLoc = latLng;
             userInputGeofenceType();
+            //tryAddingGeofence(latLng);
         }
 
     }
 
-    public void tryAddingGeofence(LatLng latLng){
+    public void drawGeofence(LatLng latLng){
         //mMap.clear();
-        addGeofence(latLng, GEOFENCE_RADIUS, geofenceType);
+        //addGeofence(latLng, GEOFENCE_RADIUS);
         addMarker(latLng);
         //Currently using a fixed radius, will require user input later
         addCircle(latLng, GEOFENCE_RADIUS);
     }
 
-    public void addGeofence(LatLng latLng, int radius, int type){
+    @SuppressLint("MissingPermission")
+    public void addGeofence(LatLng latLng){
         int translatedType = 0;
-        if (type == 0){
+        if (geofenceType == 0){
             translatedType = Geofence.GEOFENCE_TRANSITION_EXIT;
             geofenceDuration = Geofence.NEVER_EXPIRE;
         }
-        else if (type == 1){
+        else if (geofenceType == 1){
             translatedType = Geofence.GEOFENCE_TRANSITION_ENTER;
             geofenceDuration = Geofence.NEVER_EXPIRE;
         }
-        else if (type == 2){
+        else if (geofenceType == 2){
             translatedType = Geofence.GEOFENCE_TRANSITION_EXIT;
         }
 
-        Geofence geofence = geofenceHelper.getGeofence(GEOFENCE_ID, latLng, radius, translatedType, geofenceDuration);
+        Geofence geofence = geofenceHelper.getGeofence(GEOFENCE_ID, latLng, GEOFENCE_RADIUS, translatedType, geofenceDuration);
         GeofencingRequest geofencingRequest = geofenceHelper.getGeofencingRequest(geofence);
         PendingIntent pendingIntent = geofenceHelper.getPendingIntent();
         geofencingClient.addGeofences(geofencingRequest, pendingIntent)
@@ -212,7 +234,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
                             InputStreamReader isr = new InputStreamReader(fIn);
                         } catch (FileNotFoundException e) {
-                            e.printStackTrace();
                             FileOutputStream fOut = null;
                             try {
                                 fOut = new FileOutputStream(new File (getFilesDir() + "/GeofenceList.txt"));
@@ -273,27 +294,42 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         Log.d(TAG, "onFailure: " + errorMessage);
                     }
                 });
+        //geofencingClient.removeGeofences(pendingIntent);
     }
-    /**@Override
-    public void onResume() {
-        super.onResume();
-        addGeofence(fenceLoc, GEOFENCE_RADIUS);
-        tryAddingGeofence(fenceLoc);
-    }**/
 
     private void addMarker (LatLng latLng) {
         MarkerOptions markerOptions = new MarkerOptions().position(latLng);
         mMap.addMarker(markerOptions);
     }
 
-    private void addCircle(LatLng latLng, int radius){
-        CircleOptions circleOptions = new CircleOptions();
-        circleOptions.center(latLng);
-        circleOptions.radius(radius);
-        circleOptions.strokeColor(Color.argb(255,255,0,0));
-        circleOptions.fillColor(Color.argb(64,255,0,0));
-        circleOptions.strokeWidth(4);
-        mMap.addCircle(circleOptions);
+    private void addCircle(LatLng latLng, float radius){
+        if (geofenceType == 0) {
+            CircleOptions circleOptions = new CircleOptions();
+            circleOptions.center(latLng);
+            circleOptions.radius(radius);
+            circleOptions.strokeColor(Color.argb(255, 255, 0, 0));
+            circleOptions.fillColor(Color.argb(64, 255, 0, 0));
+            circleOptions.strokeWidth(4);
+            mMap.addCircle(circleOptions);
+        }
+        else if (geofenceType == 1) {
+            CircleOptions circleOptions = new CircleOptions();
+            circleOptions.center(latLng);
+            circleOptions.radius(radius);
+            circleOptions.strokeColor(Color.argb(255, 0, 0, 255));
+            circleOptions.fillColor(Color.argb(64, 0, 0, 255));
+            circleOptions.strokeWidth(4);
+            mMap.addCircle(circleOptions);
+        }
+        else if (geofenceType == 2) {
+            CircleOptions circleOptions = new CircleOptions();
+            circleOptions.center(latLng);
+            circleOptions.radius(radius);
+            circleOptions.strokeColor(Color.argb(255, 0, 255, 0));
+            circleOptions.fillColor(Color.argb(64, 0, 255, 0));
+            circleOptions.strokeWidth(4);
+            mMap.addCircle(circleOptions);
+        }
     }
 
     private void userInputGeofenceType(){
@@ -311,14 +347,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
-                if (geofenceType == 0 || geofenceType == 2) {
+                if (geofenceType == 0 || geofenceType == 1) {
                     GeofenceFieldManager fragment = new GeofenceFieldManager();
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.add(R.id.map, fragment);
                     transaction.addToBackStack(null);
                     transaction.commit();
                 }
-                else if(geofenceType == 1){
+                else if(geofenceType == 2){
                     GeofenceTimedFieldManager fragment = new GeofenceTimedFieldManager();
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.add(R.id.map, fragment);
@@ -333,6 +369,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void onClick(DialogInterface dialogInterface, int i) {
                 Toast.makeText(MapsActivity.this,"Adding Cancelled", Toast.LENGTH_SHORT).show();
                 geofenceType = -1;
+            }
+        });
+        builder.setNeutralButton("REMOVE GEOFENCE", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                CaretakerRemoveGeofence fragment = new CaretakerRemoveGeofence();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.add(R.id.map, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
         builder.show();
@@ -362,6 +408,111 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void moveMap(LatLng latLng){
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
+    }
+
+    public void fenceUpdate(){
+        mMap.clear();
+        FileInputStream fIn = null;
+        try {
+            fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
+            InputStreamReader isr = new InputStreamReader(fIn);
+        } catch (FileNotFoundException e) {
+            FileOutputStream fOut = null;
+            try {
+                fOut = new FileOutputStream(new File (getFilesDir() + "/GeofenceList.txt"));
+                OutputStreamWriter osw = new OutputStreamWriter(fOut);
+                try {
+                    osw.write("");
+                }
+                catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+            catch (FileNotFoundException fileNotFoundException) {
+                fileNotFoundException.printStackTrace();
+            }
+        }
+        try {
+            fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
+            InputStreamReader isr = new InputStreamReader(fIn);
+            BufferedReader reader = new BufferedReader(isr);
+            while (reader.ready()) {
+                String line = reader.readLine();
+                String[] splitLine = line.split(",");
+                GEOFENCE_ID = splitLine[0];
+                fenceLoc = new LatLng (parseDouble(splitLine[1]), parseDouble(splitLine[2]));
+                GEOFENCE_RADIUS = (parseFloat(splitLine[3]));
+                geofenceType = (parseInt(splitLine[4]));
+                geofenceDuration = (parseLong(splitLine[5]));
+                drawGeofence(fenceLoc);
+            }
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeFence(String fenceID){
+        List<String> removeList = new ArrayList<>();
+        removeList.add(fenceID);
+        geofencingClient.removeGeofences(removeList);
+        fenceListRemove(fenceID);
+    }
+
+    private void fenceListRemove(String fenceID){
+        String[] ids = new String[1000000];
+        List<String> lines = new LinkedList<>();
+        int arrayIndex = 0;
+        int lineIndex = 0;
+        FileInputStream fIn = null;
+        try {
+            fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
+            InputStreamReader isr = new InputStreamReader(fIn);
+            BufferedReader reader = new BufferedReader(isr);
+            while (reader.ready()) {
+                String line = reader.readLine();
+                String[] splitLine = line.split(",");
+                lines.add(line);
+                ids [arrayIndex] = splitLine[0];
+                arrayIndex ++;
+            }
+            reader.close();
+            isr.close();
+            fIn.close();
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        while (!ids[lineIndex].equals(fenceID)){
+            lineIndex++;
+        }
+        lines.remove(lineIndex);
+
+            File file = new File(getFilesDir() + "/GeofenceList.txt");
+            FileOutputStream fr = null;
+            try {
+                fr = new FileOutputStream(file, false);
+                OutputStreamWriter writer = new OutputStreamWriter(fr);
+                try {
+                    for (String line : lines) {
+                        writer.write(line + "\n");
+                    }
+                    writer.close();
+                    fr.close();
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
     }
 
 }

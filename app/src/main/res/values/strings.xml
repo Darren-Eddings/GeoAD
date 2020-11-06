@@ -100,7 +100,7 @@
     <string name="name_fence_text">Name the Geofence</string>
     <string name="type_fence">Enter Type</string>
     <string name="remove_geofence_text">Remove Geofence</string>
-    <string name="remove_geofence_text_dummy">Are you sure you want to remove "Trinity Western University" from this patient\'s geofence list?</string>
+    <string name="remove_geofence_text_dummy">Are you sure you want to remove</string>
     <string-array name="geofence_list">
         <item>Select</item>
         <item>Home</item>

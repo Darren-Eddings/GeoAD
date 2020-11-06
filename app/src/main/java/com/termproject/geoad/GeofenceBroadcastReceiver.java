@@ -14,7 +14,7 @@ import java.util.List;
 
 public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
-    private static final String TAG = "GeofenceBroadcastReceiv";
+    private static final String TAG = "GeofenceBroadcastReceive";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -26,7 +26,7 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
         GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
 
         if(geofencingEvent.hasError()){
-            Log.d(TAG, "onReceive: Error receiving geofenc event...");
+            Log.d(TAG, "onReceive: Error receiving geofence event...");
             return;
         }
 
@@ -37,9 +37,9 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
         //Gets location where geofence was triggered, might be useful for us later on
         Location location = geofencingEvent.getTriggeringLocation();
-        int transtitionType = geofencingEvent.getGeofenceTransition();
+        int transitionType = geofencingEvent.getGeofenceTransition();
 
-        switch(transtitionType){
+        switch(transitionType){
             case Geofence.GEOFENCE_TRANSITION_ENTER:
                 Toast.makeText(context, "GEOFENCE_TRANSITION_ENTER", Toast.LENGTH_SHORT).show();
                 notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_ENTER", "", MapsActivity.class);

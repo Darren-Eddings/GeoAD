@@ -80,7 +80,8 @@ public class GeofenceTimedFieldManager extends Fragment implements View.OnClickL
             ((MapsActivity)getActivity()).setName(fenceName);
             ((MapsActivity)getActivity()).setRadius(size);
             ((MapsActivity)getActivity()).setGeofenceDuration(duration);
-            ((MapsActivity)getActivity()).tryAddingGeofence(((MapsActivity)getActivity()).getLocation());
+            ((MapsActivity)getActivity()).drawGeofence(((MapsActivity)getActivity()).getLocation());
+            ((MapsActivity)getActivity()).addGeofence(((MapsActivity)getActivity()).getLocation());
             ((MapsActivity)getActivity()).moveMap(((MapsActivity)getActivity()).getLocation());
             getFragmentManager().beginTransaction().remove(this).commitAllowingStateLoss();
 

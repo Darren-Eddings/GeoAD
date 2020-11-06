@@ -61,9 +61,10 @@ public class GeofenceFieldManager extends Fragment implements View.OnClickListen
 
             ((MapsActivity)getActivity()).setName(fenceName);
             ((MapsActivity)getActivity()).setRadius(radius);
-            ((MapsActivity)getActivity()).tryAddingGeofence(((MapsActivity)getActivity()).getLocation());
+            ((MapsActivity)getActivity()).drawGeofence(((MapsActivity)getActivity()).getLocation());
+            ((MapsActivity)getActivity()).addGeofence(((MapsActivity)getActivity()).getLocation());
             ((MapsActivity)getActivity()).moveMap(((MapsActivity)getActivity()).getLocation());
-            getFragmentManager().beginTransaction().remove(this).commitAllowingStateLoss();
+            getFragmentManager().beginTransaction().hide(this).commitAllowingStateLoss();
 
         }
 
