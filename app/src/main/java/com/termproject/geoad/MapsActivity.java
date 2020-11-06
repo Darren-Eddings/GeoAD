@@ -240,6 +240,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 OutputStreamWriter osw = new OutputStreamWriter(fOut);
                                 try {
                                     osw.write("");
+                                    osw.close();
+                                    fOut.close();
                                 }
                                 catch (IOException ioException) {
                                     ioException.printStackTrace();
@@ -262,6 +264,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             }
                             reader.close();
                             isr.close();
+                            fIn.close();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
@@ -278,10 +281,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                             "," + GEOFENCE_RADIUS + "," + geofenceType + "," + geofenceDuration + "\n");
                                     writer.close();
                                     fr.close();
-                                } catch (IOException e) {
+                                }
+                                catch (IOException e) {
                                     e.printStackTrace();
                                 }
-                            } catch (IOException e) {
+                            }
+                            catch (IOException e) {
                                 e.printStackTrace();
                             }
                         }
@@ -423,10 +428,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 OutputStreamWriter osw = new OutputStreamWriter(fOut);
                 try {
                     osw.write("");
+                    osw.close();
+                    fOut.close();
                 }
                 catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
+
             }
             catch (FileNotFoundException fileNotFoundException) {
                 fileNotFoundException.printStackTrace();
@@ -446,6 +454,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 geofenceDuration = (parseLong(splitLine[5]));
                 drawGeofence(fenceLoc);
             }
+            reader.close();
+            isr.close();
+            fIn.close();
         }
         catch (FileNotFoundException e){
             e.printStackTrace();

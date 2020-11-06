@@ -66,6 +66,8 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
                 OutputStreamWriter osw = new OutputStreamWriter(fOut);
                 try {
                     osw.write("");
+                    osw.close();
+                    fOut.close();
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
@@ -84,6 +86,8 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
                 arrayIndex ++;
             }
             reader.close();
+            isr.close();
+            fIn.close();
         }
         catch (FileNotFoundException e){
             e.printStackTrace();
