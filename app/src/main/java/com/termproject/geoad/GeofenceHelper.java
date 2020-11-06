@@ -29,13 +29,13 @@ public class GeofenceHelper extends ContextWrapper{
                 .build();
     }
 
-    public Geofence getGeofence(String ID, LatLng latLng, float radius, int transitionTypes){
+    public Geofence getGeofence(String ID, LatLng latLng, float radius, int transitionTypes, long duration){
         return new Geofence.Builder()
                 .setCircularRegion(latLng.latitude, latLng.longitude, radius)
                 .setRequestId(ID)
                 .setTransitionTypes(transitionTypes)
                 .setLoiteringDelay(5000)
-                .setExpirationDuration(Geofence.NEVER_EXPIRE)
+                .setExpirationDuration(duration)
                 .build();
     }
 

@@ -24,12 +24,14 @@ public class GeofenceFieldManager extends Fragment implements View.OnClickListen
 
     private Slider size;
     private Button close;
+    private EditText name;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_geofence_field_manager, container, false);
 
+        name = view.findViewById(R.id.enterName);
         close = view.findViewById(R.id.saveButton);
         close.setOnClickListener(this);
 
@@ -54,12 +56,18 @@ public class GeofenceFieldManager extends Fragment implements View.OnClickListen
         int buttonID = v.getId();
 
         if (buttonID == R.id.saveButton) {
+            String fenceName = name.getText().toString();
+            int radius = (int)size.getValue();
 
-            newFragment = new MapFragment();
+            ((MapsActivity)getActivity()).setName(fenceName);
+            ((MapsActivity)getActivity()).setRadius(radius);
+            ((MapsActivity)getActivity()).tryAddingGeofence(((MapsActivity)getActivity()).getLocation());
+            ((MapsActivity)getActivity()).moveMap(((MapsActivity)getActivity()).getLocation());
+            getFragmentManager().beginTransaction().remove(this).commitAllowingStateLoss();
 
         }
 
-        MainActivity mainActivity = (MainActivity) getActivity();
+        /**MainActivity mainActivity = (MainActivity) getActivity();
 
         try {
 
@@ -68,6 +76,6 @@ public class GeofenceFieldManager extends Fragment implements View.OnClickListen
         }catch (NullPointerException e) {
 
             e.printStackTrace();
-        }
+        }**/
     }
 }

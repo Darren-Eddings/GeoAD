@@ -115,6 +115,11 @@
         <item>Type</item>
         <item>Address</item>
     </string-array>
+    <string-array name="fence_type">
+        <item>Classic</item>
+        <item>Point-of-Interest</item>
+        <item>Timed</item>
+    </string-array>
     <string-array name="caretaker_patient_list_dummy">
         <item>John Doe</item>
     </string-array>

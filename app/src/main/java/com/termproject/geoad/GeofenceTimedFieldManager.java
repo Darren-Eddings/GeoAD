@@ -25,16 +25,18 @@ public class GeofenceTimedFieldManager extends Fragment implements View.OnClickL
     private Slider radius;
     private Slider time;
     private Button save;
+    private EditText name;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_geofence_timed_field_manager, container, false);
 
+        name = view.findViewById(R.id.enterNameTimed);
         save = view.findViewById(R.id.saveTimedButton);
+        save.setOnClickListener(this);
         radius = view.findViewById(R.id.sizeSliderTimed);
         time = view.findViewById(R.id.timeSlider);
-        save.setOnClickListener(this);
 
         radius.setLabelFormatter(new LabelFormatter() {
 
@@ -70,11 +72,21 @@ public class GeofenceTimedFieldManager extends Fragment implements View.OnClickL
 
         if (buttonID == R.id.saveTimedButton) {
 
-            newFragment = new MapFragment();
+            String fenceName = name.getText().toString();
+            int size = (int)radius.getValue();
+            long duration = (int)time.getValue();
+            duration = duration * 3600000;
+
+            ((MapsActivity)getActivity()).setName(fenceName);
+            ((MapsActivity)getActivity()).setRadius(size);
+            ((MapsActivity)getActivity()).setGeofenceDuration(duration);
+            ((MapsActivity)getActivity()).tryAddingGeofence(((MapsActivity)getActivity()).getLocation());
+            ((MapsActivity)getActivity()).moveMap(((MapsActivity)getActivity()).getLocation());
+            getFragmentManager().beginTransaction().remove(this).commitAllowingStateLoss();
 
         }
 
-        MainActivity mainActivity = (MainActivity) getActivity();
+        /**MainActivity mainActivity = (MainActivity) getActivity();
 
         try {
 
@@ -83,6 +95,6 @@ public class GeofenceTimedFieldManager extends Fragment implements View.OnClickL
         }catch (NullPointerException e) {
 
             e.printStackTrace();
-        }
+        }**/
     }
 }
