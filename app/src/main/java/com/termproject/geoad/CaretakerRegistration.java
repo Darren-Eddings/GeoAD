@@ -20,6 +20,8 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
         View view = inflater.inflate(R.layout.fragment_caretaker_registration, container, false);
         registerButton = view.findViewById(R.id.caretakerRegistrationButton);
         loginHere = view.findViewById(R.id.inkLogin);
@@ -30,6 +32,8 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
     }
 
     @Override public void onClick(View v) {
+
+
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.caretakerRegistrationButton) {
