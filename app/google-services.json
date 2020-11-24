@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:676536766965:android:d716771123222dbdf550bc",
+        "mobilesdk_app_id": "1:676536766965:android:570dc3abb8eef5f3f550bc",
         "android_client_info": {
-          "package_name": "com.android.application"
+          "package_name": "com.termproject.geoad"
         }
       },
       "oauth_client": [
