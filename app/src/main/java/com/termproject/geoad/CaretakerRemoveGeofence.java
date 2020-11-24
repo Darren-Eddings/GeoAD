@@ -1,7 +1,5 @@
 package com.termproject.geoad;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,28 +8,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import com.google.android.gms.maps.model.LatLng;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.nio.Buffer;
-
-import static java.lang.Double.parseDouble;
-import static java.lang.Float.parseFloat;
-import static java.lang.Integer.parseInt;
-import static java.lang.Long.parseLong;
 
 
 public class CaretakerRemoveGeofence extends Fragment implements View.OnClickListener {

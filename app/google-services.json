@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "676536766965",
+    "firebase_url": "https://geoad-a1ba3.firebaseio.com",
+    "project_id": "geoad-a1ba3",
+    "storage_bucket": "geoad-a1ba3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676536766965:android:d716771123222dbdf550bc",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676536766965-g8dbtomgtd3seuvjobc9qvc0lj821gnr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3NyWInC4XCcYNi6d6pwW6LTQBO9l4sIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676536766965-g8dbtomgtd3seuvjobc9qvc0lj821gnr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
