@@ -61,7 +61,7 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
             int year = cldr.get(Calendar.YEAR);
 
             picker = new DatePickerDialog(getActivity(),
-                    (view1, year1, monthOfYear, dayOfMonth) -> dateOfBirth.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year1), year, month, day);
+                    (view1, year1, monthOfYear, dayOfMonth) -> dateOfBirth.setText((monthOfYear + 1) + "/" + dayOfMonth  + "/" + year1), year, month, day);
             picker.show();
         });
 
