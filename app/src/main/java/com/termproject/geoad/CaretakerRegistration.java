@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -36,7 +37,7 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         db = FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         View view = inflater.inflate(R.layout.fragment_caretaker_registration, container, false);
 
@@ -54,16 +55,18 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
     }
 
     @Override public void onClick(View v) {
-        Map<String, Object> caretaker = new HashMap<>();
-        caretaker.put("fullName", fullName.getText());
-        caretaker.put("dateOfBirth", dateOfBirth.getText());
-        caretaker.put("phone", phone.getText());
-        caretaker.put("password", password.getText());
+        CollectionReference caretakers = db.collection("caretakers");
 
-        db.collection("caretakers")
-                .add(caretaker)
-                .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
-                .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+        Map<String, Object> caretaker = new HashMap<>();
+        caretaker.put("fullName", fullName.getText().toString());
+        caretaker.put("dateOfBirth", dateOfBirth.getText().toString());
+        caretaker.put("phone", phone.getText().toString());
+        caretaker.put("password", password.getText().toString());
+
+        caretakers.document(fullName.getText().toString())
+                .set(caretaker)
+                .addOnSuccessListener(documentReference -> Log.d(TAG, "Document saved!"))
+                .addOnFailureListener(e -> Log.w(TAG, "Error adding document.", e));
 
         Fragment nextFragment = null;
         int buttonId = v.getId();
