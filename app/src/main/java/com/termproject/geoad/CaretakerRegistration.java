@@ -1,5 +1,6 @@
 package com.termproject.geoad;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +28,7 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
 
     private static final String TAG = "CaretakerRegistration";
 
+    private DatePickerDialog picker;
     private Button registerButton;
     private TextView loginHere;
     private EditText fullName;
@@ -50,6 +53,17 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
 
         registerButton.setOnClickListener(this);
         loginHere.setOnClickListener(this);
+
+        dateOfBirth.setOnClickListener(v -> {
+            final Calendar cldr = Calendar.getInstance();
+            int day = cldr.get(Calendar.DAY_OF_MONTH);
+            int month = cldr.get(Calendar.MONTH);
+            int year = cldr.get(Calendar.YEAR);
+
+            picker = new DatePickerDialog(getActivity(),
+                    (view1, year1, monthOfYear, dayOfMonth) -> dateOfBirth.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year1), year, month, day);
+            picker.show();
+        });
 
         return view;
     }
