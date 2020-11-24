@@ -53,7 +53,7 @@
         android:layout_below="@id/dateOfBirthText"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="date"
+        android:focusable="false"
         android:hint="@string/date_of_birth_text_box_hint"
         />
 
