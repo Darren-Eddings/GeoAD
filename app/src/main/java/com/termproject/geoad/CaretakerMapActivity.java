@@ -1,11 +1,8 @@
 package com.termproject.geoad;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.FragmentManager;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -20,8 +17,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.android.gms.common.util.Strings;
-import com.google.android.gms.location.*;
+import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.GeofencingClient;
+import com.google.android.gms.location.GeofencingRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -34,29 +33,20 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Random;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Float.parseFloat;
 import static java.lang.Integer.parseInt;
 import static java.lang.Long.parseLong;
-import static java.lang.String.valueOf;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
+public class CaretakerMapActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
 
     private static final String TAG = "CaretakerMapsActivity";
 
@@ -175,7 +165,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     PackageManager.PERMISSION_GRANTED){
                 fenceLoc = latLng;
                 userInputGeofenceType();
-                //tryAddingGeofence(latLng);
             }
             else{
                 if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION)){
@@ -192,17 +181,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         else {
             fenceLoc = latLng;
             userInputGeofenceType();
-            //tryAddingGeofence(latLng);
+
         }
 
-    }
-
-    public void drawGeofence(LatLng latLng){
-        //mMap.clear();
-        //addGeofence(latLng, GEOFENCE_RADIUS);
-        addMarker(latLng);
-        //Currently using a fixed radius, will require user input later
-        addCircle(latLng, GEOFENCE_RADIUS);
     }
 
     @SuppressLint("MissingPermission")
@@ -220,23 +201,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             translatedType = Geofence.GEOFENCE_TRANSITION_EXIT;
         }
 
-        Geofence geofence = geofenceHelper.getGeofence(GEOFENCE_ID, latLng, GEOFENCE_RADIUS, translatedType, geofenceDuration);
-        GeofencingRequest geofencingRequest = geofenceHelper.getGeofencingRequest(geofence);
-        PendingIntent pendingIntent = geofenceHelper.getPendingIntent();
-        geofencingClient.addGeofences(geofencingRequest, pendingIntent)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d(TAG, "onSuccess: Geofence Added...");
                         boolean isNew = true;
                         FileInputStream fIn = null;
                         try {
-                            fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
+                            fIn = new FileInputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
                             InputStreamReader isr = new InputStreamReader(fIn);
                         } catch (FileNotFoundException e) {
                             FileOutputStream fOut = null;
                             try {
-                                fOut = new FileOutputStream(new File (getFilesDir() + "/GeofenceList.txt"));
+                                fOut = new FileOutputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
                                 OutputStreamWriter osw = new OutputStreamWriter(fOut);
                                 try {
                                     osw.write("");
@@ -252,7 +225,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             }
                         }
                         try {
-                            fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
+                            fIn = new FileInputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
                             InputStreamReader isr = new InputStreamReader(fIn);
                             BufferedReader reader = new BufferedReader(isr);
                             while (reader.ready() && isNew == true){
@@ -271,7 +244,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             e.printStackTrace();
                         }
                         if (isNew == true){
-                            File file = new File(getFilesDir() + "/GeofenceList.txt");
+                            File file = new File(getFilesDir() + "/CaretakerGeofenceList.txt");
                             FileOutputStream fr = null;
                             try {
                                 fr = new FileOutputStream(file, true);
@@ -291,15 +264,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             }
                         }
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        String errorMessage = geofenceHelper.getErrorString(e);
-                        Log.d(TAG, "onFailure: " + errorMessage);
-                    }
-                });
-        //geofencingClient.removeGeofences(pendingIntent);
+
+    public void drawFence(LatLng latLng){
+        addMarker(latLng);
+        addCircle(latLng, GEOFENCE_RADIUS);
     }
 
     private void addMarker (LatLng latLng) {
@@ -337,13 +305,68 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    public void moveMap(LatLng latLng){
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
+    }
+
+    public void fenceUpdate(){
+        mMap.clear();
+        FileInputStream fIn = null;
+        try {
+            fIn = new FileInputStream(new File(getFilesDir() + "/CaretakerGeofenceList.txt"));
+            InputStreamReader isr = new InputStreamReader(fIn);
+        } catch (FileNotFoundException e) {
+            FileOutputStream fOut = null;
+            try {
+                fOut = new FileOutputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
+                OutputStreamWriter osw = new OutputStreamWriter(fOut);
+                try {
+                    osw.write("");
+                    osw.close();
+                    fOut.close();
+                }
+                catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+
+            }
+            catch (FileNotFoundException fileNotFoundException) {
+                fileNotFoundException.printStackTrace();
+            }
+        }
+        try {
+            fIn = new FileInputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
+            InputStreamReader isr = new InputStreamReader(fIn);
+            BufferedReader reader = new BufferedReader(isr);
+            while (reader.ready()) {
+                String line = reader.readLine();
+                String[] splitLine = line.split(",");
+                GEOFENCE_ID = splitLine[0];
+                fenceLoc = new LatLng (parseDouble(splitLine[1]), parseDouble(splitLine[2]));
+                GEOFENCE_RADIUS = (parseFloat(splitLine[3]));
+                geofenceType = (parseInt(splitLine[4]));
+                geofenceDuration = (parseLong(splitLine[5]));
+                drawFence(fenceLoc);
+            }
+            reader.close();
+            isr.close();
+            fIn.close();
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     private void userInputGeofenceType(){
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(MapsActivity.this);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(CaretakerMapActivity.this);
         builder.setTitle("Geofence Type ");
         builder.setSingleChoiceItems(geofenceTypes, geofenceType, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(MapsActivity.this, geofenceTypes[i] + " was chosen", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CaretakerMapActivity.this, geofenceTypes[i] + " was chosen", Toast.LENGTH_SHORT).show();
                 geofenceType = i;
             }
         });
@@ -372,7 +395,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(MapsActivity.this,"Adding Cancelled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CaretakerMapActivity.this,"Adding Cancelled", Toast.LENGTH_SHORT).show();
                 geofenceType = -1;
             }
         });
@@ -389,6 +412,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         builder.show();
     }
 
+
     public void setName(String geofenceName){
         GEOFENCE_ID = geofenceName;
     }
@@ -404,126 +428,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public LatLng getLocation(){
         LatLng temp = fenceLoc;
         return temp;
-    }
-
-    public int getGeofenceType(){
-        int temp = geofenceType;
-        return temp;
-    }
-
-    public void moveMap(LatLng latLng){
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
-    }
-
-    public void fenceUpdate(){
-        mMap.clear();
-        FileInputStream fIn = null;
-        try {
-            fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
-            InputStreamReader isr = new InputStreamReader(fIn);
-        } catch (FileNotFoundException e) {
-            FileOutputStream fOut = null;
-            try {
-                fOut = new FileOutputStream(new File (getFilesDir() + "/GeofenceList.txt"));
-                OutputStreamWriter osw = new OutputStreamWriter(fOut);
-                try {
-                    osw.write("");
-                    osw.close();
-                    fOut.close();
-                }
-                catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-
-            }
-            catch (FileNotFoundException fileNotFoundException) {
-                fileNotFoundException.printStackTrace();
-            }
-        }
-        try {
-            fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
-            InputStreamReader isr = new InputStreamReader(fIn);
-            BufferedReader reader = new BufferedReader(isr);
-            while (reader.ready()) {
-                String line = reader.readLine();
-                String[] splitLine = line.split(",");
-                GEOFENCE_ID = splitLine[0];
-                fenceLoc = new LatLng (parseDouble(splitLine[1]), parseDouble(splitLine[2]));
-                GEOFENCE_RADIUS = (parseFloat(splitLine[3]));
-                geofenceType = (parseInt(splitLine[4]));
-                geofenceDuration = (parseLong(splitLine[5]));
-                drawGeofence(fenceLoc);
-            }
-            reader.close();
-            isr.close();
-            fIn.close();
-        }
-        catch (FileNotFoundException e){
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void removeFence(String fenceID){
-        List<String> removeList = new ArrayList<>();
-        removeList.add(fenceID);
-        geofencingClient.removeGeofences(removeList);
-        fenceListRemove(fenceID);
-    }
-
-    private void fenceListRemove(String fenceID){
-        String[] ids = new String[1000000];
-        List<String> lines = new LinkedList<>();
-        int arrayIndex = 0;
-        int lineIndex = 0;
-        FileInputStream fIn = null;
-        try {
-            fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
-            InputStreamReader isr = new InputStreamReader(fIn);
-            BufferedReader reader = new BufferedReader(isr);
-            while (reader.ready()) {
-                String line = reader.readLine();
-                String[] splitLine = line.split(",");
-                lines.add(line);
-                ids [arrayIndex] = splitLine[0];
-                arrayIndex ++;
-            }
-            reader.close();
-            isr.close();
-            fIn.close();
-        }
-        catch (FileNotFoundException e){
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        while (!ids[lineIndex].equals(fenceID)){
-            lineIndex++;
-        }
-        lines.remove(lineIndex);
-
-            File file = new File(getFilesDir() + "/GeofenceList.txt");
-            FileOutputStream fr = null;
-            try {
-                fr = new FileOutputStream(file, false);
-                OutputStreamWriter writer = new OutputStreamWriter(fr);
-                try {
-                    for (String line : lines) {
-                        writer.write(line + "\n");
-                    }
-                    writer.close();
-                    fr.close();
-                }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-
     }
 
 }

@@ -1,5 +1,6 @@
 package com.termproject.geoad;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,7 +52,8 @@ public class CaretakerManageGeofence extends Fragment implements View.OnClickLis
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.addGeofenceButton) {
-            nextFragment = new CaretakerAddGeofence();
+            Intent intent = new Intent(getContext(), CaretakerMapActivity.class);
+            ((MainActivity) getActivity()).startActivity(intent);
         }
         else if (buttonId == R.id.returnButton) {
             nextFragment = new CaretakerHomeScreen();

@@ -168,4 +168,5 @@
         <item>m</item>
         <item>km</item>
     </string-array>
+    <string name="title_activity_caretaker_map">Map</string>
 </resources>

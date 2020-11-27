@@ -77,12 +77,13 @@ public class GeofenceTimedFieldManager extends Fragment implements View.OnClickL
             long duration = (int)time.getValue();
             duration = duration * 3600000;
 
-            ((MapsActivity)getActivity()).setName(fenceName);
-            ((MapsActivity)getActivity()).setRadius(size);
-            ((MapsActivity)getActivity()).setGeofenceDuration(duration);
-            ((MapsActivity)getActivity()).drawGeofence(((MapsActivity)getActivity()).getLocation());
-            ((MapsActivity)getActivity()).addGeofence(((MapsActivity)getActivity()).getLocation());
-            //((MapsActivity)getActivity()).moveMap(((MapsActivity)getActivity()).getLocation());
+            ((CaretakerMapActivity)getActivity()).setName(fenceName);
+            ((CaretakerMapActivity)getActivity()).setRadius(size);
+            ((CaretakerMapActivity)getActivity()).setGeofenceDuration(duration);
+            ((CaretakerMapActivity)getActivity()).drawFence(((CaretakerMapActivity)getActivity()).getLocation());
+            ((CaretakerMapActivity)getActivity()).addGeofence(((CaretakerMapActivity)getActivity()).getLocation());
+            ((CaretakerMapActivity)getActivity()).moveMap(((CaretakerMapActivity)getActivity()).getLocation());
+
             getFragmentManager().beginTransaction().remove(this).commitAllowingStateLoss();
 
         }

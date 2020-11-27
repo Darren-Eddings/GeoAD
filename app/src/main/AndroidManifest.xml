@@ -42,6 +42,19 @@
         </receiver>
 
         <activity
+            android:name=".CaretakerMapActivity"
+            android:label="@string/title_activity_caretaker_map"></activity>
+
+        <receiver
+            android:name=".GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
