@@ -40,6 +40,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.List;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Float.parseFloat;
@@ -428,6 +430,60 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
     public LatLng getLocation(){
         LatLng temp = fenceLoc;
         return temp;
+    }
+
+    public void fenceListRemove(String fenceID){
+        String[] ids = new String[1000000];
+        List<String> lines = new LinkedList<>();
+        int arrayIndex = 0;
+        int lineIndex = 0;
+        FileInputStream fIn = null;
+        try {
+            fIn = new FileInputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
+            InputStreamReader isr = new InputStreamReader(fIn);
+            BufferedReader reader = new BufferedReader(isr);
+            while (reader.ready()) {
+                String line = reader.readLine();
+                String[] splitLine = line.split(",");
+                lines.add(line);
+                ids [arrayIndex] = splitLine[0];
+                arrayIndex ++;
+            }
+            reader.close();
+            isr.close();
+            fIn.close();
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        while (!ids[lineIndex].equals(fenceID)){
+            lineIndex++;
+        }
+        lines.remove(lineIndex);
+
+        File file = new File(getFilesDir() + "/CaretakerGeofenceList.txt");
+        FileOutputStream fr = null;
+        try {
+            fr = new FileOutputStream(file, false);
+            OutputStreamWriter writer = new OutputStreamWriter(fr);
+            try {
+                for (String line : lines) {
+                    writer.write(line + "\n");
+                }
+                writer.close();
+                fr.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

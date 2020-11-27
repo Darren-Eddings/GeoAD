@@ -56,13 +56,13 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
         int arrayIndex = 0;
         FileInputStream fIn = null;
         try {
-            fIn = new FileInputStream(new File (getActivity().getFilesDir() + "/GeofenceList.txt"));
+            fIn = new FileInputStream(new File (getActivity().getFilesDir() + "/CaretakerGeofenceList.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
         }
         catch (FileNotFoundException e) {
             FileOutputStream fOut = null;
             try {
-                fOut = new FileOutputStream(new File(getActivity().getFilesDir() + "/GeofenceList.txt"));
+                fOut = new FileOutputStream(new File(getActivity().getFilesDir() + "/CaretakerGeofenceList.txt"));
                 OutputStreamWriter osw = new OutputStreamWriter(fOut);
                 try {
                     osw.write("");
@@ -76,7 +76,7 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
             }
         }
         try {
-            fIn = new FileInputStream(new File (getActivity().getFilesDir() + "/GeofenceList.txt"));
+            fIn = new FileInputStream(new File (getActivity().getFilesDir() + "/CaretakerGeofenceList.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
             BufferedReader reader = new BufferedReader(isr);
             while (reader.ready()) {
@@ -128,8 +128,8 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
         int buttonId = v.getId();
         if (buttonId == R.id.yesButton) {
             //nextFragment = new CaretakerManageGeofence();
-            ((MapsActivity) getContext()).removeFence(fenceID);
-            ((MapsActivity) getContext()).fenceUpdate();
+            ((CaretakerMapActivity)getContext()).fenceListRemove(fenceID);
+            ((CaretakerMapActivity) getContext()).fenceUpdate();
             getFragmentManager().beginTransaction().hide(this).commitAllowingStateLoss();
             /**Context context = getActivity();
             CharSequence text = "Geofence removed successfully!";
