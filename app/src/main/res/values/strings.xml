@@ -146,12 +146,14 @@
         <item>Size</item>
         <item>Type</item>
         <item>Address</item>
+        <item >Time</item>
     </string-array>
     <string-array name="geofence_information_list_dummy">
         <item>Trinity Western University</item>
         <item>10 km radius</item>
         <item>Home</item>
         <item>22500 University Drive, Langley, BC, Canada | V2Y 1Y1</item>
+        <item>Not Timed</item>
     </string-array>
     <string-array name="geofence_list_without_select">
         <item>Home</item>

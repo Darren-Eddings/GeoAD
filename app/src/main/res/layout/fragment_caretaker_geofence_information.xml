@@ -29,7 +29,7 @@
 
         <ListView
             android:id="@+id/geofenceInformationFields"
-            android:layout_width="200sp"
+            android:layout_width="100sp"
             android:layout_height="260sp"
             android:divider="#00000000"
             android:backgroundTint="@color/light_grey"
@@ -37,7 +37,7 @@
 
         <ListView
             android:id="@+id/geofenceInformationList"
-            android:layout_width="wrap_content"
+            android:layout_width="315sp"
             android:layout_height="260sp"
             android:layout_toEndOf="@id/geofenceInformationFields"
             android:divider="#00000000"
