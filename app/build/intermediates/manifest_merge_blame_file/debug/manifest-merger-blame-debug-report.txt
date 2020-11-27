@@ -19,108 +19,127 @@
 16-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:10:5-79
 16-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:10:22-76
 17    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-17-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:11:5-84
+17-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:11:5-85
 17-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:11:22-82
 18    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-18-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:12:5-80
+18-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:12:5-81
 18-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:12:22-78
-19
-20    <!-- Include required permissions for Google Maps API to run. -->
-21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-21-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
-21-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:22-76
-22    <uses-permission android:name="android.permission.INTERNET" />
-22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
-22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:22-64
-23
-24    <uses-feature
-24-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
-25        android:glEsVersion="0x00020000"
-25-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
-26        android:required="true" />
-26-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
-27
-28    <application
-28-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:14:5-46:19
-29        android:allowBackup="true"
-29-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:15:9-35
-30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-30-->[androidx.core:core:1.3.1] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\3eb28494a4e0c8b185afed99bdff9bd6\core-1.3.1\AndroidManifest.xml:24:18-86
-31        android:debuggable="true"
-32        android:extractNativeLibs="false"
-33        android:icon="@mipmap/ic_launcher"
-33-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:16:9-43
-34        android:label="@string/app_name"
-34-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:17:9-41
-35        android:roundIcon="@mipmap/ic_launcher_round"
-35-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:18:9-54
-36        android:supportsRtl="true"
-36-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:19:9-35
-37        android:testOnly="true"
-38        android:theme="@style/Theme.GeoAD" >
-38-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:20:9-43
-39
-40        <!--
-41             The API key for Google Maps-based APIs is defined as a string resource.
-42             (See the file "res/values/google_maps_api.xml").
-43             Note that the API key is linked to the encryption key used to sign the APK.
-44             You need a different API key for each encryption key, including the release key that is used to
-45             sign the APK for publishing.
-46             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-47        -->
-48        <meta-data
-48-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:30:9-32:55
-49            android:name="com.google.android.geo.API_KEY"
-49-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:31:13-58
-50            android:value="@string/google_maps_key" />
-50-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:32:13-52
-51
-52        <activity
-52-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:34:9-36:68
-53            android:name="com.termproject.geoad.MapsActivity"
-53-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:35:13-41
-54            android:label="@string/title_activity_maps" />
-54-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:36:13-56
-55        <activity
-55-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:37:9-45:20
-56            android:name="com.termproject.geoad.MainActivity"
-56-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:38:13-41
-57            android:label="MainActivity" >
-57-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:39:13-41
-58            <intent-filter>
-58-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:40:13-44:29
-59                <action android:name="android.intent.action.MAIN" />
-59-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:41:17-69
-59-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:41:25-66
-60
-61                <category android:name="android.intent.category.LAUNCHER" />
-61-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:43:17-77
-61-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:43:27-74
-62            </intent-filter>
-63        </activity>
-64        <!-- Needs to be explicitly declared on P+ -->
-65        <uses-library
-65-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-66            android:name="org.apache.http.legacy"
-66-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-67            android:required="false" />
-67-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-68
-69        <activity
-69-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\90313ba66b87b61c38214f0d48a2ba22\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-70            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-70-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\90313ba66b87b61c38214f0d48a2ba22\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-71            android:exported="false"
-71-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\90313ba66b87b61c38214f0d48a2ba22\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-72            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-72-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\90313ba66b87b61c38214f0d48a2ba22\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-73
-74        <meta-data
-74-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\e2f3931a74b13a0da0ca4f47c74803da\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-75            android:name="com.google.android.gms.version"
-75-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\e2f3931a74b13a0da0ca4f47c74803da\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-76            android:value="@integer/google_play_services_version" />
-76-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\e2f3931a74b13a0da0ca4f47c74803da\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-77    </application>
+19    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+19-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:13:5-82
+19-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:13:22-79
+20
+21    <!-- Include required permissions for Google Maps API to run. -->
+22    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:22-76
+23    <uses-permission android:name="android.permission.INTERNET" />
+23-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
+23-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:22-64
+24
+25    <uses-feature
+25-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+26        android:glEsVersion="0x00020000"
+26-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+27        android:required="true" />
+27-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+28
+29    <application
+29-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:15:5-56:19
+30        android:allowBackup="true"
+30-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:16:9-35
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.3.1] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\3eb28494a4e0c8b185afed99bdff9bd6\core-1.3.1\AndroidManifest.xml:24:18-86
+32        android:debuggable="true"
+33        android:extractNativeLibs="false"
+34        android:icon="@mipmap/ic_launcher"
+34-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:17:9-43
+35        android:label="@string/app_name"
+35-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:18:9-41
+36        android:roundIcon="@mipmap/ic_launcher_round"
+36-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:19:9-54
+37        android:supportsRtl="true"
+37-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:20:9-35
+38        android:testOnly="true"
+39        android:theme="@style/Theme.GeoAD" >
+39-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:21:9-43
+40
+41        <!--
+42             The API key for Google Maps-based APIs is defined as a string resource.
+43             (See the file "res/values/google_maps_api.xml").
+44             Note that the API key is linked to the encryption key used to sign the APK.
+45             You need a different API key for each encryption key, including the release key that is used to
+46             sign the APK for publishing.
+47             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+48        -->
+49        <meta-data
+49-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:31:9-33:55
+50            android:name="com.google.android.geo.API_KEY"
+50-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:32:13-58
+51            android:value="@string/google_maps_key" />
+51-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:33:13-52
+52
+53        <receiver
+53-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:35:9-42:20
+54            android:name="com.termproject.geoad.GeofenceBroadcastReceiver"
+54-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:36:13-54
+55            android:enabled="true"
+55-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:37:13-35
+56            android:exported="true" >
+56-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:38:13-36
+57            <intent-filter>
+57-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:39:13-41:29
+58                <action android:name="android.intent.action.BOOT_COMPLETED" />
+58-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:40:17-79
+58-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:40:25-76
+59            </intent-filter>
+60        </receiver>
+61
+62        <activity
+62-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:44:9-46:59
+63            android:name="com.termproject.geoad.MapsActivity"
+63-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:45:13-41
+64            android:label="@string/title_activity_maps" />
+64-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:46:13-56
+65        <activity
+65-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:47:9-55:20
+66            android:name="com.termproject.geoad.MainActivity"
+66-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:48:13-41
+67            android:label="MainActivity" >
+67-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:49:13-41
+68            <intent-filter>
+68-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:50:13-54:29
+69                <action android:name="android.intent.action.MAIN" />
+69-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:51:17-69
+69-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:51:25-66
+70
+71                <category android:name="android.intent.category.LAUNCHER" />
+71-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:53:17-77
+71-->D:\ASProjects\TermProject\app\src\main\AndroidManifest.xml:53:27-74
+72            </intent-filter>
+73        </activity>
+74        <!-- Needs to be explicitly declared on P+ -->
+75        <uses-library
+75-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+76            android:name="org.apache.http.legacy"
+76-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+77            android:required="false" />
+77-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\9b93424f15ffa51f7fd7f0919f42d279\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
 78
-79</manifest>
+79        <activity
+79-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\90313ba66b87b61c38214f0d48a2ba22\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+80            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+80-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\90313ba66b87b61c38214f0d48a2ba22\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+81            android:exported="false"
+81-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\90313ba66b87b61c38214f0d48a2ba22\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+82            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\90313ba66b87b61c38214f0d48a2ba22\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+83
+84        <meta-data
+84-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\e2f3931a74b13a0da0ca4f47c74803da\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+85            android:name="com.google.android.gms.version"
+85-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\e2f3931a74b13a0da0ca4f47c74803da\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+86            android:value="@integer/google_play_services_version" />
+86-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Darren Eddings\.gradle\caches\transforms-2\files-2.1\e2f3931a74b13a0da0ca4f47c74803da\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+87    </application>
+88
+89</manifest>

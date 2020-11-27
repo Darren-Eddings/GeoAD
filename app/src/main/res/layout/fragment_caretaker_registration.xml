@@ -3,17 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/earth">
 
     <TextView
         android:id="@+id/caretakerRegistrationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="75sp"
         android:layout_centerHorizontal="true"
         android:text="@string/caretaker_registration_text"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textColor="@color/dark_grey"
         />
 
     <TextView
@@ -21,9 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/caretakerRegistrationText"
-        android:layout_marginTop="50sp"
-        android:layout_alignStart="@id/fullNameTextBox"
+        android:layout_marginTop="95sp"
+        android:layout_centerHorizontal="true"
         android:text="@string/full_name_text"
+        android:textColor="@color/light_grey"
         />
 
     <EditText
@@ -35,15 +38,20 @@
         android:ems="10"
         android:inputType="textCapWords"
         android:hint="@string/full_name_text_box_hint"
+        android:textColorHint="@color/light_grey"
+        android:backgroundTint="@color/light_grey"
+        android:textColor="@color/light_grey"
         />
 
     <TextView
         android:id="@+id/dateOfBirthText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
         android:layout_below="@id/fullNameTextBox"
-        android:layout_alignStart="@id/dateOfBirthTextBox"
+        android:layout_centerHorizontal="true"
         android:text="@string/date_of_birth_text"
+        android:textColor="@color/light_grey"
         />
 
     <EditText
@@ -55,15 +63,20 @@
         android:ems="10"
         android:inputType="date"
         android:hint="@string/date_of_birth_text_box_hint"
+        android:backgroundTint="@color/light_grey"
+        android:textColorHint="@color/light_grey"
+        android:textColor="@color/light_grey"
         />
 
     <TextView
         android:id="@+id/phoneText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
         android:layout_below="@id/dateOfBirthTextBox"
-        android:layout_alignStart="@id/phoneTextBox"
+        android:layout_centerHorizontal="true"
         android:text="@string/phone_text"
+        android:textColor="@color/light_grey"
         />
 
     <EditText
@@ -75,6 +88,9 @@
         android:ems="10"
         android:inputType="phone"
         android:hint="@string/phone_text_box_hint"
+        android:textColor="@color/light_grey"
+        android:backgroundTint="@color/light_grey"
+        android:textColorHint="@color/light_grey"
         />
 
     <TextView
@@ -82,8 +98,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/phoneTextBox"
-        android:layout_alignStart="@id/passwordTextBox"
+        android:layout_centerHorizontal="true"
         android:text="@string/password_text"
+        android:textColor="@color/light_grey"
+        android:layout_marginTop="15sp"
         />
 
     <EditText
@@ -95,6 +113,9 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="@string/password_text_box_hint"
+        android:textColor="@color/light_grey"
+        android:textColorHint="@color/light_grey"
+        android:backgroundTint="@color/light_grey"
         />
 
     <Button
@@ -105,6 +126,8 @@
         android:layout_marginTop="40sp"
         android:layout_centerHorizontal="true"
         android:text="@string/register_text"
+        android:textColor="@color/light_grey"
+        android:backgroundTint="@color/orange"
         />
 
     <TextView
@@ -116,6 +139,6 @@
         android:layout_centerHorizontal="true"
         android:text="@string/caretaker_new_login_text"
         android:textSize="20sp"
-        android:textColor="#3F51B5"
+        android:textColor="@color/blue"
         />
 </RelativeLayout>

@@ -3,17 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/earth">
 
     <TextView
         android:id="@+id/addGeofenceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150sp"
+        android:layout_marginTop="50sp"
         android:layout_centerHorizontal="true"
         android:text="@string/add_geofence_button_text"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textColor="@color/dark_grey"
         />
 
     <TextView
@@ -21,9 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/addGeofenceText"
-        android:layout_marginTop="50sp"
-        android:layout_alignStart="@id/nameTextBox"
+        android:layout_marginTop="125sp"
+        android:layout_centerHorizontal="true"
         android:text="@string/name_text"
+        android:textColor="@color/light_grey"
         />
 
     <EditText
@@ -35,6 +38,9 @@
         android:ems="10"
         android:inputType="text"
         android:hint="@string/geofence_name_hint"
+        android:textColor="@color/light_grey"
+        android:textColorHint="@color/light_grey"
+        android:backgroundTint="@color/light_grey"
         />
 
     <TextView
@@ -42,8 +48,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/nameTextBox"
-        android:layout_alignStart="@id/sizeTextBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15sp"
         android:text="@string/size_text"
+        android:textColor="@color/light_grey"
         />
 
     <EditText
@@ -55,14 +63,19 @@
         android:ems="10"
         android:inputType="number"
         android:hint="@string/size_text_box_hint"
+        android:textColorHint="@color/light_grey"
+        android:backgroundTint="@color/light_grey"
+        android:textColor="@color/light_grey"
         />
 
     <Spinner
         android:id="@+id/sizeUnitSpinner"
-        android:layout_width="wrap_content"
+        android:layout_width="45sp"
         android:layout_height="45sp"
         android:layout_below="@id/sizeText"
         android:layout_toEndOf="@id/sizeTextBox"
+        android:backgroundTint="@color/light_grey"
+        android:theme="@style/SpinnerTheme"
         />
 
     <TextView
@@ -70,8 +83,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/sizeTextBox"
-        android:layout_alignStart="@id/typeSpinner"
+        android:layout_marginTop="15sp"
+        android:layout_centerHorizontal="true"
         android:text="@string/type_text"
+        android:textColor="@color/light_grey"
         />
 
     <Spinner
@@ -80,6 +95,9 @@
         android:layout_height="45sp"
         android:layout_below="@id/typeText"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/light_grey"
+        android:entries="@string/type_fence"
+        android:theme="@style/SpinnerTheme"
         />
 
     <TextView
@@ -87,8 +105,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/typeSpinner"
-        android:layout_alignStart="@id/addressTextBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15sp"
         android:text="@string/address_text"
+        android:textColor="@color/light_grey"
         />
 
     <EditText
@@ -100,6 +120,9 @@
         android:ems="10"
         android:inputType="text"
         android:hint="@string/address_text_box_hint"
+        android:textColorHint="@color/light_grey"
+        android:backgroundTint="@color/light_grey"
+        android:textColor="@color/light_grey"
         />
 
     <Button
@@ -110,6 +133,8 @@
         android:layout_marginTop="40sp"
         android:layout_centerHorizontal="true"
         android:text="@string/add_button_text"
+        android:textColor="@color/dark_grey"
+        android:backgroundTint="@color/orange"
         />
 
     <Button
@@ -120,6 +145,8 @@
         android:layout_marginTop="20sp"
         android:layout_centerHorizontal="true"
         android:text="@string/cancel_button_text"
+        android:textColor="@color/dark_grey"
+        android:backgroundTint="@color/orange"
         />
 
 </RelativeLayout>

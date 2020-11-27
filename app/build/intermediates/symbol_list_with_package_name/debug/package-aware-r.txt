@@ -63,6 +63,7 @@ animator nav_default_pop_exit_anim
 array caretaker_manage_geofence_dummy
 array caretaker_patient_list_dummy
 array change_type
+array fence_type
 array geofence_information_fields
 array geofence_information_list_dummy
 array geofence_list
@@ -999,6 +1000,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1023,6 +1025,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color dark_grey
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1069,8 +1072,10 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_grey
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1153,6 +1158,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color orange
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1183,6 +1189,7 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -1263,8 +1270,6 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
-dimen activity_horizontal_margin
-dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
@@ -1326,6 +1331,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen earth_top
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -1657,6 +1663,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable earth
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_dismiss
@@ -1667,6 +1674,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_open
+drawable ic_phone
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1801,6 +1809,7 @@ id bottom
 id bounce
 id buttonPanel
 id cache_measures
+id callConfirm
 id cancelButton
 id cancel_action
 id cancel_button
@@ -1886,7 +1895,6 @@ id enterAlwaysCollapsed
 id enterName
 id enterNameTimed
 id enterTime
-id enterType
 id enterTypeTimed
 id exitUntilCollapsed
 id expand_activities_button
@@ -1907,6 +1915,7 @@ id fragment_container
 id fragment_container_view_tag
 id fullNameText
 id fullNameTextBox
+id geofenceIDs
 id geofenceInformationFields
 id geofenceInformationList
 id geofenceInformationText
@@ -1923,6 +1932,7 @@ id groups
 id hideable
 id home
 id homeAsUp
+id home_screen_text
 id honorRequest
 id hybrid
 id icon
@@ -2009,6 +2019,7 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id option
 id outline
 id packed
 id parallax
@@ -2037,6 +2048,7 @@ id patientPhoneText
 id patientRegisterText
 id peekHeight
 id percent
+id phoneImage
 id phoneText
 id phoneTextBox
 id pin
@@ -2048,16 +2060,18 @@ id promptNameText
 id promptNameTimed
 id promptSize
 id promptSizeTimed
-id promptTypeText
 id promptTypeTimed
 id radio
 id ratio
 id rectangles
+id removeGeofenceButton
+id removeGeofenceWarning
 id removePatientButton
 id removePatientWarning
 id requestButton
 id requestChange
 id requestNew
+id requestText
 id returnButton
 id reverseSawtooth
 id right
@@ -2276,6 +2290,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_call_emergency
 layout fragment_caretaker_add_geofence
 layout fragment_caretaker_add_patient
 layout fragment_caretaker_edit_geofence
@@ -2287,10 +2302,12 @@ layout fragment_caretaker_patient_information
 layout fragment_caretaker_patient_list
 layout fragment_caretaker_register_success
 layout fragment_caretaker_registration
+layout fragment_caretaker_remove_geofence
 layout fragment_caretaker_remove_patient
 layout fragment_geofence_change_request
 layout fragment_geofence_field_manager
 layout fragment_geofence_timed_field_manager
+layout fragment_guide_me_home
 layout fragment_home_screen
 layout fragment_map
 layout fragment_new_account_success
@@ -2460,6 +2477,7 @@ string geofence_name_hint
 string google_maps_key
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
+string home_screen
 string home_text
 string icon_content_description
 string invalid_password
@@ -2543,6 +2561,8 @@ string phone_text_box_hint
 string prompt_email
 string prompt_password
 string register_text
+string remove_geofence_text
+string remove_geofence_text_dummy
 string remove_patient_button_text
 string remove_patient_warning_text
 string request_change_text
@@ -2550,6 +2570,7 @@ string request_confirm_text
 string request_edit_type_text
 string request_new_text
 string request_text
+string request_type_text
 string return_button_text
 string save_changes_button_text
 string save_text

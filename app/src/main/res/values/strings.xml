@@ -9,7 +9,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="title_activity_nav_home">Map</string>
+    <string name="title_activity_nav_home">Guide Me Home</string>
     <string name="start_screen_text">Are you a ..?</string>
     <string name="patient_button_text">Patient</string>
     <string name="caretaker_button_text">Caretaker</string>
@@ -70,14 +70,14 @@
     <string name="caretaker_id_placeholder">000000</string>
     <string name="continue_button_text">Continue</string>
     <string name="add_patient_button_text">Add Patient</string>
-    <string name="patient_information_button_text">Patient Information</string>
-    <string name="check_patient_location_button_text">Check Patient Location</string>
+    <string name="patient_information_button_text">Patient Info</string>
+    <string name="check_patient_location_button_text">Patient Location</string>
     <string name="manage_geofence_button_text">Manage Geofence</string>
     <string name="remove_patient_button_text">Remove Patient</string>
-    <string name="remove_patient_warning_text">Are you sure you want to remove "John Doe" from your patient list?</string>
+    <string name="remove_patient_warning_text">Are you sure you want to remove this patient?</string>
     <string name="yes_text">Yes</string>
     <string name="no_text">No</string>
-    <string name="add_patient_info_text">Please enter the Patient ID of your new patient:</string>
+    <string name="add_patient_info_text">Enter New Patient ID</string>
     <string name="add_button_text">Add</string>
     <string name="cancel_button_text">Cancel</string>
     <string name="return_button_text">Return</string>
@@ -100,7 +100,10 @@
     <string name="name_fence_text">Name the Geofence</string>
     <string name="type_fence">Enter Type</string>
     <string name="remove_geofence_text">Remove Geofence</string>
-    <string name="remove_geofence_text_dummy">Are you sure you want to remove</string>
+    <string name="remove_geofence_text_dummy">Are you sure you want to remove?</string>
+    <string name="home_screen">Welcome</string>
+    <string name="request_type_text">Select Request</string>
+    <string name="greet_screen">Hello!</string>
     <string-array name="geofence_list">
         <item>Select</item>
         <item>Home</item>
