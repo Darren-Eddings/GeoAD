@@ -32,6 +32,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity
+            android:name=".PatientLocation"
+            android:label="@string/title_activity_patient_location"></activity>
+
         <receiver
             android:name=".GeofenceBroadcastReceiver"
             android:enabled="true"
@@ -43,7 +47,7 @@
 
         <activity
             android:name=".CaretakerMapActivity"
-            android:label="@string/title_activity_caretaker_map"></activity>
+            android:label="@string/title_activity_caretaker_map" />
 
         <receiver
             android:name=".GeofenceBroadcastReceiver"

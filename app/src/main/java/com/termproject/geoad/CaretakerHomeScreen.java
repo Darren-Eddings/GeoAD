@@ -1,5 +1,6 @@
 package com.termproject.geoad;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,8 @@ public class CaretakerHomeScreen extends Fragment implements View.OnClickListene
             nextFragment = new CaretakerPatientInformation();
         }
         else if (buttonId == R.id.checkPatientLocationButton) {
-
+            Intent intent = new Intent(getContext(), PatientLocation.class);
+            ((MainActivity) getActivity()).startActivity(intent);
         }
         else if (buttonId == R.id.manageGeofenceButton) {
             nextFragment = new CaretakerManageGeofence();
