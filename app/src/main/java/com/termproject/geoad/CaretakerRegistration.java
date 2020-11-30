@@ -12,19 +12,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class CaretakerRegistration extends Fragment implements View.OnClickListener {
 
@@ -32,7 +29,6 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
 
     private static final String TAG = "CaretakerRegistration";
 
-    private String caretakerID;
     private DatePickerDialog picker;
     private Button registerButton;
     private TextView loginHere;
@@ -74,21 +70,8 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
     }
 
     @Override public void onClick(View v) {
-        db.collection("id")
-                .document("idincrement")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if(document.exists()) {
-                                caretakerID = (String) document.get("caretakerID");
-                            }
-                        }
-                    }
-                });
-        CollectionReference caretakers = db.collection("caretakers");
+        Random rnd = new Random();
+        int caretakerID = 100000 + rnd.nextInt(900000);
 
         Map<String, Object> caretaker = new HashMap<>();
         caretaker.put("caretakerID", caretakerID);
@@ -96,6 +79,8 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
         caretaker.put("dateOfBirth", dateOfBirth.getText().toString());
         caretaker.put("phone", phone.getText().toString());
         caretaker.put("password", password.getText().toString());
+
+        CollectionReference caretakers = db.collection("caretakers");
 
         caretakers.document(fullName.getText().toString())
                 .set(caretaker)
