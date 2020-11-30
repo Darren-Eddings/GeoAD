@@ -3,22 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/earth">
 
     <TextView
-        android:id="@+id/changeRequestTitle"
+        android:id="@+id/callConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150sp"
+        android:layout_marginTop="225sp"
         android:textStyle="bold"
         android:text="Call 911?"
-        android:textSize="36sp"/>
+        android:textSize="36sp"
+        android:textColor="@color/light_grey"/>
 
     <ImageView
         android:id="@+id/phoneImage"
-        android:layout_width="128sp"
-        android:layout_height="128sp"
-        android:layout_centerInParent="true"
+        android:layout_width="130sp"
+        android:layout_height="130sp"
+        android:layout_marginTop="75sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/callConfirm"
         android:src="@drawable/ic_phone" />
 </RelativeLayout>

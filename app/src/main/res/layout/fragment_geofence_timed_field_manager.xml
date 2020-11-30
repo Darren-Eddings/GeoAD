@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@drawable/earth">
 
     <TextView
         android:id="@+id/setFieldsTimed"
@@ -14,16 +14,19 @@
         android:layout_marginTop="75sp"
         android:textStyle="bold"
         android:text="Set Attributes"
-        android:textSize="36sp"/>
+        android:textSize="36sp"
+        android:textColor="@color/dark_grey"
+        />
 
     <TextView
         android:id="@+id/promptNameTimed"
         android:layout_width="275sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35sp"
+        android:layout_marginTop="75sp"
         android:layout_below="@id/setFieldsTimed"
         android:layout_centerHorizontal="true"
         android:gravity="center"
+        android:textColor="@color/light_grey"
         android:text="@string/name_fence_text"
         android:textStyle="bold"/>
 
@@ -34,18 +37,45 @@
         android:layout_below="@id/promptNameTimed"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10sp"
+        android:textColor="@color/light_grey"
+        android:textColorHint="@color/light_grey"
         android:hint="@string/name_fence"
         android:inputType="text" />
 
     <TextView
-        android:id="@+id/promptSizeTimed"
+        android:id="@+id/promptTypeTimed"
         android:layout_width="275sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35sp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_below="@id/enterNameTimed"
+        android:text="@string/type_fence_text"
+        android:textStyle="bold"
+        android:textColor="@color/light_grey"/>
+
+    <EditText
+        android:id="@+id/enterTypeTimed"
+        android:layout_width="275sp"
+        android:layout_height="45sp"
+        android:layout_below="@id/promptTypeTimed"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp"
+        android:hint="@string/name_fence"
+        android:inputType="text"
+        android:textColor="@color/light_grey"
+        android:textColorHint="@color/light_grey"/>
+
+    <TextView
+        android:id="@+id/promptSizeTimed"
+        android:layout_width="275sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@id/enterTypeTimed"
         android:text="@string/size_select_text"
+        android:textColor="@color/light_grey"
         android:textStyle="bold"/>
 
     <com.google.android.material.slider.Slider
@@ -63,12 +93,13 @@
         android:id="@+id/enterTime"
         android:layout_width="275sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35sp"
+        android:layout_marginTop="15sp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_below="@id/sizeSliderTimed"
         android:text="@string/time_text"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/light_grey"/>
 
     <com.google.android.material.slider.Slider
         android:id="@+id/timeSlider"
@@ -79,7 +110,8 @@
         android:layout_marginTop="10sp"
         android:value="30"
         android:valueFrom="1"
-        android:valueTo="72"/>
+        android:valueTo="72"
+        />
 
     <Button
         android:id="@+id/saveTimedButton"

@@ -4,46 +4,67 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@drawable/earth"
+    >
 
     <TextView
         android:id="@+id/removeGeofenceWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="175sp"
+        android:layout_marginTop="50sp"
         android:gravity="center"
         android:text="@string/remove_geofence_text_dummy"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textColor="@color/dark_grey"
         />
 
     <Spinner
         android:id="@+id/geofenceIDs"
         android:layout_width="2in"
         android:layout_height="12pt"
+        android:layout_marginTop="75sp"
         android:layout_below="@+id/removeGeofenceWarning"
         android:gravity="center"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/light_grey"
         />
 
-    <Button
-        android:id="@+id/yesButton"
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:orientation="horizontal"
         android:layout_below="@id/geofenceIDs"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50sp"
-        android:text="@string/yes_text"
-        />
+        android:layout_centerInParent="true"
+        android:layout_marginTop="75sp">
 
-    <Button
-        android:id="@+id/noButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/yesButton"
-        android:layout_marginTop="50sp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/no_text"
-        />
+        <Button
+            android:id="@+id/yesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/geofenceIDs"
+            android:layout_centerHorizontal="true"
+            android:text="@string/yes_text"
+            android:textColor="@color/dark_grey"
+            android:backgroundTint="@color/orange"
+            android:layout_margin="30sp"
+            />
+
+        <Button
+            android:id="@+id/noButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/yesButton"
+            android:layout_centerHorizontal="true"
+            android:text="@string/no_text"
+            android:textColor="@color/dark_grey"
+            android:backgroundTint="@color/orange"
+            android:layout_margin="30sp"
+            />
+
+    </GridLayout>
+
 </RelativeLayout>

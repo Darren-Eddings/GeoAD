@@ -1,4 +1,4 @@
-/**package com.termproject.geoad;
+/** package com.termproject.geoad;
 
 import android.app.Activity;
 import android.app.Notification;
@@ -85,6 +85,4 @@ public class NotificationActivity extends AppCompatAcitity{
     public void dismiss() {
         notificationManager.cancel(NOTIFICATION_ID);
     }
-}
-
-**/
+}*/

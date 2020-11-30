@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/earth">
 
     <TextView
         android:id="@+id/patientLoginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="50sp"
         android:text="@string/patient_login_text"
+        android:textColor="@color/dark_grey"
         android:textSize="36sp"
         android:textStyle="bold" />
 
@@ -22,9 +24,10 @@ android:layout_height="match_parent">
         android:layout_below="@id/patientLoginText"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="35sp"
+        android:layout_marginTop="100sp"
         android:layout_marginBottom="10sp"
-        android:text="@string/patient_id_text" />
+        android:text="@string/patient_id_text"
+        android:textColor="@color/light_grey" />
 
     <EditText
         android:id="@+id/idTextBox"
@@ -34,7 +37,10 @@ android:layout_height="match_parent">
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="@string/patient_id_text_hint"
-        android:inputType="textNoSuggestions" />
+        android:textColorHint="@color/light_grey"
+        android:textColor="@color/light_grey"
+        android:inputType="textNoSuggestions"
+        android:backgroundTint="@color/light_grey"/>
     <TextView
         android:id="@+id/passwordText"
         android:layout_width="wrap_content"
@@ -45,7 +51,7 @@ android:layout_height="match_parent">
         android:layout_marginTop="35sp"
         android:layout_marginBottom="10sp"
         android:text="@string/password_text"
-        />
+        android:textColor="@color/light_grey" />
 
     <EditText
         android:id="@+id/passwordTextBox"
@@ -55,7 +61,9 @@ android:layout_height="match_parent">
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="@string/password_text_box_hint"
-        android:inputType="textPassword" />
+        android:textColorHint="@color/light_grey"
+        android:inputType="textPassword"
+        android:backgroundTint="@color/light_grey"/>
 
     <Button
         android:id="@+id/patientLoginButton"
@@ -64,7 +72,9 @@ android:layout_height="match_parent">
         android:layout_below="@id/passwordTextBox"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55sp"
-        android:text="@string/login_text" />
+        android:text="@string/login_text"
+        android:textColor="@color/dark_grey"
+        android:backgroundTint="@color/orange"/>
 
     <TextView
         android:id="@+id/linkRegister"
@@ -74,6 +84,6 @@ android:layout_height="match_parent">
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55sp"
         android:text="@string/patient_new_registration_text"
-        android:textColor="#3F51B5"
+        android:textColor="@color/blue"
         android:textSize="24sp" />
 </RelativeLayout>

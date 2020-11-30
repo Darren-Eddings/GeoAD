@@ -3,16 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/earth">
 
     <TextView
         android:id="@+id/addPatientInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200sp"
+        android:layout_marginTop="50sp"
         android:layout_centerHorizontal="true"
         android:text="@string/add_patient_info_text"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         android:gravity="center"
         />
@@ -22,8 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/addPatientInfo"
-        android:layout_marginTop="50sp"
-        android:layout_alignStart="@id/patientIdTextBox"
+        android:layout_marginTop="125sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/light_grey"
         android:text="@string/patient_id_text"
         />
 
@@ -36,6 +38,10 @@
         android:ems="10"
         android:inputType="number"
         android:hint="@string/patient_id_text_hint"
+        android:textColor="@color/light_grey"
+        android:backgroundTint="@color/light_grey"
+        android:textColorHint="@color/light_grey"
+        android:layout_marginTop="15sp"
         />
 
     <Button
@@ -44,8 +50,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/patientIdTextBox"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="35sp"
         android:text="@string/add_button_text"
+        android:textColor="@color/dark_grey"
+        android:backgroundTint="@color/orange"
         />
 
     <Button
@@ -56,5 +64,7 @@
         android:layout_below="@id/addButton"
         android:layout_marginTop="20sp"
         android:text="@string/cancel_button_text"
+        android:textColor="@color/dark_grey"
+        android:backgroundTint="@color/orange"
         />
 </RelativeLayout>

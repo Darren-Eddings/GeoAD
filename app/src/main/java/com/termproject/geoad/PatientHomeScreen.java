@@ -7,25 +7,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 
 public class PatientHomeScreen extends Fragment implements View.OnClickListener{
 
     String caretakerNum = "tel:5037268713";
-    private Button mapButton;
-    private Button emergencyButton;
-    private Button careButton;
-    private Button requestButton;
+    private ImageButton mapButton;
+    private ImageButton emergencyButton;
+    private ImageButton careButton;
+    private ImageButton requestButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_screen, container, false);
-        mapButton = (Button) view.findViewById(R.id.mapButton);
-        emergencyButton = (Button) view.findViewById(R.id.emergencyButton);
-        careButton = (Button) view.findViewById(R.id.careButton);
-        requestButton = (Button) view.findViewById(R.id.requestButton);
+        mapButton = view.findViewById(R.id.mapButton);
+        emergencyButton = view.findViewById(R.id.emergencyButton);
+        careButton = view.findViewById(R.id.careButton);
+        requestButton = view.findViewById(R.id.requestButton);
         mapButton.setOnClickListener(this);
         emergencyButton.setOnClickListener(this);
         careButton.setOnClickListener(this);

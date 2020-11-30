@@ -3,36 +3,40 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/earth">
 
     <TextView
         android:id="@+id/changeRequestTitle"
-        android:layout_width="275sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75sp"
+        android:layout_marginTop="50sp"
         android:textStyle="bold"
         android:text="Request Change"
-        android:textSize="36sp"/>
+        android:textSize="36sp"
+        android:textColor="@color/dark_grey"/>
 
     <TextView
         android:id="@+id/fenceNameText"
-        android:layout_width="275sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@id/changeRequestTitle"
+        android:layout_centerInParent="true"
         android:layout_below="@id/changeRequestTitle"
-        android:layout_marginTop="35sp"
+        android:layout_marginTop="100sp"
         android:text="@string/which_fence_text"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/light_grey"/>
 
     <Spinner
         android:id="@+id/nameSpinner"
         android:layout_width="wrap_content"
         android:layout_height="45sp"
         android:layout_below="@id/fenceNameText"
-        android:entries="@array/geofence_list"
+        android:layout_alignStart="@id/fenceNameText"
         android:layout_marginTop="30sp"
-        android:layout_alignStart="@id/fenceNameText"/>
+        android:backgroundTint="@color/light_grey"
+        android:entries="@array/geofence_list" />
 
     <TextView
         android:id="@+id/fenceSizeText"
@@ -42,7 +46,8 @@
         android:layout_below="@id/nameSpinner"
         android:layout_marginTop="30sp"
         android:text="@string/request_edit_type_text"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/light_grey"/>
 
     <Spinner
         android:id="@+id/typeSpinner"
@@ -51,7 +56,8 @@
         android:layout_below="@id/fenceSizeText"
         android:entries="@array/change_type"
         android:layout_marginTop="30sp"
-        android:layout_alignStart="@id/fenceSizeText"/>
+        android:layout_alignStart="@id/fenceSizeText"
+        android:backgroundTint="@color/light_grey"/>
 
     <TextView
         android:id="@+id/addressText"
@@ -61,6 +67,7 @@
         android:layout_alignStart="@id/typeSpinner"
         android:layout_marginTop="30sp"
         android:text="@string/change_text"
+        android:textColor="@color/light_grey"
         android:textStyle="bold"/>
 
     <EditText
@@ -72,7 +79,10 @@
         android:layout_marginTop="30sp"
         android:ems="10"
         android:hint="Enter Change Here"
-        android:inputType="textNoSuggestions" />
+        android:inputType="textNoSuggestions"
+        android:backgroundTint="@color/light_grey"
+        android:textColor="@color/light_grey"
+        android:textColorHint="@color/light_grey"/>
 
     <Button
         android:id="@+id/submitChangeButton"
@@ -81,6 +91,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40sp"
         android:layout_below="@id/addressTextBox"
-        android:text="@string/submit_text" />
+        android:text="@string/submit_text"
+        android:textColor="@color/dark_grey"
+        android:backgroundTint="@color/orange"/>
 
 </RelativeLayout>

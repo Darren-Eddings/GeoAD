@@ -58,7 +58,7 @@ import static java.lang.String.valueOf;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
 
-    private static final String TAG = "MapsActivity";
+    private static final String TAG = "CaretakerMapsActivity";
 
     private GoogleMap mMap;
     private GeofencingClient geofencingClient;
