@@ -41,7 +41,7 @@
     <string name="patient_existing_account_text">Already registered? Login Here!</string>
     <string name="patient_new_registration_text">New to GeoAD? Register Here!</string>
     <string name="new_account_text">Success!</string>
-    <string name="continue_text">Press the button below to being using GeoAD</string>
+    <string name="continue_text">Here is your assigned Patient ID that will be used for logging in. Make sure to take note of it!</string>
     <string name="begin_text">Begin</string>
     <string name="request_text">Requests Page</string>
     <string name="map_text">Map</string>
@@ -66,7 +66,7 @@
     <string name="home_text">Home</string>
     <string name="title_activity_maps">Map</string>
     <string name="patient_list_text">Patient List</string>
-    <string name="caretaker_id_note_text">Here is your assigned Caretaker ID that will be used for logging in. Make sure to remember it!</string>
+    <string name="caretaker_id_note_text">Here is your assigned Caretaker ID that will be used for logging in. Make sure to take note of it!</string>
     <string name="caretaker_id_placeholder">000000</string>
     <string name="continue_button_text">Continue</string>
     <string name="add_patient_button_text">Add Patient</string>
@@ -122,9 +122,6 @@
         <item>Classic</item>
         <item>Point-of-Interest</item>
         <item>Timed</item>
-    </string-array>
-    <string-array name="caretaker_patient_list_dummy">
-        <item>John Doe</item>
     </string-array>
     <string-array name="caretaker_manage_geofence_dummy">
         <item>Trinity Western University</item>

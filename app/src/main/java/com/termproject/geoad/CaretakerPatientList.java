@@ -11,18 +11,35 @@ import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class CaretakerPatientList extends Fragment implements View.OnClickListener {
+    private CaretakerViewModel viewModel;
+
+    private FirebaseFirestore db;
 
     private ArrayAdapter<CharSequence> patientListAdapter;
     private ListView patientList;
     private Button addPatient;
 
+    private String[] patients;
+    private Caretaker caretaker;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        db = FirebaseFirestore.getInstance();
+
+        viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
+        caretaker = viewModel.getCaretaker();
+
+        patients = null;
+
         View view = inflater.inflate(R.layout.fragment_caretaker_patient_list, container, false);
-        patientListAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.caretaker_patient_list_dummy, android.R.layout.simple_list_item_1);
+
+        patientListAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1);
         patientList = view.findViewById(R.id.patientList);
         patientList.setAdapter(patientListAdapter);
         patientList.setOnItemClickListener(patientListClick);

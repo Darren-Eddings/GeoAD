@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,10 +25,11 @@ import java.util.Map;
 import java.util.Random;
 
 public class CaretakerRegistration extends Fragment implements View.OnClickListener {
+    private CaretakerViewModel viewModel;
 
     private FirebaseFirestore db;
 
-    private static final String TAG = "CaretakerRegistration";
+    private final String TAG = "CaretakerRegistration";
 
     private DatePickerDialog picker;
     private Button registerButton;
@@ -36,12 +38,15 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
     private EditText dateOfBirth;
     private EditText phone;
     private EditText password;
+    private Caretaker caretakerClass;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         db = FirebaseFirestore.getInstance();
+
+        viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
 
         View view = inflater.inflate(R.layout.fragment_caretaker_registration, container, false);
 
@@ -73,12 +78,16 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
         Random rnd = new Random();
         int caretakerID = 100000 + rnd.nextInt(900000);
 
+        caretakerClass = new Caretaker(Integer.toString(caretakerID), fullName.getText().toString(), dateOfBirth.getText().toString(), phone.getText().toString(), password.getText().toString());
+
+        viewModel.setCaretaker(caretakerClass);
+
         Map<String, Object> caretaker = new HashMap<>();
-        caretaker.put("caretakerID", caretakerID);
-        caretaker.put("fullName", fullName.getText().toString());
-        caretaker.put("dateOfBirth", dateOfBirth.getText().toString());
-        caretaker.put("phone", phone.getText().toString());
-        caretaker.put("password", password.getText().toString());
+        caretaker.put("caretakerID", caretakerClass.getCaretakerID());
+        caretaker.put("fullName", caretakerClass.getFullName());
+        caretaker.put("dateOfBirth", caretakerClass.getDateOfBirth());
+        caretaker.put("phone", caretakerClass.getPhone());
+        caretaker.put("password", caretakerClass.getPassword());
 
         CollectionReference caretakers = db.collection("caretakers");
 

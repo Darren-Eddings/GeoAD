@@ -21,11 +21,10 @@
     <ListView
         android:id="@+id/patientList"
         android:layout_width="wrap_content"
-        android:layout_height="520sp"
-        android:layout_marginTop="35sp"
+        android:layout_height="450dp"
         android:layout_below="@id/patientListText"
-        android:cacheColorHint="@color/light_grey"
-        />
+        android:layout_marginTop="90sp"
+        android:cacheColorHint="@color/light_grey" />
 
     <Button
         android:id="@+id/addPatientButton"
