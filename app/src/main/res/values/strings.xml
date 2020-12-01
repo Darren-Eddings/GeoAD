@@ -104,6 +104,7 @@
     <string name="home_screen">Welcome</string>
     <string name="request_type_text">Select Request</string>
     <string name="greet_screen">Hello!</string>
+    <string name="new_caretaker_text">Your Caretaker's ID</string>
     <string-array name="geofence_list">
         <item>Select</item>
         <item>Home</item>

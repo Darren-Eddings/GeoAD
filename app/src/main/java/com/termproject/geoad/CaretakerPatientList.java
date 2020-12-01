@@ -9,11 +9,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class CaretakerPatientList extends Fragment implements View.OnClickListener {
     private CaretakerViewModel viewModel;
@@ -24,7 +30,6 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
     private ListView patientList;
     private Button addPatient;
 
-    private String[] patients;
     private Caretaker caretaker;
 
     @Nullable
@@ -35,7 +40,19 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
         viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
         caretaker = viewModel.getCaretaker();
 
-        patients = null;
+        Query patient = db.collection("patients")
+                .whereEqualTo("caretakerID", caretaker.getCaretakerID());
+
+        patient.get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                   @Override
+                   public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                       if(task.isSuccessful()) {
+                           for (QueryDocumentSnapshot document : task.getResult()) {
+                           }
+                       }
+                   }
+                });
 
         View view = inflater.inflate(R.layout.fragment_caretaker_patient_list, container, false);
 

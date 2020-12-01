@@ -36,6 +36,7 @@ public class PatientRegister extends Fragment implements View.OnClickListener{
     private EditText dateOfBirth;
     private EditText phone;
     private EditText password;
+    private Patient patient;
 
     @Nullable
     @Override
@@ -74,6 +75,8 @@ public class PatientRegister extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         Random rnd = new Random();
         int patientID = 100000 + rnd.nextInt(900000);
+
+        patient = new Patient(null, fullName.getText().toString(), dateOfBirth.getText().toString(), password.getText().toString(), Integer.toString(patientID), phone.getText().toString());
 
         viewModel.setPatientID(patientID);
 

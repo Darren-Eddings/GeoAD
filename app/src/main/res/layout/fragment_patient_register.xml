@@ -49,7 +49,6 @@
         android:layout_below="@id/fullNameTextBox"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="10sp"
         android:text="@string/date_of_birth_text"
         android:textColor="@color/light_grey"
         />
@@ -75,7 +74,6 @@
         android:layout_below="@id/dateOfBirthTextBox"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="10sp"
         android:text="@string/patient_phone_text"
         android:textColor="@color/light_grey"
         />
@@ -100,7 +98,6 @@
         android:layout_below="@id/newPhoneTextBox"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="10sp"
         android:text="@string/password_text"
         android:textColor="@color/light_grey"
         />
@@ -119,11 +116,36 @@
         android:textColorHint="@color/light_grey"
         />
 
+    <TextView
+        android:id="@+id/caretakerIdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTextBox"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/caretaker_id_text"
+        android:textColor="@color/light_grey"
+        />
+
+    <EditText
+        android:id="@+id/caretakerIdTextBox"
+        android:layout_width="275sp"
+        android:layout_height="55sp"
+        android:layout_below="@id/caretakerIdText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/new_caretaker_text"
+        android:inputType="number"
+        android:textColor="@color/light_grey"
+        android:backgroundTint="@color/light_grey"
+        android:textColorHint="@color/light_grey"
+        />
+
     <Button
         android:id="@+id/accountRegisterButton"
         android:layout_width="150sp"
         android:layout_height="60sp"
-        android:layout_below="@id/passwordTextBox"
+        android:layout_below="@id/caretakerIdTextBox"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30sp"
         android:text="@string/register_text"
@@ -136,7 +158,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/accountRegisterButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35sp"
+        android:layout_marginTop="20sp"
         android:text="@string/patient_existing_account_text"
         android:textColor="@color/blue"
         android:textSize="24sp" />

@@ -3,7 +3,6 @@ package com.termproject.geoad;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,24 +11,23 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class CaretakerRegistration extends Fragment implements View.OnClickListener {
     private CaretakerViewModel viewModel;
 
     private FirebaseFirestore db;
-
-    private final String TAG = "CaretakerRegistration";
 
     private DatePickerDialog picker;
     private Button registerButton;
@@ -38,7 +36,7 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
     private EditText dateOfBirth;
     private EditText phone;
     private EditText password;
-    private Caretaker caretakerClass;
+    private Caretaker caretaker;
 
 
     @Nullable
@@ -78,35 +76,41 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
         Random rnd = new Random();
         int caretakerID = 100000 + rnd.nextInt(900000);
 
-        caretakerClass = new Caretaker(Integer.toString(caretakerID), fullName.getText().toString(), dateOfBirth.getText().toString(), phone.getText().toString(), password.getText().toString());
+        caretaker = new Caretaker(Integer.toString(caretakerID), fullName.getText().toString(), dateOfBirth.getText().toString(), password.getText().toString(), phone.getText().toString());
 
-        viewModel.setCaretaker(caretakerClass);
-
-        Map<String, Object> caretaker = new HashMap<>();
-        caretaker.put("caretakerID", caretakerClass.getCaretakerID());
-        caretaker.put("fullName", caretakerClass.getFullName());
-        caretaker.put("dateOfBirth", caretakerClass.getDateOfBirth());
-        caretaker.put("phone", caretakerClass.getPhone());
-        caretaker.put("password", caretakerClass.getPassword());
+        viewModel.setCaretaker(caretaker);
 
         CollectionReference caretakers = db.collection("caretakers");
 
         caretakers.document(fullName.getText().toString())
                 .set(caretaker)
-                .addOnSuccessListener(documentReference -> Log.d(TAG, "Document saved!"))
-                .addOnFailureListener(e -> Log.w(TAG, "Error adding document.", e));
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Context context = getActivity();
+                        CharSequence text = "Registration Successful!";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast registrationSuccessful = Toast.makeText(context, text, duration);
+                        registrationSuccessful.show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Context context = getActivity();
+                        CharSequence text = "Error Adding Document!";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast registrationFail = Toast.makeText(context, text, duration);
+                        registrationFail.show();
+                    }
+                });
 
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.caretakerRegistrationButton) {
             nextFragment = new CaretakerRegistrationSuccess();
-
-            Context context = getActivity();
-            CharSequence text = "Registration Successful!";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast registrationSuccessful = Toast.makeText(context, text, duration);
-            registrationSuccessful.show();
         }
         else if (buttonId == R.id.inkLogin) {
             nextFragment = new CaretakerLogin();

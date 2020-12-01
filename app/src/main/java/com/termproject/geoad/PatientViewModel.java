@@ -3,13 +3,13 @@ package com.termproject.geoad;
 import androidx.lifecycle.ViewModel;
 
 public class PatientViewModel extends ViewModel {
-    private int patientID;
+    private Patient patient;
 
-    public void setPatientID(int patientID) {
-        this.patientID = patientID;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
-    public int getPatientID() {
-        return patientID;
+    public Patient getPatient() {
+        return patient;
     }
 }
