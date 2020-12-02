@@ -84,11 +84,11 @@ public class GeofenceFieldManager extends Fragment implements View.OnClickListen
             int radius = (int)size.getValue();
 
             //apply the attributes by calling functions from the activity
-            ((MapsActivity)getActivity()).setName(fenceName);
-            ((MapsActivity)getActivity()).setRadius(radius);
-            ((MapsActivity)getActivity()).drawGeofence(((MapsActivity)getActivity()).getLocation());
-            ((MapsActivity)getActivity()).addGeofence(((MapsActivity)getActivity()).getLocation());
-            ((MapsActivity)getActivity()).moveMap(((MapsActivity)getActivity()).getLocation());
+            ((CaretakerMapActivity)getActivity()).setName(fenceName);
+            ((CaretakerMapActivity)getActivity()).setRadius(radius);
+            ((CaretakerMapActivity)getActivity()).drawFence(((CaretakerMapActivity)getActivity()).getLocation());
+            ((CaretakerMapActivity)getActivity()).addGeofence(((CaretakerMapActivity)getActivity()).getLocation());
+            ((CaretakerMapActivity)getActivity()).moveMap(((CaretakerMapActivity)getActivity()).getLocation());
             getFragmentManager().beginTransaction().hide(this).commitAllowingStateLoss();
 
         }
