@@ -60,12 +60,12 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         //determine the ID of the button pressed
         if (buttonId == R.id.mapButton){
 
-            /*if map button was pressed open the map activity
-            Intent intent = new Intent(getContext(), MapsActivity.class);
-            ((MainActivity) getActivity()).startActivity(intent);*/
+            //if map button was pressed open the map activity
+            Intent intent = new Intent(getContext(), CaretakerMapActivity.class);
+            ((MainActivity) getActivity()).startActivity(intent);
 
             //sets nextFragment equal to GuideMeHome()
-            nextFragment = new GuideMeHome();
+            //nextFragment = new GuideMeHome();
 
         } else if (buttonId == R.id.emergencyButton) {
 
