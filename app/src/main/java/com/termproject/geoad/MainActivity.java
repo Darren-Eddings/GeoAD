@@ -43,6 +43,7 @@ import static java.lang.Long.parseLong;
 
 public class MainActivity extends FragmentActivity {
 
+    //Setting Up variables
     private int FINE_LOCATION_ACCESS_REQUEST_CODE = 10001;
     private int BACKGROUND_LOCATION_ACCESS_REQUEST_CODE = 10002;
     private static final String TAG = "RebootReregisterGeofences";
@@ -60,9 +61,12 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        //Function for permissions
         enablePermissions();
+        //Starts location tracking service
         startService();
         super.onCreate(savedInstanceState);
+        //Creates and points to first UI elements
         setContentView(R.layout.activity_main);
 
         if (findViewById(R.id.fragment_container) != null) {
@@ -78,6 +82,7 @@ public class MainActivity extends FragmentActivity {
                     .add(R.id.fragment_container, firstFragment).commit();
         }
     }
+    //Permissions handling function
     private void enablePermissions(){
         //Checking for permission
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
@@ -96,11 +101,13 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
+    //Starts the location reporting service
     void startService(){
         Intent intent = new Intent(MainActivity.this, LocationService.class);
         startService(intent);
     }
 
+    //Making sure we get permissions by saying that we need them or the app does not work
     @SuppressLint("MissingPermission")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -124,9 +131,10 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
+    //Setting up pointing to other ui panels
     public void replaceFragments(Fragment fragment) {
         if(Build.VERSION.SDK_INT >= 29) {
-            //We need background permission
+            //Hijacking this step to ask for further permissions if they aren't already enabled
             if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED){
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -156,17 +164,19 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    public static class BootBroadcastReceiver extends BroadcastReceiver {
+    //Catches a system reboot and reapplies all geofences since they are deleted on shutdown
+    public class BootBroadcastReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
-
+                fenceUpdate();
             }
         }
     }
-
+    //Function that adds geofences by reading from the text file
     public void fenceUpdate(){
         FileInputStream fIn = null;
+        //Attempt opening the file, create one if it does not exist
         try {
             fIn = new FileInputStream(new File(getFilesDir() + "/GeofenceList.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
@@ -189,6 +199,7 @@ public class MainActivity extends FragmentActivity {
                 fileNotFoundException.printStackTrace();
             }
         }
+        //Open the file, parse through for geofence arguments line by line and add the geofence
         try {
             fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
@@ -214,6 +225,7 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
+    //Function that adds geofences
     @SuppressLint("MissingPermission")
     public void addGeofence(){
         int translatedType = 0;
@@ -229,9 +241,12 @@ public class MainActivity extends FragmentActivity {
             translatedType = Geofence.GEOFENCE_TRANSITION_EXIT;
         }
 
+        //Using the helper class to add geofences with the API
         Geofence geofence = geofenceHelper.getGeofence(GEOFENCE_ID, fenceLoc, GEOFENCE_RADIUS, translatedType, geofenceDuration);
         GeofencingRequest geofencingRequest = geofenceHelper.getGeofencingRequest(geofence);
+        //Sets up geofences to trigger notifications through a broadcast receiver
         PendingIntent pendingIntent = geofenceHelper.getPendingIntent();
+        //Adding and logging success/failures
         geofencingClient.addGeofences(geofencingRequest, pendingIntent)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

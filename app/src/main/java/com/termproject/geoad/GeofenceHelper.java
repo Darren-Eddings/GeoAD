@@ -12,7 +12,7 @@ import com.google.android.gms.location.GeofencingRequest;
 import com.google.android.gms.maps.model.LatLng;
 
 public class GeofenceHelper extends ContextWrapper{
-
+    //Helper class to interact with geofence API
     private static final String TAG = "GeofenceHelper";
     PendingIntent pendingIntent;
 
@@ -20,6 +20,7 @@ public class GeofenceHelper extends ContextWrapper{
         super(base);
     }
 
+    //Creates the request for a geofence to the API
     public GeofencingRequest getGeofencingRequest(Geofence geofence) {
 
         return new GeofencingRequest.Builder()
@@ -29,6 +30,7 @@ public class GeofenceHelper extends ContextWrapper{
                 .build();
     }
 
+    //Grabs required inputs and creates the geofence according to the API
     public Geofence getGeofence(String ID, LatLng latLng, float radius, int transitionTypes, long duration){
         return new Geofence.Builder()
                 .setCircularRegion(latLng.latitude, latLng.longitude, radius)
@@ -38,6 +40,7 @@ public class GeofenceHelper extends ContextWrapper{
                 .build();
     }
 
+    //Setting up the pending intent that API uses to send triggers to the broadcast receiver
     public PendingIntent getPendingIntent(){
         if (pendingIntent != null){
             return pendingIntent;
@@ -48,7 +51,7 @@ public class GeofenceHelper extends ContextWrapper{
         return pendingIntent;
     }
 
-
+    //Handling of errors when trynig to add geofences
     public String getErrorString(Exception e){
         if (e instanceof ApiException){
             ApiException apiException = (ApiException) e;

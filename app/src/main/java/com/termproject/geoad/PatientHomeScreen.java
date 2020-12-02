@@ -40,14 +40,12 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         mapButton = view.findViewById(R.id.mapButton);
         emergencyButton = view.findViewById(R.id.emergencyButton);
         careButton = view.findViewById(R.id.careButton);
-        requestButton = view.findViewById(R.id.requestButton);
         logoutButton = view.findViewById(R.id.logoutButton);
 
         //set all buttons to listen for clicks
         mapButton.setOnClickListener(this);
         emergencyButton.setOnClickListener(this);
         careButton.setOnClickListener(this);
-        requestButton.setOnClickListener(this);
         logoutButton.setOnClickListener(this);
 
         return view;
@@ -64,11 +62,11 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         if (buttonId == R.id.mapButton){
 
             //if map button was pressed open the map activity
-            Intent intent = new Intent(getContext(), MapsActivity.class);
-            ((MainActivity) getActivity()).startActivity(intent);
+            //Intent intent = new Intent(getContext(), MapsActivity.class);
+            //((MainActivity) getActivity()).startActivity(intent);
 
             //sets nextFragment equal to GuideMeHome()
-            //nextFragment = new GuideMeHome();
+            nextFragment = new GuideMeHome();
 
         } else if (buttonId == R.id.emergencyButton) {
 
@@ -82,10 +80,6 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
             intent.setData(Uri.parse(caretakerNum));
             startActivity(intent);
 
-        } else if (buttonId == R.id.requestButton){
-
-            //if request button was pressed set nextFragment to the requests page
-            nextFragment = new RequestChangeOrNew();
         }
 
         //if patient presses logout button nextFragment sends them to logout confirm

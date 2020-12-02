@@ -128,15 +128,18 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
             just[index] = str[index];
             index++;
         }
+        //Creating the spinner filled with geofence names from the array
         Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
         ArrayAdapter adapter = new ArrayAdapter(getContext(),
                 R.layout.color_spinner_layout, just);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_color);
 
         spinner.setAdapter(adapter);
+        //Grabbing Geofence name from the spinner
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            //Setting the fenceID to the one wanting to be removed
             fenceID = parent.getItemAtPosition(position).toString();
         }
 
@@ -150,12 +153,16 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
     }
 
     @Override public void onClick(View v) {
+        //If the yes button is clicked, remove the geofence chosen from the spinner
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.yesButton) {
             //nextFragment = new CaretakerManageGeofence();
+            //Removes the fence from the file calling the function from that activity
             ((CaretakerMapActivity) getContext()).fenceListRemove(fenceID);
+            //Updating the drawn geofences with function call
             ((CaretakerMapActivity) getContext()).fenceUpdate();
+            //Killing this fragment
             getFragmentManager().beginTransaction().hide(this).commitAllowingStateLoss();
             /**Context context = getActivity();
              CharSequence text = "Geofence removed successfully!";
@@ -165,6 +172,7 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
              geofenceRemoved.show();**/
         }
         else if (buttonId == R.id.noButton) {
+            //Killing this fragment
             getFragmentManager().beginTransaction().hide(this).commitAllowingStateLoss();
         }
         /**MainActivity mainActivity = (MainActivity) getActivity();
