@@ -1,22 +1,28 @@
 package com.termproject.geoad;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 
-import androidx.core.app.ActivityCompat;
+import androidx.annotation.NonNull;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -26,6 +32,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class LocationService extends Service {
+
+    private FirebaseFirestore db;
 
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationCallback locationCallback;
@@ -37,6 +45,8 @@ public class LocationService extends Service {
 
     @Override
     public void onCreate() {
+        db = FirebaseFirestore.getInstance();
+
         super.onCreate();
         //Using fusedlocation api for location data
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
@@ -97,6 +107,35 @@ public class LocationService extends Service {
                 catch (FileNotFoundException fileNotFoundException) {
                     fileNotFoundException.printStackTrace();
                 }
+                FileInputStream fis = null;
+                try{
+                    fis = new FileInputStream(new File(getFilesDir() + "/Session.txt"));
+                    InputStreamReader isr = new InputStreamReader(fis);
+                    try {
+                        BufferedReader reader = new BufferedReader(isr);
+                        String line = reader.readLine();
+                        String[] credentials = line.split(",");
+                        Query session;
+
+                        if(credentials[0].equals("Patient")) {
+                            session = db.collection("patients")
+                                    .whereEqualTo("patientID", credentials[1])
+                                    .whereEqualTo("password", credentials[2]);
+
+                            executePatientQuery(session, new SimpleCallback<String>() {
+                                @Override
+                                public void callback(String patientName) {
+                                    DocumentReference patientRef = db.collection("patients").document(patientName);
+                                    patientRef.update("location", locationResult.getLastLocation().getLatitude() + "," + locationResult.getLastLocation().getLongitude());
+                                }
+                            });
+                        }
+                    } catch (IOException io) {
+                        io.printStackTrace();
+                    }
+                }catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         };
     }
@@ -115,5 +154,29 @@ public class LocationService extends Service {
         locationRequest.setInterval(5000);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
+    }
+
+    private void executePatientQuery(Query patientQuery, @NonNull SimpleCallback<String> finishedCallback) {
+        patientQuery.get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            QuerySnapshot snapshot = task.getResult();
+                            if (!snapshot.isEmpty()) {
+                                String patientName = "";
+                                for (QueryDocumentSnapshot document: snapshot) {
+                                    Patient patient = document.toObject(Patient.class);
+                                    patientName = patient.getFullName();
+                                }
+                                finishedCallback.callback(patientName);
+                            }
+                        }
+                    }
+                });
+    }
+
+    public interface SimpleCallback<T> {
+        void callback(T data);
     }
 }
