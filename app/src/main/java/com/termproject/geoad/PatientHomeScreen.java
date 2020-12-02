@@ -64,7 +64,7 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         if (buttonId == R.id.mapButton){
 
             //if map button was pressed open the map activity
-            Intent intent = new Intent(getContext(), CaretakerMapActivity.class);
+            Intent intent = new Intent(getContext(), MapsActivity.class);
             ((MainActivity) getActivity()).startActivity(intent);
 
             //sets nextFragment equal to GuideMeHome()
