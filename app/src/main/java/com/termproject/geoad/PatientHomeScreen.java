@@ -48,9 +48,11 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
     private FirebaseFirestore db;
 
     //initializes 4 navigation buttons as well as provides the caretakers phone number
+    String caretakerNum = "tel:" + "5037268713";
     private ImageButton mapButton;
     private ImageButton emergencyButton;
     private ImageButton careButton;
+    private ImageButton requestButton;
     private ImageButton logoutButton;
 
     @Override
@@ -129,7 +131,6 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         mapButton = view.findViewById(R.id.mapButton);
         emergencyButton = view.findViewById(R.id.emergencyButton);
         careButton = view.findViewById(R.id.careButton);
-
         logoutButton = view.findViewById(R.id.logoutButton);
 
         //set all buttons to listen for clicks
@@ -152,12 +153,17 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         if (buttonId == R.id.mapButton){
 
             //if map button was pressed open the map activity
-            Intent intent = new Intent(getContext(), CaretakerMapActivity.class);
-            intent.putExtra("patientName", viewModel.getPatient().getFullName());
+            Intent intent = new Intent(getContext(), GuideMeHome.class);
             ((MainActivity) getActivity()).startActivity(intent);
 
             //sets nextFragment equal to GuideMeHome()
             //nextFragment = new GuideMeHome();
+            //Uri gmmIntentUri = Uri.parse("google.streetview:home");
+
+            //Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            //mapIntent.setPackage("com.google.android.apps.maps");
+
+           // startActivity(mapIntent);
 
         } else if (buttonId == R.id.emergencyButton) {
 
@@ -165,6 +171,7 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
             nextFragment = new CallEmergency();
 
         } else if (buttonId == R.id.careButton) {
+
             //if caretaker button was pressed call the caretaker
             if (viewModel.getPatient().getCaretakerID() != "") {
                 if (viewModel.getCaretakerNum() == "") {
@@ -208,7 +215,9 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
             nextFragment = new StartScreen();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
+
         try {
+
             //replace the current fragment in the mainActivity with nextFragment
             mainActivity.replaceFragments(nextFragment);
 
@@ -216,6 +225,7 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
 
         //if nextFragment is null throw an exception
         catch (NullPointerException e) {
+
             e.printStackTrace();
         }
     }
