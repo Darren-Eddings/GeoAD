@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.Looper;
+import android.util.Log;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -37,6 +38,12 @@ public class LocationService extends Service {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
+                Log.d("mylog", "Lat is: " + locationResult.getLastLocation().getLatitude() + ", " + "Lng is: " +
+                        locationResult.getLastLocation().getLongitude());
+                Intent intent = new Intent("ACT_LOC");
+                intent.putExtra("latitude", locationResult.getLastLocation().getLatitude());
+                intent.putExtra("longitude", locationResult.getLastLocation().getLongitude());
+                sendBroadcast(intent);
                 FileInputStream fIn = null;
                 try {
                     fIn = new FileInputStream(new File(getFilesDir() + "/MyLocation.txt"));
@@ -59,6 +66,22 @@ public class LocationService extends Service {
                         fileNotFoundException.printStackTrace();
                     }
                 }
+                FileOutputStream fOut = null;
+                try {
+                    fOut = new FileOutputStream(new File (getFilesDir() + "/MyLocation.txt"));
+                    OutputStreamWriter osw = new OutputStreamWriter(fOut);
+                    try {
+                        osw.write(locationResult.getLastLocation().getLatitude() + "," + locationResult.getLastLocation().getLongitude());
+                        osw.close();
+                        fOut.close();
+                    }
+                    catch (IOException ioException) {
+                        ioException.printStackTrace();
+                    }
+                }
+                catch (FileNotFoundException fileNotFoundException) {
+                    fileNotFoundException.printStackTrace();
+                }
             }
         };
     }
@@ -71,8 +94,8 @@ public class LocationService extends Service {
 
     private void requestLocation() {
         LocationRequest locationRequest = new LocationRequest();
-        locationRequest.setInterval(5000);
-        locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+        locationRequest.setInterval(500000);
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
     }
 }

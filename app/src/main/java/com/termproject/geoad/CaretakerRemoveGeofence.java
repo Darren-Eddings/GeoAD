@@ -17,7 +17,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -66,7 +69,7 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
             fIn = new FileInputStream(new File (getActivity().getFilesDir() + "/CaretakerGeofenceList.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
         }
-        //if no such file exists throw an exception
+        //if no such file exists create one
         catch (FileNotFoundException e) {
 
             FileOutputStream fOut = null;
@@ -92,7 +95,7 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
                 fileNotFoundException.printStackTrace();
             }
         }
-
+        //Opening the file again
         try {
 
             fIn = new FileInputStream(new File (getActivity().getFilesDir() + "/CaretakerGeofenceList.txt"));
@@ -100,7 +103,7 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
             BufferedReader reader = new BufferedReader(isr);
 
             while (reader.ready()) {
-
+                //Reading in each line, saving geofence names
                 String line = reader.readLine();
                 String[] splitLine = line.split(",");
                 str [arrayIndex] = splitLine[0];
@@ -118,12 +121,30 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
             e.printStackTrace();
 
         }
+        //Converting to array with just the right amount of entries for names
         int index = 0;
         String[] just = new String[arrayIndex];
         while (str [index] != null){
             just[index] = str[index];
             index++;
         }
+        Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
+        ArrayAdapter adapter = new ArrayAdapter(getContext(),
+                R.layout.color_spinner_layout, just);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_color);
+
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            fenceID = parent.getItemAtPosition(position).toString();
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    });
 
         return view;
     }
@@ -132,40 +153,25 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.yesButton) {
-
-            //remove geofence
-            ((CaretakerMapActivity)getContext()).fenceListRemove(fenceID);
+            //nextFragment = new CaretakerManageGeofence();
+            ((CaretakerMapActivity) getContext()).fenceListRemove(fenceID);
             ((CaretakerMapActivity) getContext()).fenceUpdate();
             getFragmentManager().beginTransaction().hide(this).commitAllowingStateLoss();
-            nextFragment = new CaretakerManageGeofence();
+            /**Context context = getActivity();
+             CharSequence text = "Geofence removed successfully!";
+             int duration = Toast.LENGTH_SHORT;
 
-            //create fields for a toast
-            Context context = getActivity();
-            CharSequence text = "Geofence removed successfully!";
-            int duration = Toast.LENGTH_SHORT;
-
-            //display the toast
-            Toast geofenceRemoved = Toast.makeText(context, text, duration);
-            geofenceRemoved.show();
+             Toast geofenceRemoved = Toast.makeText(context, text, duration);
+             geofenceRemoved.show();**/
         }
         else if (buttonId == R.id.noButton) {
-
-            nextFragment = new CaretakerManageGeofence();
-            //getFragmentManager().beginTransaction().hide(this).commitAllowingStateLoss();
+            getFragmentManager().beginTransaction().hide(this).commitAllowingStateLoss();
         }
-
-        MainActivity mainActivity = (MainActivity) getActivity();
-
-        //replace current fragment with next fragment
-        try {
-
-            mainActivity.replaceFragments(nextFragment);
-        }
-
-        //if nextFragment is null throw an exception
-        catch (NullPointerException e) {
-
-            e.printStackTrace();
-        }
+        /**MainActivity mainActivity = (MainActivity) getActivity();
+         try {
+         mainActivity.replaceFragments(nextFragment);
+         }catch (NullPointerException e) {
+         e.printStackTrace();
+         }**/
     }
 }
