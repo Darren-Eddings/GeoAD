@@ -153,7 +153,6 @@ public class StartScreen extends Fragment implements View.OnClickListener {
                                 }
                             });
                 }
-
             } catch (IOException io) {
                 io.printStackTrace();
             }
