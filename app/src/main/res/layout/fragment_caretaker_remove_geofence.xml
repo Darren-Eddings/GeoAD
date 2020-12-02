@@ -20,49 +20,32 @@
         android:textColor="@color/dark_grey"
         />
 
-    <Spinner
-        android:id="@+id/geofenceIDs"
-        android:layout_width="2in"
-        android:layout_height="12pt"
-        android:layout_marginTop="75sp"
-        android:layout_below="@+id/removeGeofenceWarning"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/light_grey"
-        />
-
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:rowCount="1"
         android:orientation="horizontal"
-        android:layout_below="@id/geofenceIDs"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="75sp">
+        android:layout_below="@id/removeGeofenceWarning"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150sp">
 
-        <Button
+        <ImageButton
             android:id="@+id/yesButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/geofenceIDs"
-            android:layout_centerHorizontal="true"
-            android:text="@string/yes_text"
-            android:textColor="@color/dark_grey"
+            android:src="@drawable/ic_check_mark"
             android:backgroundTint="@color/orange"
-            android:layout_margin="30sp"
+            android:layout_margin="40sp"
             />
 
-        <Button
+        <ImageButton
             android:id="@+id/noButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/yesButton"
-            android:layout_centerHorizontal="true"
-            android:text="@string/no_text"
-            android:textColor="@color/dark_grey"
+            android:src="@drawable/ic_x_symbol"
             android:backgroundTint="@color/orange"
-            android:layout_margin="30sp"
+            android:layout_margin="40sp"
             />
 
     </GridLayout>

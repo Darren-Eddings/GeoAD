@@ -42,7 +42,7 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
         switch(transitionType){
             case Geofence.GEOFENCE_TRANSITION_ENTER:
                 Toast.makeText(context, "GEOFENCE_TRANSITION_ENTER", Toast.LENGTH_SHORT).show();
-                notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_ENTER", "", MapsActivity.class);
+                notificationHelper.sendHighPriorityNotification("GeoAD Notification", "You have entered once of your previously established geofences", MapsActivity.class);
                 break;
             case Geofence.GEOFENCE_TRANSITION_DWELL:
                 Toast.makeText(context, "GEOFENCE_TRANSITION_DWELL", Toast.LENGTH_SHORT).show();
@@ -50,7 +50,7 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
                 break;
             case Geofence.GEOFENCE_TRANSITION_EXIT:
                 Toast.makeText(context, "GEOFENCE_TRANSITION_EXIT", Toast.LENGTH_SHORT).show();
-                notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_EXIT", "", MapsActivity.class);
+                notificationHelper.sendHighPriorityNotification("GeoAD Notification", "You have left your current geofence. Please re-enter the geofence", MapsActivity.class);
                 break;
 
         }

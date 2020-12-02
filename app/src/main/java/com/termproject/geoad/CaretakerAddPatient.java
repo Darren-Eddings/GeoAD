@@ -1,3 +1,17 @@
+/*
+ *Written by Kieffer Liestyo
+ *
+ * Commented by Darren Eddings
+ *
+ * Some code was automatically generated
+ * upon fragment creation
+ *
+ * Fragment is designed to create a page
+ * where the caretaker can enter patient
+ * info and add them to their patient list
+ * or cancel and return to their list
+ * without adding the patient
+ */
 package com.termproject.geoad;
 
 import android.content.Context;
@@ -5,6 +19,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -29,8 +44,9 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
 
     private FirebaseFirestore db;
 
-    private Button add;
-    private Button cancel;
+    //initialize two ImageButton objects
+    private ImageButton add;
+    private ImageButton cancel;
     private EditText patientId;
 
     @Nullable
@@ -41,7 +57,6 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
         db = FirebaseFirestore.getInstance();
 
         View view = inflater.inflate(R.layout.fragment_caretaker_add_patient, container, false);
-
         add = view.findViewById(R.id.addButton);
         cancel = view.findViewById(R.id.cancelButton);
         patientId = view.findViewById(R.id.patientIdTextBox);
@@ -75,12 +90,12 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
         }
         else if (buttonId == R.id.cancelButton) {
             nextFragment = new CaretakerPatientList();
-            MainActivity mainActivity = (MainActivity) getActivity();
-            try {
-                mainActivity.replaceFragments(nextFragment);
-            }catch (NullPointerException e) {
-                e.printStackTrace();
-            }
+        }
+        MainActivity mainActivity = (MainActivity) getActivity();
+        try {
+            mainActivity.replaceFragments(nextFragment);
+        }catch (NullPointerException e) {
+            e.printStackTrace();
         }
     }
 

@@ -39,45 +39,54 @@
             android:id="@+id/geofenceInformationList"
             android:layout_width="315sp"
             android:layout_height="260sp"
-            android:layout_toEndOf="@id/geofenceInformationFields"
             android:divider="#00000000"
             android:backgroundTint="@color/light_grey"
             />
 
     </GridLayout>
 
-    <Button
-        android:id="@+id/editGeofenceButton"
+    <GridLayout
+        android:id="@+id/buttonManager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/geofenceManagerGrid"
-        android:layout_marginTop="35sp"
-        android:text="@string/edit_geofence_button_text"
-        android:backgroundTint="@color/orange"
-        android:textColor="@color/dark_grey"
-        />
+        android:columnCount="2"
+        android:rowCount="1"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
 
-    <Button
-        android:id="@+id/removeGeofenceButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/editGeofenceButton"
-        android:layout_marginTop="20sp"
-        android:text="@string/remove_geofence_text"
-        android:backgroundTint="@color/orange"
-        android:textColor="@color/dark_grey"
-        />
+        <ImageButton
+            android:id="@+id/editGeofenceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            android:layout_marginRight="30sp"
+            android:layout_marginTop="20sp"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/dark_grey"
+            />
 
-    <Button
+        <ImageButton
+            android:id="@+id/removeGeofenceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_remove_general"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="20sp"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/dark_grey"
+            />
+
+    </GridLayout>
+
+    <ImageButton
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/removeGeofenceButton"
+        android:layout_below="@id/buttonManager"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
-        android:text="@string/return_button_text"
+        android:src="@drawable/ic_return_button"
         android:backgroundTint="@color/orange"
         android:textColor="@color/dark_grey"
         />

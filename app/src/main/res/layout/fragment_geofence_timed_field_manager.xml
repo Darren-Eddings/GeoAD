@@ -70,7 +70,7 @@
         android:id="@+id/promptSizeTimed"
         android:layout_width="275sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25sp"
+        android:layout_marginTop="15sp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_below="@id/enterTypeTimed"
@@ -113,13 +113,15 @@
         android:valueTo="72"
         />
 
-    <Button
+    <ImageButton
         android:id="@+id/saveTimedButton"
-        android:layout_width="275sp"
-        android:layout_height="60sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="35sp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/timeSlider"
-        android:text="@string/save_text"/>
+        android:backgroundTint="@color/orange"
+        android:contentDescription="@string/save_text"
+        android:src="@drawable/ic_check_mark"/>
 
 </RelativeLayout>

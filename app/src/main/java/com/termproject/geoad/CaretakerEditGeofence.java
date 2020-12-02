@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -23,8 +23,8 @@ public class CaretakerEditGeofence extends Fragment implements View.OnClickListe
     private EditText geofenceAddress;
     private Spinner geofenceType;
     private Spinner geofenceSizeUnit;
-    private Button saveChangesButton;
-    private Button cancelButton;
+    private ImageButton saveChangesButton;
+    private ImageButton cancelButton;
     private String[] geofenceInformationDummy;
 
     @Nullable
@@ -38,8 +38,11 @@ public class CaretakerEditGeofence extends Fragment implements View.OnClickListe
         geofenceSize = view.findViewById(R.id.sizeTextBox);
         geofenceAddress = view.findViewById(R.id.addressTextBox);
 
-        geofenceTypeAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_list_without_select, android.R.layout.simple_spinner_dropdown_item);
-        geofenceSizeUnitAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_size_unit, android.R.layout.simple_spinner_dropdown_item);
+        geofenceTypeAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_list_without_select, R.layout.color_spinner_layout);
+        geofenceSizeUnitAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_size_unit, R.layout.color_spinner_layout);
+
+        geofenceTypeAdapter.setDropDownViewResource(R.layout.spinner_dropdown_color);
+        geofenceSizeUnitAdapter.setDropDownViewResource(R.layout.spinner_dropdown_color);
 
         geofenceType = view.findViewById(R.id.typeSpinner);
         geofenceSizeUnit = view.findViewById(R.id.sizeUnitSpinner);
@@ -47,8 +50,8 @@ public class CaretakerEditGeofence extends Fragment implements View.OnClickListe
         geofenceType.setAdapter(geofenceTypeAdapter);
         geofenceSizeUnit.setAdapter(geofenceSizeUnitAdapter);
 
-        saveChangesButton = view.findViewById(R.id.saveChangesButton);
-        cancelButton = view.findViewById(R.id.cancelButton);
+        saveChangesButton = view.findViewById(R.id.yesButtonEdit);
+        cancelButton = view.findViewById(R.id.noButtonEdit);
 
         geofenceName.setText(geofenceInformationDummy[0]);
         geofenceSize.setText(geofenceInformationDummy[1]);
@@ -69,7 +72,7 @@ public class CaretakerEditGeofence extends Fragment implements View.OnClickListe
     @Override public void onClick (View v) {
         Fragment nextFragment = null;
         int buttonId = v.getId();
-        if (buttonId == R.id.saveChangesButton) {
+        if (buttonId == R.id.yesButtonEdit) {
             nextFragment = new CaretakerGeofenceInformation();
 
             Context context = getActivity();
@@ -79,7 +82,7 @@ public class CaretakerEditGeofence extends Fragment implements View.OnClickListe
             Toast savedChanges = Toast.makeText(context, text, duration);
             savedChanges.show();
         }
-        else if (buttonId == R.id.cancelButton) {
+        else if (buttonId == R.id.noButtonEdit) {
             nextFragment = new CaretakerManageGeofence();
         }
         MainActivity mainActivity = (MainActivity) getActivity();

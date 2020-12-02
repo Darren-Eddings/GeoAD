@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50sp"
         android:textStyle="bold"
-        android:text="Request Change"
+        android:text="@string/request_change"
         android:textSize="36sp"
         android:textColor="@color/dark_grey"/>
 
@@ -78,21 +78,20 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30sp"
         android:ems="10"
-        android:hint="Enter Change Here"
+        android:hint="@string/enter_change_here"
         android:inputType="textNoSuggestions"
         android:backgroundTint="@color/light_grey"
         android:textColor="@color/light_grey"
         android:textColorHint="@color/light_grey"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/submitChangeButton"
         android:layout_width="wrap_content"
-        android:layout_height="60sp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40sp"
         android:layout_below="@id/addressTextBox"
-        android:text="@string/submit_text"
-        android:textColor="@color/dark_grey"
+        android:src="@drawable/ic_check_mark"
         android:backgroundTint="@color/orange"/>
 
 </RelativeLayout>

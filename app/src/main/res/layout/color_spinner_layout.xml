@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="210sp"
+    android:text="@string/select_text"
+    android:textColor="@color/light_grey"
+    android:layout_height="wrap_content">
+</CheckedTextView>

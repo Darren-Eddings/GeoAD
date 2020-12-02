@@ -34,15 +34,14 @@
         android:divider="#00000000"
     />
 
-    <Button
+    <ImageButton
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/patientInformationFields"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50sp"
-        android:text="@string/return_button_text"
-        android:textColor="@color/dark_grey"
+        android:src="@drawable/ic_return_button"
         android:backgroundTint="@color/orange"
         />
 

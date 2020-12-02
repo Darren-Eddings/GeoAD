@@ -1,3 +1,14 @@
+/*
+ * Written by Darren Eddings and Gideon Woo
+ *
+ * Commented by Darren Eddings
+ *
+ * Some Code was automatically generated
+ * upon fragment creation
+ *
+ * Fragment allows caretaker to set the attributes
+ * for a regular geofence upon creation
+ */
 package com.termproject.geoad;
 
 import android.os.Bundle;
@@ -11,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -22,20 +34,27 @@ import java.util.Currency;
 
 public class GeofenceFieldManager extends Fragment implements View.OnClickListener{
 
+    //initialize variables for UI objects
     private Slider size;
-    private Button close;
+    private ImageButton close;
     private EditText name;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        //create a view for the fragment page
         View view = inflater.inflate(R.layout.fragment_geofence_field_manager, container, false);
 
+        //connect UI object variables to corresponding xml elements by using their ID
         name = view.findViewById(R.id.enterName);
         close = view.findViewById(R.id.saveButton);
+        size = view.findViewById(R.id.sizeSlider);
+
+        //have the close button listen for clicks
         close.setOnClickListener(this);
 
-        size = view.findViewById(R.id.sizeSlider);
+        //format size slider label to have units
         size.setLabelFormatter(new LabelFormatter() {
             @NonNull
             @Override
@@ -52,18 +71,24 @@ public class GeofenceFieldManager extends Fragment implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+
+        //when button is clicked create a new temporary fragment and set it to null
         Fragment newFragment = null;
         int buttonID = v.getId();
 
+        //if the ID matches the button pressed
         if (buttonID == R.id.saveButton) {
+
+            //define the geofence fields
             String fenceName = name.getText().toString();
             int radius = (int)size.getValue();
 
-            ((CaretakerMapActivity)getActivity()).setName(fenceName);
-            ((CaretakerMapActivity)getActivity()).setRadius(radius);
-            ((CaretakerMapActivity)getActivity()).drawFence(((CaretakerMapActivity)getActivity()).getLocation());
-            ((CaretakerMapActivity)getActivity()).addGeofence(((CaretakerMapActivity)getActivity()).getLocation());
-            ((CaretakerMapActivity)getActivity()).moveMap(((CaretakerMapActivity)getActivity()).getLocation());
+            //apply the attributes
+            ((MapsActivity)getActivity()).setName(fenceName);
+            ((MapsActivity)getActivity()).setRadius(radius);
+            ((MapsActivity)getActivity()).drawGeofence(((MapsActivity)getActivity()).getLocation());
+            ((MapsActivity)getActivity()).addGeofence(((MapsActivity)getActivity()).getLocation());
+            ((MapsActivity)getActivity()).moveMap(((MapsActivity)getActivity()).getLocation());
             getFragmentManager().beginTransaction().hide(this).commitAllowingStateLoss();
 
         }

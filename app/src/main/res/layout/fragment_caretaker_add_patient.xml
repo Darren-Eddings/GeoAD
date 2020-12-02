@@ -44,27 +44,34 @@
         android:layout_marginTop="15sp"
         />
 
-    <Button
-        android:id="@+id/addButton"
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:orientation="horizontal"
         android:layout_below="@id/patientIdTextBox"
-        android:layout_marginTop="35sp"
-        android:text="@string/add_button_text"
-        android:textColor="@color/dark_grey"
-        android:backgroundTint="@color/orange"
-        />
-
-    <Button
-        android:id="@+id/cancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/addButton"
-        android:layout_marginTop="20sp"
-        android:text="@string/cancel_button_text"
-        android:textColor="@color/dark_grey"
-        android:backgroundTint="@color/orange"
-        />
+        android:layout_marginTop="30sp">
+
+        <ImageButton
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check_mark"
+            android:backgroundTint="@color/orange"
+            android:layout_margin="40sp"
+            android:contentDescription="@string/yes_text" />
+
+        <ImageButton
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_x_symbol"
+            android:backgroundTint="@color/orange"
+            android:layout_margin="40sp"
+            android:contentDescription="@string/no_text" />
+
+    </GridLayout>
+
 </RelativeLayout>

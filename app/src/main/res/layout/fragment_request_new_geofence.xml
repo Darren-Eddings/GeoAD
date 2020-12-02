@@ -50,7 +50,7 @@
         android:layout_below="@id/nameTextBox"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="30sp"
+        android:layout_marginTop="25sp"
         android:text="@string/change_type_text"
         android:textStyle="bold"
         android:textColor="@color/light_grey"/>
@@ -76,7 +76,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_below="@id/typeTextBox"
-        android:layout_marginTop="30sp"
+        android:layout_marginTop="25sp"
         android:text="@string/new_fence_size_text"
         android:textStyle="bold"
         android:textColor="@color/light_grey"/>
@@ -95,15 +95,15 @@
         android:backgroundTint="@color/light_grey"
         android:textColorHint="@color/light_grey"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/submitChangeButton"
         android:layout_width="wrap_content"
-        android:layout_height="60sp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40sp"
+        android:layout_marginTop="30sp"
         android:layout_below="@id/sizeTextBox"
-        android:text="@string/submit_text"
-        android:textColor="@color/dark_grey"
+        android:contentDescription="@string/submit_text"
+        android:src="@drawable/ic_check_mark"
         android:backgroundTint="@color/orange"/>
 
 </RelativeLayout>

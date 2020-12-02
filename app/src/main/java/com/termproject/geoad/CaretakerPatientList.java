@@ -1,3 +1,15 @@
+/*
+ * Written by Kieffer Liestyo
+ *
+ * Commented by Darren Eddings
+ *
+ * Some Code has been automatically generated
+ * upon fragment creation
+ *
+ * Fragment is responsible for displaying a list
+ * of patients and allowing caretaker to select
+ * a patient to view or add a new patient
+ */
 package com.termproject.geoad;
 
 import android.os.Bundle;
@@ -7,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -28,10 +41,12 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
 
     private FirebaseFirestore db;
 
+    //initialize UI object to be displayed on the page
     private ArrayAdapter<CharSequence> patientListAdapter;
-    private ListView patientListView;
-    private Button addPatient;
+
+    private ImageButton addPatient;
     private Button logout;
+    private ListView patientList;
 
     private Caretaker caretaker;
 
@@ -39,6 +54,8 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         db = FirebaseFirestore.getInstance();
+
+        //creates a view to display UI objects
 
         viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
         caretaker = viewModel.getCaretaker();
@@ -48,19 +65,31 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
 
         View view = inflater.inflate(R.layout.fragment_caretaker_patient_list, container, false);
 
+        //point variables to xml files required for showing them on the page
+        patientListAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1);
+        patientList = view.findViewById(R.id.patientList);
+
+        //set ListView as an adapter
+        patientList.setAdapter(patientListAdapter);
+
+        //have add patient list listen for click
+        patientList.setOnItemClickListener(patientListClick);
+
+        //point to button at an ID and have it listen for clicks
+
         executePatientQuery(patientQuery, new SimpleCallback<ArrayList<Patient>>() {
             @Override
-            public void callback(ArrayList<Patient> patientList) {
-                viewModel.setPatientList(patientList);
+            public void callback(ArrayList<Patient> patientList1) {
+                viewModel.setPatientList(patientList1);
 
                 patientListAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1);
 
                 for (Patient patient : viewModel.getPatientList()) {
                     patientListAdapter.add(patient.getFullName());
 
-                    patientListView = view.findViewById(R.id.patientList);
-                    patientListView.setAdapter(patientListAdapter);
-                    patientListView.setOnItemClickListener(patientListClick);
+                    patientList = view.findViewById(R.id.patientList);
+                    patientList.setAdapter(patientListAdapter);
+                    patientList.setOnItemClickListener(patientListClick);
                 }
             }
         });
@@ -74,8 +103,11 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
         return view;
     }
 
+    //when an item in the ListView is clicked
     private AdapterView.OnItemClickListener patientListClick = (parent, v, position, id) -> {
-        String patientName = (String) patientListView.getItemAtPosition(position);
+
+        //initialize a temporary fragment
+        String patientName = (String) patientList.getItemAtPosition(position);
         for (Patient patient : viewModel.getPatientList()) {
             if (patient.getFullName().equals(patientName)) {
                 viewModel.setSelectedPatient(patient);
@@ -83,14 +115,22 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
         }
 
         Fragment nextFragment = new CaretakerHomeScreen();
+
+        //set current fragment in the main activity to nextFragment
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.replaceFragments(nextFragment);
     };
 
     @Override public void onClick (View v) {
+
+        //when the add patient button is clicked create a temporary fragment and set it to null
         Fragment nextFragment = null;
         int buttonId = v.getId();
+
+        //if the button id is correct
         if (buttonId == R.id.addPatientButton) {
+
+            //set the temporary fragment to equal  the CaretakerAddPatient fragment
             nextFragment = new CaretakerAddPatient();
         }
         else if (buttonId == R.id.logoutButton){
@@ -98,9 +138,15 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
             viewModel.clearAll();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
+
+        //replace current fragment in the main activity with nextFragment
         try {
             mainActivity.replaceFragments(nextFragment);
-        }catch (NullPointerException e) {
+
+        }
+
+        //throw an exception if nextFragment == null on click
+        catch (NullPointerException e) {
             e.printStackTrace();
         }
     }

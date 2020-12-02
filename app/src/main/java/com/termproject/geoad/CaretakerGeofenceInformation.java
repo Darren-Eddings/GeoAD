@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -17,17 +17,17 @@ public class CaretakerGeofenceInformation extends Fragment implements View.OnCli
     private ArrayAdapter<CharSequence> geofenceInformationListAdapter;
     private ListView geofenceInformationFields;
     private ListView geofenceInformationList;
-    private Button editGeofenceButton;
-    private Button removeGeofenceButton;
-    private Button returnButton;
+    private ImageButton editGeofenceButton;
+    private ImageButton removeGeofenceButton;
+    private ImageButton returnButton;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_caretaker_geofence_information, container, false);
 
-        geofenceInformationFieldsAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_information_fields, android.R.layout.simple_list_item_1);
-        geofenceInformationListAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_information_list_dummy, android.R.layout.simple_list_item_1);
+        geofenceInformationFieldsAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_information_fields, R.layout.listview_entry_color);
+        geofenceInformationListAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_information_list_dummy, R.layout.listview_entry_color);
 
         geofenceInformationFields = view.findViewById(R.id.geofenceInformationFields);
         geofenceInformationList = view.findViewById(R.id.geofenceInformationList);
