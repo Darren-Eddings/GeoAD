@@ -172,6 +172,7 @@ public class StartScreen extends Fragment implements View.OnClickListener {
         return view;
     }
 
+
     @Override
     //when an object is tapped
     public void onClick(View v) {
