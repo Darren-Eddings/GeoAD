@@ -2,6 +2,7 @@ package com.termproject.geoad;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         enablePermissions();
+        startService();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -54,6 +56,11 @@ public class MainActivity extends FragmentActivity {
                         FINE_LOCATION_ACCESS_REQUEST_CODE);
             }
         }
+    }
+
+    void startService(){
+        Intent intent = new Intent(MainActivity.this, LocationService.class);
+        startService(intent);
     }
 
     @SuppressLint("MissingPermission")
