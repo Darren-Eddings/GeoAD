@@ -17,8 +17,10 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 public class CaretakerHomeScreen extends Fragment implements View.OnClickListener{
+    //Sets up the viewModel
     private CaretakerViewModel viewModel;
 
+    //Sets up the ImageButton variable
     private ImageButton patientInformation;
     private ImageButton checkPatientLocation;
     private ImageButton manageGeofence;
@@ -28,8 +30,10 @@ public class CaretakerHomeScreen extends Fragment implements View.OnClickListene
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //Initialize the viewModel to gain access to data shared between fragments
         viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
 
+        // Overwrites the on the text file used to keep track of geofences with the data from the database, or creates a new file if one does not exist.
         File file = new File(getActivity().getFilesDir() + "/CaretakerGeofenceList.txt");
         FileOutputStream fr = null;
         try{

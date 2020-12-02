@@ -1,5 +1,6 @@
 package com.termproject.geoad;
 
+//Class to set up a caretaker
 public class Caretaker {
     private String caretakerID;
     private String dateOfBirth;
@@ -7,6 +8,7 @@ public class Caretaker {
     private String password;
     private String phone;
 
+    //Constructor
     public Caretaker(String caretakerID, String dateOfBirth, String fullName, String password, String phone) {
         this.caretakerID = caretakerID;
         this.dateOfBirth = dateOfBirth;
@@ -15,6 +17,7 @@ public class Caretaker {
         this.phone = phone;
     }
 
+    //Blank Constructor
     public Caretaker() {
 
     }

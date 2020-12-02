@@ -19,9 +19,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,8 +39,10 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class CaretakerAddPatient extends Fragment implements View.OnClickListener {
+    //Initialize the ViewModel to be shared
     private CaretakerViewModel viewModel;
 
+    //Initializes the FireStore database
     private FirebaseFirestore db;
 
     //initialize two ImageButton objects
@@ -52,24 +53,36 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //Instantiate the viewModel variable, receiving any data existing in it
         viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
 
+        //Gets a connection to the database
         db = FirebaseFirestore.getInstance();
 
+        //Sets up the view to be displayed on the app
         View view = inflater.inflate(R.layout.fragment_caretaker_add_patient, container, false);
+
+        //Links the variables to the appropriate view objects based on id
         add = view.findViewById(R.id.addButton);
         cancel = view.findViewById(R.id.cancelButton);
         patientId = view.findViewById(R.id.patientIdTextBox);
 
+        //Adds listeners to the two buttons
         add.setOnClickListener(this);
         cancel.setOnClickListener(this);
 
+        //Returns and displays the view
         return view;
     }
 
     @Override public void onClick(View v) {
+        //Initializes the variable to navigate to the next fragment
         Fragment nextFragment = null;
+
+        //Retrieves id of the button that was clicked
         int buttonId = v.getId();
+
+        //If else statements to do commands and navigate to the appropriate fragments based on the button that was clicked
         if (buttonId == R.id.addButton) {
             Query patientQuery = db.collection("patients")
                     .whereEqualTo("patientID", patientId.getText().toString());
@@ -91,6 +104,8 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
         else if (buttonId == R.id.cancelButton) {
             nextFragment = new CaretakerPatientList();
         }
+
+        //Replaces old fragment with the new one
         MainActivity mainActivity = (MainActivity) getActivity();
         try {
             mainActivity.replaceFragments(nextFragment);
@@ -99,6 +114,7 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
         }
     }
 
+    //Callback function to retrieve the data from the database query, making sure that the data is used after it is received
     private void executePatientQuery(Query patientQuery, @NonNull SimpleCallback finishedCallback) {
         patientQuery.get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -149,6 +165,7 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
                 });
     }
 
+    //Interface to be used with the callback function
     public interface SimpleCallback {
         void callback();
     }
