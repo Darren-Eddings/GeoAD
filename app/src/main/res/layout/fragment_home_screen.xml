@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/earth">
+    android:background="@drawable/earth"
+    android:id="@+id/patientHomeScreen">
 
     <TextView
         android:id="@+id/home_screen_text"
@@ -19,6 +20,7 @@
         android:textColor="@color/dark_grey"/>
 
     <GridLayout
+        android:id="@+id/labelGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="2"
@@ -27,14 +29,6 @@
         android:layout_marginTop="110sp"
         android:layout_centerHorizontal="true">
 
-        <TextView
-            android:id="@+id/home_label"
-            android:layout_width="120sp"
-            android:layout_height="120sp"
-            android:text="@string/title_activity_nav_home"
-            android:textColor="@color/light_grey"
-            android:layout_margin="30sp"
-            android:gravity="center_horizontal"/>
         <TextView
             android:id="@+id/emergency_label"
             android:layout_width="120sp"
@@ -51,15 +45,18 @@
             android:textColor="@color/light_grey"
             android:layout_margin="30sp"
             android:gravity="center_horizontal"/>
-        <TextView
-            android:id="@+id/request_label"
-            android:layout_width="120sp"
-            android:layout_height="120sp"
-            android:text="@string/request_text"
-            android:textColor="@color/light_grey"
-            android:layout_margin="30sp"
-            android:gravity="center_horizontal"/>
     </GridLayout>
+
+    <TextView
+        android:id="@+id/home_label"
+        android:layout_width="120sp"
+        android:layout_height="120sp"
+        android:text="@string/title_activity_nav_home"
+        android:textColor="@color/light_grey"
+        android:layout_margin="30sp"
+        android:layout_below="@id/labelGrid"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"/>
 
     <GridLayout
         android:id="@+id/buttonGrid"
@@ -70,16 +67,6 @@
         android:columnCount="2"
         android:rowCount="2"
         android:layout_below="@id/home_screen_text">
-
-        <ImageButton
-            android:id="@+id/mapButton"
-            android:layout_width="120sp"
-            android:layout_height="120sp"
-            android:src="@drawable/ic_map_home"
-            android:backgroundTint="@color/orange"
-            android:textColor="@color/dark_grey"
-            android:layout_margin="30sp"
-            android:contentDescription="@string/guide_me_home" />
 
         <ImageButton
             android:id="@+id/emergencyButton"
@@ -102,25 +89,26 @@
             android:contentDescription="@string/call_caretaker"
             />
 
-        <ImageButton
-            android:id="@+id/requestButton"
-            android:layout_width="120sp"
-            android:layout_height="120sp"
-            android:src="@drawable/ic_request"
-            android:backgroundTint="@color/orange"
-            android:textColor="@color/dark_grey"
-            android:layout_margin="30sp"
-            android:contentDescription="@string/request_text"
-            />
-
     </GridLayout>
-    
+
+    <ImageButton
+        android:id="@+id/mapButton"
+        android:layout_width="120sp"
+        android:layout_height="120sp"
+        android:src="@drawable/ic_map_home"
+        android:backgroundTint="@color/orange"
+        android:layout_below="@id/buttonGrid"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/dark_grey"
+        android:layout_margin="30sp"
+        android:contentDescription="@string/guide_me_home" />
+
     <TextView
         android:layout_width="60sp"
         android:layout_height="60sp"
         android:text="@string/logout_text"
         android:textColor="@color/light_grey"
-        android:layout_below="@id/buttonGrid"
+        android:layout_below="@id/mapButton"
         android:layout_marginTop="30sp"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"/>
@@ -132,7 +120,7 @@
         android:contentDescription="@string/logout_text"
         android:src="@drawable/ic_logout"
         android:backgroundTint="@color/orange"
-        android:layout_below="@id/buttonGrid"
+        android:layout_below="@id/mapButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45sp"/>
 

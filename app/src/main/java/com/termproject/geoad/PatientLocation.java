@@ -3,6 +3,8 @@ package com.termproject.geoad;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,6 +23,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Float.parseFloat;
@@ -54,13 +58,29 @@ public class PatientLocation extends FragmentActivity implements OnMapReadyCallb
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         patientLocationUpdate();
+
+        //Setting up code to run repeatedly at intervals
+        Handler handler = new Handler();
+        Runnable runnableCode = new Runnable() {
+            @Override
+            public void run() {
+                //Redrawing marker from text file every 7 seconds
+                Log.d("Handlers", "Called on main thread");
+                patientLocationUpdate();
+                handler.postDelayed(this, 7000);
+            }
+        };
+// Start the initial runnable task by posting through the handler
+        handler.post(runnableCode);
     }
 
+    //Drawing the marker on the map of where the patient is
     public void patientLocationUpdate(){
+        //Clear the map of markers
         mMap.clear();
         FileInputStream fIn = null;
+        //Try reading the file for patient location, creating the file if it does not exist
         try {
             fIn = new FileInputStream(new File(getFilesDir() + "/PatientLocation.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
@@ -83,6 +103,7 @@ public class PatientLocation extends FragmentActivity implements OnMapReadyCallb
                 fileNotFoundException.printStackTrace();
             }
         }
+        //Opens the file, reads in the location data
         try {
             fIn = new FileInputStream(new File (getFilesDir() + "/PatientLocation.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
@@ -91,6 +112,7 @@ public class PatientLocation extends FragmentActivity implements OnMapReadyCallb
                 String line = reader.readLine();
                 String[] splitLine = line.split(",");
                 patientLoc = new LatLng (parseDouble(splitLine[0]), parseDouble(splitLine[1]));
+                //Calls the function to draw the marker where the patient is
                 drawMarker(patientLoc);
             }
             reader.close();
@@ -104,6 +126,7 @@ public class PatientLocation extends FragmentActivity implements OnMapReadyCallb
         }
     }
 
+    //Function responsible for drawing a marker
     private void drawMarker (LatLng latLng) {
         MarkerOptions markerOptions = new MarkerOptions().position(latLng)
                 .icon(BitmapDescriptorFactory

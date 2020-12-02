@@ -94,6 +94,7 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
             nextFragment = new CallEmergency();
 
         } else if (buttonId == R.id.careButton) {
+
             //if caretaker button was pressed call the caretaker
             if(viewModel.getPatient().getCaretakerID() != "") {
                 if(viewModel.getCaretakerNum() == "") {
@@ -134,8 +135,11 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
             viewModel.clearAll();
             nextFragment = new StartScreen();
         }
+
         MainActivity mainActivity = (MainActivity) getActivity();
+
         try {
+
             //replace the current fragment in the mainActivity with nextFragment
             mainActivity.replaceFragments(nextFragment);
 
@@ -143,6 +147,7 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
 
         //if nextFragment is null throw an exception
         catch (NullPointerException e) {
+
             e.printStackTrace();
         }
     }

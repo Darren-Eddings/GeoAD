@@ -2,7 +2,6 @@ package com.termproject.geoad;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -26,10 +25,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -50,6 +46,7 @@ import static java.lang.Long.parseLong;
 public class CaretakerMapActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
     private FirebaseFirestore db;
 
+    //Setting up variables
     private static final String TAG = "CaretakerMapsActivity";
 
     private GoogleMap mMap;
@@ -84,8 +81,11 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        //Setting up geofencing API through the GeofenceHelper class
         geofencingClient = LocationServices.getGeofencingClient(this);
         geofenceHelper = new GeofenceHelper(this);
+
+
     }
 
     /**
@@ -101,14 +101,17 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng home = new LatLng(49.222152, -123.064591);
+        //Using Trinity Western as default home location, starting the map there
+        LatLng home = new LatLng(49.139289, -122.608944);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(home, 16));
 
+        //Function call for permissions and enabling user location on the map
         enableUserLocation();
 
+        //Setting up map interaction
         mMap.setOnMapLongClickListener(this);
 
+        //Function call to draw all geofences onto the map
         fenceUpdate();
 
     }
@@ -119,6 +122,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
                 PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
         }
+        //No permissions, asking for them
         else {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 //Explain permission reasons, ask for permission
@@ -132,6 +136,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         }
     }
 
+    //Checking if people gave permission, if not warn that the app requires them
     @SuppressLint("MissingPermission")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -157,14 +162,17 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         }
     }
 
+    //Setting up what happens when people long click on the map
     @Override
     public void onMapLongClick(LatLng latLng) {
 
         if(Build.VERSION.SDK_INT >= 29) {
-            //We need background permission
+            //We need background permission, check for it
             if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED){
+                //We have permission, set the location to point of long click
                 fenceLoc = latLng;
+                //Function call to spawn user input options for geofences
                 userInputGeofenceType();
             }
             else{
@@ -180,10 +188,13 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
             }
         }
         else {
+            //Have permission so set location to point of long click
             fenceLoc = latLng;
+            //Function call to spawn user input options for geofences
             userInputGeofenceType();
 
         }
+
     }
 
     @SuppressLint("MissingPermission")
