@@ -138,7 +138,6 @@
         <item>Size</item>
         <item>Type</item>
         <item>Time</item>
-        <item>Address</item>
     </string-array>
     <string-array name="geofence_information_list_dummy">
         <item>Trinity Western University</item>

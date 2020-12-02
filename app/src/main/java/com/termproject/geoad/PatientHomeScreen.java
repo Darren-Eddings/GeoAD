@@ -17,7 +17,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -26,11 +25,22 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class PatientHomeScreen extends Fragment implements View.OnClickListener{
     private PatientViewModel viewModel;
@@ -41,14 +51,76 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
     private ImageButton mapButton;
     private ImageButton emergencyButton;
     private ImageButton careButton;
-    private ImageButton requestButton;
-    private Button logoutButton;
+    private ImageButton logoutButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         viewModel = new ViewModelProvider(requireActivity()).get(PatientViewModel.class);
 
         db = FirebaseFirestore.getInstance();
+
+        File file = new File(getActivity().getFilesDir() + "/CaretakerGeofenceList.txt");
+        FileOutputStream fr = null;
+        try{
+            fr = new FileOutputStream(file, false);
+            OutputStreamWriter writer = new OutputStreamWriter(fr);
+
+            if (viewModel.getPatient().getGeofence() == "") {
+                writer.write("");
+            }
+            else {
+                String[] lines = viewModel.getPatient().getGeofence().split("\n");
+                for (String line : lines) {
+                    writer.write(line + "\n");
+                }
+            }
+
+            writer.close();
+            fr.close();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        FileInputStream fIn = null;
+        try {
+            fIn = new FileInputStream(new File(getActivity().getFilesDir() + "/MyLocation.txt"));
+            InputStreamReader isr = new InputStreamReader(fIn);
+            BufferedReader reader = new BufferedReader(isr);
+            String patientLocation = reader.readLine();
+
+            DocumentReference patientRef = db.collection("patients").document(viewModel.getPatient().getFullName());
+            patientRef
+                    .update("location", patientLocation)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override public void onSuccess(Void aVoid) {
+                        }
+                    });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        FileInputStream fInSession = null;
+        try {
+            File fileSession = new File(getActivity().getFilesDir() + "/PatientSession.txt");
+            fInSession = new FileInputStream(fileSession);
+            InputStreamReader isr = new InputStreamReader(fInSession);
+        } catch (FileNotFoundException e) {
+            FileOutputStream fOut = null;
+            try {
+                fOut = new FileOutputStream(new File(getActivity().getFilesDir() + "/PatientSession.txt"));
+                OutputStreamWriter osw = new OutputStreamWriter(fOut);
+                try {
+                    osw.write(viewModel.getPatient().getPatientID() + "," + viewModel.getPatient().getPassword());
+                    osw.close();
+                    fOut.close();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+
+            } catch (FileNotFoundException fileNotFoundException) {
+                fileNotFoundException.printStackTrace();
+            }
+        }
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_screen, container, false);
@@ -57,7 +129,6 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         mapButton = view.findViewById(R.id.mapButton);
         emergencyButton = view.findViewById(R.id.emergencyButton);
         careButton = view.findViewById(R.id.careButton);
-        requestButton = view.findViewById(R.id.requestButton);
 
         logoutButton = view.findViewById(R.id.logoutButton);
 
@@ -65,7 +136,6 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         mapButton.setOnClickListener(this);
         emergencyButton.setOnClickListener(this);
         careButton.setOnClickListener(this);
-        requestButton.setOnClickListener(this);
         logoutButton.setOnClickListener(this);
 
         return view;
@@ -83,6 +153,7 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
 
             //if map button was pressed open the map activity
             Intent intent = new Intent(getContext(), CaretakerMapActivity.class);
+            intent.putExtra("patientName", viewModel.getPatient().getFullName());
             ((MainActivity) getActivity()).startActivity(intent);
 
             //sets nextFragment equal to GuideMeHome()
@@ -94,10 +165,9 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
             nextFragment = new CallEmergency();
 
         } else if (buttonId == R.id.careButton) {
-
             //if caretaker button was pressed call the caretaker
-            if(viewModel.getPatient().getCaretakerID() != "") {
-                if(viewModel.getCaretakerNum() == "") {
+            if (viewModel.getPatient().getCaretakerID() != "") {
+                if (viewModel.getCaretakerNum() == "") {
                     Query caretakerNumQuery = db.collection("caretakers")
                             .whereEqualTo("caretakerID", viewModel.getPatient().getCaretakerID());
 
@@ -111,14 +181,12 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
                             startActivity(intent);
                         }
                     });
-                }
-                else {
+                } else {
                     Intent intent = new Intent(Intent.ACTION_DIAL);
                     intent.setData(Uri.parse(viewModel.getCaretakerNum()));
                     startActivity(intent);
                 }
-            }
-            else {
+            } else {
                 Context context = getActivity();
                 CharSequence text = "You don't have a caretaker yet!";
                 int duration = Toast.LENGTH_SHORT;
@@ -126,20 +194,21 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
                 Toast noCaretaker = Toast.makeText(context, text, duration);
                 noCaretaker.show();
             }
-        } else if (buttonId == R.id.requestButton){
+        } else if (buttonId == R.id.logoutButton) {
+            FileInputStream fIn = null;
+            try {
+                File file = new File(getActivity().getFilesDir() + "/PatientSession.txt");
+                fIn = new FileInputStream(file);
+                file.delete();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
 
-            //if request button was pressed set nextFragment to the requests page
-            nextFragment = new RequestChangeOrNew();
-        }
-        else if (buttonId == R.id.logoutButton) {
             viewModel.clearAll();
             nextFragment = new StartScreen();
         }
-
         MainActivity mainActivity = (MainActivity) getActivity();
-
         try {
-
             //replace the current fragment in the mainActivity with nextFragment
             mainActivity.replaceFragments(nextFragment);
 
@@ -147,7 +216,6 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
 
         //if nextFragment is null throw an exception
         catch (NullPointerException e) {
-
             e.printStackTrace();
         }
     }

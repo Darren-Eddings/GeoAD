@@ -1,21 +1,28 @@
 package com.termproject.geoad;
 
-import androidx.fragment.app.FragmentActivity;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -27,11 +34,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import static java.lang.Double.parseDouble;
-import static java.lang.Float.parseFloat;
-import static java.lang.Integer.parseInt;
-import static java.lang.Long.parseLong;
 
 public class PatientLocation extends FragmentActivity implements OnMapReadyCallback {
+    private FirebaseFirestore db;
 
     private GoogleMap mMap;
     private LatLng patientLoc;
@@ -39,6 +44,7 @@ public class PatientLocation extends FragmentActivity implements OnMapReadyCallb
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = FirebaseFirestore.getInstance();
         setContentView(R.layout.activity_patient_location);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -57,6 +63,7 @@ public class PatientLocation extends FragmentActivity implements OnMapReadyCallb
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
         patientLocationUpdate();
 
@@ -104,26 +111,17 @@ public class PatientLocation extends FragmentActivity implements OnMapReadyCallb
             }
         }
         //Opens the file, reads in the location data
-        try {
-            fIn = new FileInputStream(new File (getFilesDir() + "/PatientLocation.txt"));
-            InputStreamReader isr = new InputStreamReader(fIn);
-            BufferedReader reader = new BufferedReader(isr);
-            while (reader.ready()) {
-                String line = reader.readLine();
-                String[] splitLine = line.split(",");
+
+        DocumentReference patientRef = db.collection("patients").document(getIntent().getStringExtra("patientName"));
+        executePatientLocation(patientRef, new SimpleCallback<String>() {
+            @Override
+            public void callback(String patientLocation) {
+                String[] splitLine = patientLocation.split(",");
                 patientLoc = new LatLng (parseDouble(splitLine[0]), parseDouble(splitLine[1]));
                 //Calls the function to draw the marker where the patient is
                 drawMarker(patientLoc);
             }
-            reader.close();
-            isr.close();
-            fIn.close();
-        }
-        catch (FileNotFoundException e){
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        });
     }
 
     //Function responsible for drawing a marker
@@ -134,5 +132,23 @@ public class PatientLocation extends FragmentActivity implements OnMapReadyCallb
                 .title("Patient Location");
         mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(patientLoc, 15));
+    }
+
+    private void executePatientLocation(DocumentReference patientRef, @NonNull SimpleCallback<String> finishedCallback) {
+        patientRef.get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            String patientLocation = document.get("location").toString();
+                            finishedCallback.callback(patientLocation);
+                        }
+                    }
+                });
+    }
+
+    public interface SimpleCallback<T> {
+        void callback(T data);
     }
 }

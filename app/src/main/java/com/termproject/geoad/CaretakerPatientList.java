@@ -18,7 +18,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -45,7 +44,7 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
     private ArrayAdapter<CharSequence> patientListAdapter;
 
     private ImageButton addPatient;
-    private Button logout;
+    private ImageButton logout;
     private ListView patientList;
 
     private Caretaker caretaker;
@@ -68,6 +67,7 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
         //point variables to xml files required for showing them on the page
         patientListAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1);
         patientList = view.findViewById(R.id.patientList);
+        logout = view.findViewById(R.id.logoutButton);
 
         //set ListView as an adapter
         patientList.setAdapter(patientListAdapter);

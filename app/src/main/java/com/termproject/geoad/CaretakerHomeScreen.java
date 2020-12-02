@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
@@ -24,7 +23,7 @@ public class CaretakerHomeScreen extends Fragment implements View.OnClickListene
     private ImageButton checkPatientLocation;
     private ImageButton manageGeofence;
     private ImageButton removePatient;
-    private Button returnPatientList;
+    private ImageButton returnPatientList;
 
     @Nullable
     @Override
@@ -78,6 +77,7 @@ public class CaretakerHomeScreen extends Fragment implements View.OnClickListene
         }
         else if (buttonId == R.id.checkPatientLocationButton) {
             Intent intent = new Intent(getContext(), PatientLocation.class);
+            intent.putExtra("patientName", viewModel.getSelectedPatient().getFullName());
             ((MainActivity) getActivity()).startActivity(intent);
         }
         else if (buttonId == R.id.manageGeofenceButton) {
