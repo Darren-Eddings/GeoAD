@@ -13,18 +13,13 @@
 package com.termproject.geoad;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-
 import android.widget.ImageButton;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -33,7 +28,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -134,7 +128,7 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
             index++;
         }
 
-        Spinner spinner = new Spinner(getContext());
+        /*Spinner spinner = new Spinner(getContext());
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,
                 just);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -151,7 +145,7 @@ public class CaretakerRemoveGeofence extends Fragment implements View.OnClickLis
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
 
         return view;
     }

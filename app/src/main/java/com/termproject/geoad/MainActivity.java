@@ -116,6 +116,5 @@ public class MainActivity extends FragmentActivity {
 
             transaction.commit();
         }
-
     }
 }

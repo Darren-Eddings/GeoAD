@@ -135,7 +135,16 @@ public class CaretakerAddPatient extends Fragment implements View.OnClickListene
                                 }
                                 finishedCallback.callback();
                             }
+                            else {
+                                Context context = getActivity();
+                                CharSequence text = "Patient does not exist!";
+                                int duration = Toast.LENGTH_SHORT;
+
+                                Toast patientAdded = Toast.makeText(context, text, duration);
+                                patientAdded.show();
+                            }
                         }
+
                     }
                 });
     }

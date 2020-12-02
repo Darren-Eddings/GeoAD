@@ -39,7 +39,7 @@
         android:hint="@string/patient_id_text_hint"
         android:textColorHint="@color/light_grey"
         android:textColor="@color/light_grey"
-        android:inputType="textNoSuggestions"
+        android:inputType="number"
         android:backgroundTint="@color/light_grey"/>
     <TextView
         android:id="@+id/passwordText"

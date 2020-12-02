@@ -5,15 +5,17 @@ public class Patient {
     private String caretakerID;
     private String dateOfBirth;
     private String fullName;
+    private String geofence;
     private String password;
     private String patientID;
     private String phone;
 
-    public Patient(String address, String caretakerID, String dateOfBirth, String fullName, String password, String patientID, String phone) {
+    public Patient(String address, String caretakerID, String dateOfBirth, String fullName, String geofence, String password, String patientID, String phone) {
         this.address = address;
         this.caretakerID = caretakerID;
         this.dateOfBirth = dateOfBirth;
         this.fullName = fullName;
+        this.geofence = geofence;
         this.password = password;
         this.patientID = patientID;
         this.phone = phone;
@@ -38,6 +40,10 @@ public class Patient {
 
     public String getFullName() {
         return fullName;
+    }
+
+    public String getGeofence() {
+        return geofence;
     }
 
     public String getPassword() {
@@ -67,6 +73,10 @@ public class Patient {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public void setGeofence(String geofence) {
+        this.geofence = geofence;
     }
 
     public void setPassword(String password) {

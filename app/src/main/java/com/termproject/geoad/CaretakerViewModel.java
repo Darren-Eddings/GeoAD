@@ -8,7 +8,7 @@ public class CaretakerViewModel extends ViewModel {
     private Caretaker caretaker;
     private ArrayList<Patient> patientArrayList;
     private Patient selectedPatient;
-
+    private String[] geofence;
 
     public void setCaretaker(Caretaker caretaker) {
         this.caretaker = caretaker;
@@ -40,6 +40,14 @@ public class CaretakerViewModel extends ViewModel {
 
     public Patient getSelectedPatient() {
         return selectedPatient;
+    }
+
+    public void setGeofence(String[] geofence) {
+        this.geofence = geofence;
+    }
+
+    public String[] getGeofence() {
+        return geofence;
     }
 
     public void clearAll() {

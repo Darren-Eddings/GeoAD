@@ -39,54 +39,21 @@
             android:id="@+id/geofenceInformationList"
             android:layout_width="315sp"
             android:layout_height="260sp"
+            android:layout_toEndOf="@id/geofenceInformationFields"
             android:divider="#00000000"
             android:backgroundTint="@color/light_grey"
             />
 
     </GridLayout>
 
-    <GridLayout
-        android:id="@+id/buttonManager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/geofenceManagerGrid"
-        android:columnCount="2"
-        android:rowCount="1"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true">
-
-        <ImageButton
-            android:id="@+id/editGeofenceButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_edit"
-            android:layout_marginRight="30sp"
-            android:layout_marginTop="20sp"
-            android:backgroundTint="@color/orange"
-            android:textColor="@color/dark_grey"
-            />
-
-        <ImageButton
-            android:id="@+id/removeGeofenceButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_remove_general"
-            android:layout_marginLeft="30sp"
-            android:layout_marginTop="20sp"
-            android:backgroundTint="@color/orange"
-            android:textColor="@color/dark_grey"
-            />
-
-    </GridLayout>
-
-    <ImageButton
+    <Button
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonManager"
+        android:layout_below="@id/geofenceManagerGrid"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
-        android:src="@drawable/ic_return_button"
+        android:layout_marginTop="100sp"
+        android:text="@string/return_button_text"
         android:backgroundTint="@color/orange"
         android:textColor="@color/dark_grey"
         />

@@ -135,7 +135,7 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="@string/new_address_text"
-        android:inputType="number"
+        android:inputType="text"
         android:textColor="@color/light_grey"
         android:backgroundTint="@color/light_grey"
         android:textColorHint="@color/light_grey"

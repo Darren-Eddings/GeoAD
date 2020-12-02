@@ -13,8 +13,6 @@ package com.termproject.geoad;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,7 +90,7 @@ public class PatientRegister extends Fragment implements View.OnClickListener{
         Random rnd = new Random();
         int patientID = 100000 + rnd.nextInt(900000);
 
-        patient = new Patient(address.getText().toString(), null, dateOfBirth.getText().toString(), fullName.getText().toString(), password.getText().toString(), Integer.toString(patientID), phone.getText().toString());
+        patient = new Patient(address.getText().toString(), "", dateOfBirth.getText().toString(), fullName.getText().toString(), "", password.getText().toString(), Integer.toString(patientID), phone.getText().toString());
 
         viewModel.setPatient(patient);
 
