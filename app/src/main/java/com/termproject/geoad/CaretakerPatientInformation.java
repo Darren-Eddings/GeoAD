@@ -44,9 +44,9 @@ public class CaretakerPatientInformation extends Fragment implements View.OnClic
         View view = inflater.inflate(R.layout.fragment_caretaker_patient_information, container, false);
 
         //create array adapters that pull from specified array with a specified layout
-        patientInformationFieldsAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.patient_information_fields, android.R.layout.simple_list_item_1);
+        patientInformationFieldsAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.patient_information_fields, R.layout.listview_entry_color);
+        patientInformationListAdapter = new ArrayAdapter<>(getActivity(), R.layout.listview_entry_color);
 
-        patientInformationListAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1);
         patientInformationListAdapter.add(viewModel.getSelectedPatient().getFullName());
         patientInformationListAdapter.add(viewModel.getSelectedPatient().getDateOfBirth());
         patientInformationListAdapter.add(viewModel.getSelectedPatient().getPhone());
