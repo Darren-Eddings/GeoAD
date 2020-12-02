@@ -2,12 +2,12 @@ package com.termproject.geoad;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -22,6 +22,7 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         enablePermissions();
         startService();
         super.onCreate(savedInstanceState);
@@ -116,6 +117,5 @@ public class MainActivity extends FragmentActivity {
 
             transaction.commit();
         }
-
     }
 }

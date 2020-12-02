@@ -40,17 +40,19 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
         int transitionType = geofencingEvent.getGeofenceTransition();
 
         switch(transitionType){
+
+            //sets title and body text of the notification for each type of notification
             case Geofence.GEOFENCE_TRANSITION_ENTER:
-                Toast.makeText(context, "GEOFENCE_TRANSITION_ENTER", Toast.LENGTH_SHORT).show();
-                notificationHelper.sendHighPriorityNotification("GeoAD Notification", "You have entered once of your previously established geofences", MapsActivity.class);
+                Toast.makeText(context, "You've Entered a Geofence", Toast.LENGTH_SHORT).show();
+                notificationHelper.sendHighPriorityNotification("Geofence Triggered", "You have entered once of your previously established geofences", MapsActivity.class);
                 break;
             case Geofence.GEOFENCE_TRANSITION_DWELL:
                 Toast.makeText(context, "GEOFENCE_TRANSITION_DWELL", Toast.LENGTH_SHORT).show();
                 notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_DWELL", "", MapsActivity.class);
                 break;
             case Geofence.GEOFENCE_TRANSITION_EXIT:
-                Toast.makeText(context, "GEOFENCE_TRANSITION_EXIT", Toast.LENGTH_SHORT).show();
-                notificationHelper.sendHighPriorityNotification("GeoAD Notification", "You have left your current geofence. Please re-enter the geofence", MapsActivity.class);
+                Toast.makeText(context, "You've Left a Geofence", Toast.LENGTH_SHORT).show();
+                notificationHelper.sendHighPriorityNotification("Geofence Triggered", "You have left your current geofence. Please re-enter the geofence", MapsActivity.class);
                 break;
 
         }
