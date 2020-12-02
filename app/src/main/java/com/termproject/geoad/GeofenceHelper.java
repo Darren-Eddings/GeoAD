@@ -51,7 +51,7 @@ public class GeofenceHelper extends ContextWrapper{
         return pendingIntent;
     }
 
-    //Handling of errors when trynig to add geofences
+    //Handling of errors when trying to add geofences
     public String getErrorString(Exception e){
         if (e instanceof ApiException){
             ApiException apiException = (ApiException) e;
