@@ -50,6 +50,7 @@ import static java.lang.Long.parseLong;
 
 public class CaretakerMapActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
 
+    //Setting up variables
     private static final String TAG = "CaretakerMapsActivity";
 
     private GoogleMap mMap;
@@ -83,6 +84,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        //Setting up geofencing API through the GeofenceHelper class
         geofencingClient = LocationServices.getGeofencingClient(this);
         geofenceHelper = new GeofenceHelper(this);
 
@@ -102,14 +104,17 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng home = new LatLng(49.222152, -123.064591);
+        //Using Trinity Western as default home location, starting the map there
+        LatLng home = new LatLng(49.139289, -122.608944);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(home, 16));
 
+        //Function call for permissions and enabling user location on the map
         enableUserLocation();
 
+        //Setting up map interaction
         mMap.setOnMapLongClickListener(this);
 
+        //Function call to draw all geofences onto the map
         fenceUpdate();
 
     }
@@ -120,6 +125,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
                 PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
         }
+        //No permissions, asking for them
         else {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 //Explain permission reasons, ask for permission
@@ -133,6 +139,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         }
     }
 
+    //Checking if people gave permission, if not warn that the app requires them
     @SuppressLint("MissingPermission")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -158,14 +165,17 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         }
     }
 
+    //Setting up what happens when people long click on the map
     @Override
     public void onMapLongClick(LatLng latLng) {
 
         if(Build.VERSION.SDK_INT >= 29) {
-            //We need background permission
+            //We need background permission, check for it
             if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED){
+                //We have permission, set the location to point of long click
                 fenceLoc = latLng;
+                //Function call to spawn user input options for geofences
                 userInputGeofenceType();
             }
             else{
@@ -181,15 +191,20 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
             }
         }
         else {
+            //Have permission so set location to point of long click
             fenceLoc = latLng;
+            //Function call to spawn user input options for geofences
             userInputGeofenceType();
 
         }
 
     }
 
+    //Function to add geofences
     @SuppressLint("MissingPermission")
     public void addGeofence(LatLng latLng){
+
+        //Translating geofence type integers to constants provided by the API
         int translatedType = 0;
         if (geofenceType == 0){
             translatedType = Geofence.GEOFENCE_TRANSITION_EXIT;
@@ -202,17 +217,22 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         else if (geofenceType == 2){
             translatedType = Geofence.GEOFENCE_TRANSITION_EXIT;
         }
-
+                        //File interaction setup
                         boolean isNew = true;
                         FileInputStream fIn = null;
+                        //Attempt opening text file for geofences
                         try {
                             fIn = new FileInputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
                             InputStreamReader isr = new InputStreamReader(fIn);
-                        } catch (FileNotFoundException e) {
+                        }
+                        //File does not exist, so create it
+                        catch (FileNotFoundException e) {
                             FileOutputStream fOut = null;
+                            //Using try block to create the file
                             try {
                                 fOut = new FileOutputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
                                 OutputStreamWriter osw = new OutputStreamWriter(fOut);
+                                //Creating the file for the first time, initializing it
                                 try {
                                     osw.write("");
                                     osw.close();
@@ -226,10 +246,12 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
                                 fileNotFoundException.printStackTrace();
                             }
                         }
+                        //Try opening the file again after having created it
                         try {
                             fIn = new FileInputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
                             InputStreamReader isr = new InputStreamReader(fIn);
                             BufferedReader reader = new BufferedReader(isr);
+                            //Using boolean and checking for geofence names for already existing one
                             while (reader.ready() && isNew == true){
                                 String line = reader.readLine();
                                 String[] splitLine = line.split(",");
@@ -245,6 +267,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+                        //If the geofence name is unique and new, append to the text file
                         if (isNew == true){
                             File file = new File(getFilesDir() + "/CaretakerGeofenceList.txt");
                             FileOutputStream fr = null;
@@ -267,17 +290,21 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
                         }
                     }
 
+    //Function that draws a geofence on the map
     public void drawFence(LatLng latLng){
         addMarker(latLng);
         addCircle(latLng, GEOFENCE_RADIUS);
     }
 
+    //Function that adds a marker onto the map
     private void addMarker (LatLng latLng) {
         MarkerOptions markerOptions = new MarkerOptions().position(latLng);
         mMap.addMarker(markerOptions);
     }
 
+    //Function that draws a shaded circle onto the map
     private void addCircle(LatLng latLng, float radius){
+        //Changing the color of the circle depending on the geofence type
         if (geofenceType == 0) {
             CircleOptions circleOptions = new CircleOptions();
             circleOptions.center(latLng);
@@ -307,12 +334,16 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         }
     }
 
+    //Function to move the map with a specific location in the center
     public void moveMap(LatLng latLng){
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
     }
 
+    //Update function that draws in all the geofences within the list onto the map
     public void fenceUpdate(){
+        //Clearing the map of all geofences
         mMap.clear();
+        //Doing file opening, creating if one is not found.
         FileInputStream fIn = null;
         try {
             fIn = new FileInputStream(new File(getFilesDir() + "/CaretakerGeofenceList.txt"));
@@ -336,6 +367,8 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
                 fileNotFoundException.printStackTrace();
             }
         }
+        //Opening up the file and parsing through it line by line, argument by argument, drawing
+        //every fence on the list
         try {
             fIn = new FileInputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
@@ -348,6 +381,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
                 GEOFENCE_RADIUS = (parseFloat(splitLine[3]));
                 geofenceType = (parseInt(splitLine[4]));
                 geofenceDuration = (parseLong(splitLine[5]));
+                //Calling the function to draw the geofence on the map
                 drawFence(fenceLoc);
             }
             reader.close();
@@ -361,11 +395,12 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         }
     }
 
-
+    //Function that handles user input, creates the alert dialog
     private void userInputGeofenceType(){
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(CaretakerMapActivity.this);
         builder.setTitle("Geofence Type ");
         builder.setSingleChoiceItems(geofenceTypes, geofenceType, new DialogInterface.OnClickListener() {
+            //Shows a toast when an option is selected and sets the geofence type
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Toast.makeText(CaretakerMapActivity.this, geofenceTypes[i] + " was chosen", Toast.LENGTH_SHORT).show();
@@ -374,6 +409,8 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         });
         builder.setBackground(getResources().getDrawable(R.drawable.alert_dialog_bg, null));
         builder.setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+            //When positive button is pressed, geofence type is considered and the user is brought to the right screen
+            //for further input
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
@@ -395,6 +432,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
             }
         });
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            //Cancel button behavior, geofence type set back to negative
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Toast.makeText(CaretakerMapActivity.this,"Adding Cancelled", Toast.LENGTH_SHORT).show();
@@ -402,6 +440,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
             }
         });
         builder.setNeutralButton("REMOVE GEOFENCE", new DialogInterface.OnClickListener() {
+            //Remove button spawns separate interface for doing so
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 CaretakerRemoveGeofence fragment = new CaretakerRemoveGeofence();
@@ -414,7 +453,7 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         builder.show();
     }
 
-
+    //Function to change private variables
     public void setName(String geofenceName){
         GEOFENCE_ID = geofenceName;
     }
@@ -427,17 +466,20 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         geofenceDuration = duration;
     }
 
+    //Function to grab private location variable
     public LatLng getLocation(){
         LatLng temp = fenceLoc;
         return temp;
     }
 
+    //Function dealing with removing a geofence from the text file
     public void fenceListRemove(String fenceID){
         String[] ids = new String[1000000];
         List<String> lines = new LinkedList<>();
         int arrayIndex = 0;
         int lineIndex = 0;
         FileInputStream fIn = null;
+        //Opens the file reads it
         try {
             fIn = new FileInputStream(new File (getFilesDir() + "/CaretakerGeofenceList.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
@@ -458,18 +500,21 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        //lineindex stops incrementing when the name of the fence to be removed is found
         while (!ids[lineIndex].equals(fenceID)){
             lineIndex++;
         }
+        //Remove that line
         lines.remove(lineIndex);
 
+        //Open the file again for writing
         File file = new File(getFilesDir() + "/CaretakerGeofenceList.txt");
         FileOutputStream fr = null;
         try {
             fr = new FileOutputStream(file, false);
             OutputStreamWriter writer = new OutputStreamWriter(fr);
             try {
+                //Write all the surviving lines of geofence data back in, overwriting everything
                 for (String line : lines) {
                     writer.write(line + "\n");
                 }

@@ -20,15 +20,24 @@
         android:textColor="@color/dark_grey"
         />
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/removeGeofenceWarning"
+        android:backgroundTint="@color/light_grey"
+        android:layout_marginTop="115dp" />
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:rowCount="1"
         android:orientation="horizontal"
-        android:layout_below="@id/removeGeofenceWarning"
+        android:layout_below="@id/spinner"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150sp">
+        android:layout_marginTop="75sp">
 
         <ImageButton
             android:id="@+id/yesButton"

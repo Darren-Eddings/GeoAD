@@ -2,12 +2,17 @@ package com.termproject.geoad;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.FragmentManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -15,10 +20,42 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.GeofencingClient;
+import com.google.android.gms.location.GeofencingRequest;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+import static java.lang.Double.parseDouble;
+import static java.lang.Float.parseFloat;
+import static java.lang.Integer.parseInt;
+import static java.lang.Long.parseLong;
+
 public class MainActivity extends FragmentActivity {
 
     private int FINE_LOCATION_ACCESS_REQUEST_CODE = 10001;
     private int BACKGROUND_LOCATION_ACCESS_REQUEST_CODE = 10002;
+    private static final String TAG = "RebootReregisterGeofences";
+
+    private GeofenceHelper geofenceHelper;
+    private GeofencingClient geofencingClient;
+    private String GEOFENCE_ID = "Placeholder";
+
+    private int geofenceType = -1;
+
+    private long geofenceDuration = Geofence.NEVER_EXPIRE;
+    private float GEOFENCE_RADIUS = 100;
+    private LatLng fenceLoc = new LatLng(0,0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,5 +154,97 @@ public class MainActivity extends FragmentActivity {
 
             transaction.commit();
         }
+    }
+
+    public static class BootBroadcastReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
+
+            }
+        }
+    }
+
+    public void fenceUpdate(){
+        FileInputStream fIn = null;
+        try {
+            fIn = new FileInputStream(new File(getFilesDir() + "/GeofenceList.txt"));
+            InputStreamReader isr = new InputStreamReader(fIn);
+        } catch (FileNotFoundException e) {
+            FileOutputStream fOut = null;
+            try {
+                fOut = new FileOutputStream(new File (getFilesDir() + "/GeofenceList.txt"));
+                OutputStreamWriter osw = new OutputStreamWriter(fOut);
+                try {
+                    osw.write("");
+                    osw.close();
+                    fOut.close();
+                }
+                catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+
+            }
+            catch (FileNotFoundException fileNotFoundException) {
+                fileNotFoundException.printStackTrace();
+            }
+        }
+        try {
+            fIn = new FileInputStream(new File (getFilesDir() + "/GeofenceList.txt"));
+            InputStreamReader isr = new InputStreamReader(fIn);
+            BufferedReader reader = new BufferedReader(isr);
+            while (reader.ready()) {
+                String line = reader.readLine();
+                String[] splitLine = line.split(",");
+                GEOFENCE_ID = splitLine[0];
+                fenceLoc = new LatLng(parseDouble(splitLine[1]), parseDouble(splitLine[2]));
+                GEOFENCE_RADIUS = (parseFloat(splitLine[3]));
+                geofenceType = (parseInt(splitLine[4]));
+                geofenceDuration = (parseLong(splitLine[5]));
+                addGeofence();
+            }
+            reader.close();
+            isr.close();
+            fIn.close();
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    public void addGeofence(){
+        int translatedType = 0;
+        if (geofenceType == 0){
+            translatedType = Geofence.GEOFENCE_TRANSITION_EXIT;
+            geofenceDuration = Geofence.NEVER_EXPIRE;
+        }
+        else if (geofenceType == 1){
+            translatedType = Geofence.GEOFENCE_TRANSITION_ENTER;
+            geofenceDuration = Geofence.NEVER_EXPIRE;
+        }
+        else if (geofenceType == 2){
+            translatedType = Geofence.GEOFENCE_TRANSITION_EXIT;
+        }
+
+        Geofence geofence = geofenceHelper.getGeofence(GEOFENCE_ID, fenceLoc, GEOFENCE_RADIUS, translatedType, geofenceDuration);
+        GeofencingRequest geofencingRequest = geofenceHelper.getGeofencingRequest(geofence);
+        PendingIntent pendingIntent = geofenceHelper.getPendingIntent();
+        geofencingClient.addGeofences(geofencingRequest, pendingIntent)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "onSuccess: Geofence Added...");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        String errorMessage = geofenceHelper.getErrorString(e);
+                        Log.d(TAG, "onFailure: " + errorMessage);
+                            }
+                });
     }
 }
