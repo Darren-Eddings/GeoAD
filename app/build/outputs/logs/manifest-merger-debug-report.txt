@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-79:12
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-89:12
 MERGED from [com.google.firebase:firebase-core:18.0.0] C:\Users\kieff\.gradle\caches\transforms-2\files-2.1\bd46411bd75bc5434bc249ccd6be355d\jetified-firebase-core-18.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-analytics:18.0.0] C:\Users\kieff\.gradle\caches\transforms-2\files-2.1\d549c5604d91bb09adf5a4fd2807107d\jetified-firebase-analytics-18.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\kieff\.gradle\caches\transforms-2\files-2.1\d517602d042b21c9e015d0062379c047\jetified-firebase-auth-20.0.1\AndroidManifest.xml:17:1-83:12
@@ -79,20 +79,20 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\kieff\.gradle\ca
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.0] C:\Users\kieff\.gradle\caches\transforms-2\files-2.1\71c2cd00b68bb00f1925646c8a552452\jetified-protolite-well-known-types-17.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\kieff\.gradle\caches\transforms-2\files-2.1\dd0a6ad96b7c9f32eea9e9f127e9ccfb\jetified-grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\kieff\.gradle\caches\transforms-2\files-2.1\65286594e4901aa1ee46032f07babf5c\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-79:12
-INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-79:12
+INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-89:12
 	package
 		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-79:12
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-89:12
 		INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-79:12
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:1-89:12
 		INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:2:11-69
@@ -133,7 +133,7 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.0] C:
 	android:name
 		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:14:22-64
 application
-ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:16:5-77:19
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:16:5-87:19
 MERGED from [com.google.firebase:firebase-core:18.0.0] C:\Users\kieff\.gradle\caches\transforms-2\files-2.1\bd46411bd75bc5434bc249ccd6be355d\jetified-firebase-core-18.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-core:18.0.0] C:\Users\kieff\.gradle\caches\transforms-2\files-2.1\bd46411bd75bc5434bc249ccd6be355d\jetified-firebase-core-18.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:18.0.0] C:\Users\kieff\.gradle\caches\transforms-2\files-2.1\d549c5604d91bb09adf5a4fd2807107d\jetified-firebase-analytics-18.0.0\AndroidManifest.xml:7:5-20
@@ -234,34 +234,48 @@ action#android.intent.action.BOOT_COMPLETED
 ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:48:17-79
 	android:name
 		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:48:25-76
+receiver#com.termproject.geoad.MainActivity$BootBroadcastReceiver
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:52:9-60:20
+	android:enabled
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:54:13-35
+	android:exported
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:55:13-36
+	android:name
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:53:13-63
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.USER_PRESENT
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:56:13-59:29
+action#android.intent.action.USER_PRESENT
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:58:17-77
+	android:name
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:58:25-74
 activity#com.termproject.geoad.CaretakerMapActivity
-ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:52:9-54:68
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:62:9-64:68
 	android:label
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:54:13-65
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:64:13-65
 	android:name
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:53:13-49
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:63:13-49
 activity#com.termproject.geoad.MapsActivity
-ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:65:9-67:59
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:75:9-77:59
 	android:label
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:67:13-56
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:77:13-56
 	android:name
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:66:13-41
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:76:13-41
 activity#com.termproject.geoad.MainActivity
-ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:68:9-76:20
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:78:9-86:20
 	android:label
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:70:13-41
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:80:13-41
 	android:name
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:69:13-41
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:79:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:71:13-75:29
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:81:13-85:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:72:17-69
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:82:17-69
 	android:name
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:72:25-66
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:82:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:74:17-77
+ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:84:17-77
 	android:name
-		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:74:27-74
+		ADDED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml:84:27-74
 uses-sdk
 INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\kieff\AndroidStudioProjects\GeoAD\app\src\main\AndroidManifest.xml

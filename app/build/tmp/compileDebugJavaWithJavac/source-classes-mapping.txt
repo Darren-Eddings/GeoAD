@@ -2,12 +2,19 @@ com/termproject/geoad/PatientRegister.java
  com.termproject.geoad.PatientRegister
  com.termproject.geoad.PatientRegister$1
  com.termproject.geoad.PatientRegister$2
-com/termproject/geoad/ui/login/LoggedInUserView.java
- com.termproject.geoad.ui.login.LoggedInUserView
-com/termproject/geoad/Patient.java
- com.termproject.geoad.Patient
-com/termproject/geoad/ui/login/LoginFormState.java
- com.termproject.geoad.ui.login.LoginFormState
+com/termproject/geoad/MainActivity.java
+ com.termproject.geoad.MainActivity
+ com.termproject.geoad.MainActivity$1
+ com.termproject.geoad.MainActivity$2
+ com.termproject.geoad.MainActivity$BootBroadcastReceiver
+com/termproject/geoad/PatientHomeScreen.java
+ com.termproject.geoad.PatientHomeScreen
+ com.termproject.geoad.PatientHomeScreen$1
+ com.termproject.geoad.PatientHomeScreen$2
+ com.termproject.geoad.PatientHomeScreen$3
+ com.termproject.geoad.PatientHomeScreen$SimpleCallback
+com/termproject/geoad/PatientLogin.java
+ com.termproject.geoad.PatientLogin
 com/termproject/geoad/ui/login/LoginViewModelFactory.java
  com.termproject.geoad.ui.login.LoginViewModelFactory
 com/termproject/geoad/LocationService.java
@@ -30,6 +37,7 @@ com/termproject/geoad/PatientLocation.java
  com.termproject.geoad.PatientLocation
  com.termproject.geoad.PatientLocation$1
  com.termproject.geoad.PatientLocation$2
+ com.termproject.geoad.PatientLocation$3
  com.termproject.geoad.PatientLocation$SimpleCallback
 com/termproject/geoad/PatientViewModel.java
  com.termproject.geoad.PatientViewModel
@@ -39,15 +47,11 @@ com/termproject/geoad/data/LoginDataSource.java
  com.termproject.geoad.data.LoginDataSource
 com/termproject/geoad/CaretakerRemoveGeofence.java
  com.termproject.geoad.CaretakerRemoveGeofence
+ com.termproject.geoad.CaretakerRemoveGeofence$1
 com/termproject/geoad/GeofenceBroadcastReceiver.java
  com.termproject.geoad.GeofenceBroadcastReceiver
-com/termproject/geoad/CaretakerAddPatient.java
- com.termproject.geoad.CaretakerAddPatient
- com.termproject.geoad.CaretakerAddPatient$1
- com.termproject.geoad.CaretakerAddPatient$2
- com.termproject.geoad.CaretakerAddPatient$2$1
- com.termproject.geoad.CaretakerAddPatient$2$2
- com.termproject.geoad.CaretakerAddPatient$SimpleCallback
+com/termproject/geoad/RequestConfirm.java
+ com.termproject.geoad.RequestConfirm
 com/termproject/geoad/CaretakerManageGeofence.java
  com.termproject.geoad.CaretakerManageGeofence
 com/termproject/geoad/GeofenceHelper.java
@@ -58,8 +62,8 @@ com/termproject/geoad/GeofenceChangeRequest.java
  com.termproject.geoad.GeofenceChangeRequest
 com/termproject/geoad/data/LoginRepository.java
  com.termproject.geoad.data.LoginRepository
-com/termproject/geoad/CaretakerAddGeofence.java
- com.termproject.geoad.CaretakerAddGeofence
+com/termproject/geoad/NewAccountSuccess.java
+ com.termproject.geoad.NewAccountSuccess
 com/termproject/geoad/CaretakerEditGeofence.java
  com.termproject.geoad.CaretakerEditGeofence
 com/termproject/geoad/ui/login/LoginResult.java
@@ -90,7 +94,6 @@ com/termproject/geoad/CaretakerMapActivity.java
  com.termproject.geoad.CaretakerMapActivity$5
 com/termproject/geoad/GuideMeHome.java
  com.termproject.geoad.GuideMeHome
- com.termproject.geoad.GuideMeHome$1
 com/termproject/geoad/RequestChangeOrNew.java
  com.termproject.geoad.RequestChangeOrNew
 com/termproject/geoad/CaretakerRemovePatient.java
@@ -110,33 +113,34 @@ com/termproject/geoad/MapFragment.java
  com.termproject.geoad.MapFragment
  com.termproject.geoad.MapFragment$1
  com.termproject.geoad.MapFragment$1$1
-com/termproject/geoad/GeofenceTimedFieldManager.java
- com.termproject.geoad.GeofenceTimedFieldManager
- com.termproject.geoad.GeofenceTimedFieldManager$1
- com.termproject.geoad.GeofenceTimedFieldManager$2
-com/termproject/geoad/CallEmergency.java
- com.termproject.geoad.CallEmergency
-com/termproject/geoad/MainActivity.java
- com.termproject.geoad.MainActivity
-com/termproject/geoad/StartScreen.java
- com.termproject.geoad.StartScreen
- com.termproject.geoad.StartScreen$1
-com/termproject/geoad/RequestConfirm.java
- com.termproject.geoad.RequestConfirm
-com/termproject/geoad/PatientHomeScreen.java
- com.termproject.geoad.PatientHomeScreen
- com.termproject.geoad.PatientHomeScreen$1
- com.termproject.geoad.PatientHomeScreen$2
- com.termproject.geoad.PatientHomeScreen$3
- com.termproject.geoad.PatientHomeScreen$SimpleCallback
-com/termproject/geoad/PatientLogin.java
- com.termproject.geoad.PatientLogin
-com/termproject/geoad/PatientLogoutConfirm.java
- com.termproject.geoad.PatientLogoutConfirm
 com/termproject/geoad/CaretakerPatientList.java
  com.termproject.geoad.CaretakerPatientList
  com.termproject.geoad.CaretakerPatientList$1
  com.termproject.geoad.CaretakerPatientList$2
  com.termproject.geoad.CaretakerPatientList$SimpleCallback
-com/termproject/geoad/NewAccountSuccess.java
- com.termproject.geoad.NewAccountSuccess
+com/termproject/geoad/CallEmergency.java
+ com.termproject.geoad.CallEmergency
+com/termproject/geoad/CaretakerAddGeofence.java
+ com.termproject.geoad.CaretakerAddGeofence
+com/termproject/geoad/GeofenceTimedFieldManager.java
+ com.termproject.geoad.GeofenceTimedFieldManager
+ com.termproject.geoad.GeofenceTimedFieldManager$1
+ com.termproject.geoad.GeofenceTimedFieldManager$2
+com/termproject/geoad/StartScreen.java
+ com.termproject.geoad.StartScreen
+ com.termproject.geoad.StartScreen$1
+com/termproject/geoad/ui/login/LoginFormState.java
+ com.termproject.geoad.ui.login.LoginFormState
+com/termproject/geoad/PatientLogoutConfirm.java
+ com.termproject.geoad.PatientLogoutConfirm
+com/termproject/geoad/CaretakerAddPatient.java
+ com.termproject.geoad.CaretakerAddPatient
+ com.termproject.geoad.CaretakerAddPatient$1
+ com.termproject.geoad.CaretakerAddPatient$2
+ com.termproject.geoad.CaretakerAddPatient$2$1
+ com.termproject.geoad.CaretakerAddPatient$2$2
+ com.termproject.geoad.CaretakerAddPatient$SimpleCallback
+com/termproject/geoad/Patient.java
+ com.termproject.geoad.Patient
+com/termproject/geoad/ui/login/LoggedInUserView.java
+ com.termproject.geoad.ui.login.LoggedInUserView

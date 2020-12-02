@@ -33,6 +33,13 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 public class CaretakerPatientList extends Fragment implements View.OnClickListener {
@@ -54,6 +61,28 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         db = FirebaseFirestore.getInstance();
 
+        FileInputStream fInSession = null;
+        try {
+            File fileSession = new File(getActivity().getFilesDir() + "/Session.txt");
+            fInSession = new FileInputStream(fileSession);
+            InputStreamReader isr = new InputStreamReader(fInSession);
+        } catch (FileNotFoundException e) {
+            FileOutputStream fOut = null;
+            try {
+                fOut = new FileOutputStream(new File(getActivity().getFilesDir() + "/Session.txt"));
+                OutputStreamWriter osw = new OutputStreamWriter(fOut);
+                try {
+                    osw.write("Caretaker" + "," + viewModel.getCaretaker().getCaretakerID() + "," + viewModel.getCaretaker().getPassword());
+                    osw.close();
+                    fOut.close();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+
+            } catch (FileNotFoundException fileNotFoundException) {
+                fileNotFoundException.printStackTrace();
+            }
+        }
         //creates a view to display UI objects
 
         viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
@@ -134,6 +163,15 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
             nextFragment = new CaretakerAddPatient();
         }
         else if (buttonId == R.id.logoutButton){
+            FileInputStream fIn = null;
+            try {
+                File file = new File(getActivity().getFilesDir() + "/Session.txt");
+                fIn = new FileInputStream(file);
+                file.delete();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
             nextFragment = new StartScreen();
             viewModel.clearAll();
         }

@@ -1,194 +1,306 @@
 [
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_request_confirm.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_request_confirm.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_earth.jpg.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\earth.jpg"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_new_account_success.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_new_account_success.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_login.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_login.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_patient_login.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_patient_login.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_patient_list.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_patient_list.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add_geofence.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_add_geofence.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home_screen.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_home_screen.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_geofence_manager.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_geofence_manager.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_home_screen.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_home_screen.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_manage_geofence.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_manage_geofence.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_add_patient.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_add_patient.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit_large.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_edit_large.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_patient_information.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_patient_information.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_field_manager.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_geofence_field_manager.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_phone.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\ic_phone.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_info_icon.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_info_icon.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add_large.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_add_large.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_map.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_map.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_map_home.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_map_home.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_guide_me_home.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_guide_me_home.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_request.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_request.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_navigation_small.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_navigation_small.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_maps.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\activity_maps.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_change_request.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_geofence_change_request.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_alert_dialog_bg.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\alert_dialog_bg.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_alert_dialog_bg.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\alert_dialog_bg.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_request.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_request.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_remove_geofence.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_remove_geofence.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_change_request.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_geofence_change_request.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_request_confirm.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_request_confirm.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_guide_me_home.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_guide_me_home.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_patient_register.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_patient_register.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_start_screen.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_start_screen.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_earth.jpg.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\earth.jpg"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_request_new_geofence.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_request_new_geofence.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_add_geofence.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_add_geofence.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_open.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\ic_open.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_new_account_success.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_new_account_success.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_login.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_login.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_geofence_information.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_geofence_information.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_color_spinner_layout.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\color_spinner_layout.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_geofence_information.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_geofence_information.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_request.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_request.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home_screen.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_home_screen.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_field_manager.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_geofence_field_manager.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_request_new_geofence.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_request_new_geofence.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_add_geofence.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_add_geofence.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_remove_geofence.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_remove_geofence.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_register_success.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_register_success.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_home.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_edit_geofence.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_edit_geofence.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_remove_patient.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_remove_patient.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_manage_geofence.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_manage_geofence.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_register_success.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_register_success.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_patient_information.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_patient_information.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_registration.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_registration.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_return_button.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_return_button.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_patient_login.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_patient_login.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove_general.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_remove_general.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_dismiss.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\drawable\\ic_dismiss.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_start_screen.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_start_screen.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_patient_location.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\activity_patient_location.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_spinner_dropdown_color.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\spinner_dropdown_color.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_edit.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_remove_patient.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_caretaker_remove_patient.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_home_screen.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_home_screen.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_call_emergency.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_call_emergency.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_timed_field_manager.xml.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\layout\\fragment_geofence_timed_field_manager.xml"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_dismiss.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_dismiss.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "D:\\ASProjects\\TermProject\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "D:\\ASProjects\\TermProject\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_caretaker_map.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\activity_caretaker_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_call_emergency.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_call_emergency.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_navigation.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_globe_notification.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_globe_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove_user.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_remove_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_geofence_timed_field_manager.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_geofence_timed_field_manager.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_emergency_call.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_emergency_call.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_patient_register.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_patient_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_patient_list.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_patient_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_phone.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_phone.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_maps.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\activity_maps.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_edit_geofence.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_edit_geofence.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_add_patient.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_add_patient.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_listview_entry_color.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\listview_entry_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_patient_logout_confirm.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_patient_logout_confirm.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_caretaker.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_caretaker.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_cancel.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_cancel.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_caretaker_registration.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_caretaker_registration.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_x_symbol.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_x_symbol.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_open.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_open.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_map_access.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_map_access.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_map.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\layout\\fragment_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_check_mark.xml.flat",
+        "source": "C:\\Users\\kieff\\AndroidStudioProjects\\GeoAD\\app\\src\\main\\res\\drawable\\ic_check_mark.xml"
     }
 ]

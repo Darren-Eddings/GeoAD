@@ -1733,6 +1733,7 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id GuideMeHome
 id META
 id NO_DEBUG
 id SHIFT
@@ -1920,7 +1921,6 @@ id enterAlwaysCollapsed
 id enterName
 id enterNameTimed
 id enterTime
-id enterTypeTimed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1979,6 +1979,7 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id labelGrid
 id labeled
 id largeLabel
 id layout
@@ -2066,6 +2067,7 @@ id password_toggle
 id path
 id pathRelative
 id patientButton
+id patientHomeScreen
 id patientIDText
 id patientId
 id patientIdText
@@ -2094,14 +2096,12 @@ id promptNameText
 id promptNameTimed
 id promptSize
 id promptSizeTimed
-id promptTypeTimed
 id radio
 id ratio
 id rectangles
 id removeGeofenceWarning
 id removePatientButton
 id removePatientWarning
-id requestButton
 id requestChange
 id requestNew
 id requestText
@@ -2159,6 +2159,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id spinner
 id spline
 id split_action_bar
 id spread

@@ -46,6 +46,7 @@ public class StartScreen extends Fragment implements View.OnClickListener {
     //initialize variable for UI objects
     private Button patientButton;
     private Button caretakerButton;
+    private Query session;
 
     @Nullable
     @Override
@@ -56,18 +57,24 @@ public class StartScreen extends Fragment implements View.OnClickListener {
 
         FileInputStream fIn = null;
         try {
-            fIn = new FileInputStream(new File(getActivity().getFilesDir() + "/PatientSession.txt"));
+            fIn = new FileInputStream(new File(getActivity().getFilesDir() + "/Session.txt"));
             InputStreamReader isr = new InputStreamReader(fIn);
             try {
                 BufferedReader reader = new BufferedReader(isr);
                 String line = reader.readLine();
-                String[] patientCredentials = line.split(",");
+                String[] credentials = line.split(",");
 
-                Query patient = db.collection("patients")
-                        .whereEqualTo("patientID", patientCredentials[0])
-                        .whereEqualTo("password", patientCredentials[1]);
-
-                patient.get()
+                if(credentials[0] == "Patient") {
+                    session = db.collection("patients")
+                            .whereEqualTo("patientID", credentials[1])
+                            .whereEqualTo("password", credentials[2]);
+                }
+                else if(credentials[0] == "Caretaker") {
+                    session = db.collection("caretakers")
+                        .whereEqualTo("caretakerID", credentials[1])
+                        .whereEqualTo("password", credentials[2]);
+                    }
+                session.get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -106,7 +113,7 @@ public class StartScreen extends Fragment implements View.OnClickListener {
             } catch (IOException io) {
                 io.printStackTrace();
             }
-        } catch (FileNotFoundException e) {
+        } catch(FileNotFoundException e) {
             e.printStackTrace();
         }
 

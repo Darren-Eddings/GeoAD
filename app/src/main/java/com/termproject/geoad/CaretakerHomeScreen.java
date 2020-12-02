@@ -52,6 +52,7 @@ public class CaretakerHomeScreen extends Fragment implements View.OnClickListene
             e.printStackTrace();
         }
 
+
         View view = inflater.inflate(R.layout.fragment_caretaker_home_screen, container, false);
 
         patientInformation = view.findViewById(R.id.patientInformationButton);

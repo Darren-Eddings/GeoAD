@@ -101,16 +101,16 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
 
         FileInputStream fInSession = null;
         try {
-            File fileSession = new File(getActivity().getFilesDir() + "/PatientSession.txt");
+            File fileSession = new File(getActivity().getFilesDir() + "/Session.txt");
             fInSession = new FileInputStream(fileSession);
             InputStreamReader isr = new InputStreamReader(fInSession);
         } catch (FileNotFoundException e) {
             FileOutputStream fOut = null;
             try {
-                fOut = new FileOutputStream(new File(getActivity().getFilesDir() + "/PatientSession.txt"));
+                fOut = new FileOutputStream(new File(getActivity().getFilesDir() + "/Session.txt"));
                 OutputStreamWriter osw = new OutputStreamWriter(fOut);
                 try {
-                    osw.write(viewModel.getPatient().getPatientID() + "," + viewModel.getPatient().getPassword());
+                    osw.write("Patient" + "," + viewModel.getPatient().getPatientID() + "," + viewModel.getPatient().getPassword());
                     osw.close();
                     fOut.close();
                 } catch (IOException ioException) {
@@ -197,7 +197,7 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         } else if (buttonId == R.id.logoutButton) {
             FileInputStream fIn = null;
             try {
-                File file = new File(getActivity().getFilesDir() + "/PatientSession.txt");
+                File file = new File(getActivity().getFilesDir() + "/Session.txt");
                 fIn = new FileInputStream(file);
                 file.delete();
             } catch (FileNotFoundException e) {
