@@ -104,7 +104,9 @@
     <string name="home_screen">Welcome</string>
     <string name="request_type_text">Select Request</string>
     <string name="greet_screen">Hello!</string>
-    <string name="new_caretaker_text">Your Caretaker's ID</string>
+    <string name="new_caretaker_text">Your Caretaker\'s ID</string>
+    <string name="new_address_text">Address</string>
+    <string name="logout_text">Logout</string>
     <string-array name="geofence_list">
         <item>Select</item>
         <item>Home</item>
@@ -124,20 +126,14 @@
         <item>Point-of-Interest</item>
         <item>Timed</item>
     </string-array>
-    <string-array name="caretaker_manage_geofence_dummy">
-        <item>Trinity Western University</item>
-    </string-array>
     <string-array name="patient_information_fields">
-        <item>Patient ID</item>
         <item>Name</item>
+        <item>Date of Birth</item>
         <item>Phone Number</item>
         <item>Address</item>
     </string-array>
-    <string-array name="patient_information_list_dummy">
-        <item>000000</item>
-        <item>John Doe</item>
-        <item>111 111 1111</item>
-        <item>22500 University Drive, Langley, BC, Canada | V2Y 1Y1</item>
+    <string-array name="caretaker_manage_geofence_dummy">
+        <item>Trinity Western University</item>
     </string-array>
     <string-array name="geofence_information_fields">
         <item>Name</item>

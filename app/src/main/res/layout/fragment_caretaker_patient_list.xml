@@ -21,7 +21,7 @@
     <ListView
         android:id="@+id/patientList"
         android:layout_width="wrap_content"
-        android:layout_height="450dp"
+        android:layout_height="380dp"
         android:layout_below="@id/patientListText"
         android:layout_marginTop="90sp"
         android:cacheColorHint="@color/light_grey" />
@@ -36,5 +36,17 @@
         android:text="@string/add_patient_button_text"
         android:backgroundTint="@color/orange"
         android:textColor="@color/dark_grey"
+        />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addPatientButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        android:text="@string/logout_text"
+        android:textColor="@color/dark_grey"
+        android:backgroundTint="@color/orange"
         />
 </RelativeLayout>

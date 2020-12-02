@@ -10,8 +10,17 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class CaretakerRemovePatient extends Fragment implements View.OnClickListener {
+    private CaretakerViewModel viewModel;
+
+    private FirebaseFirestore db;
 
     private Button yesButton;
     private Button noButton;
@@ -19,6 +28,10 @@ public class CaretakerRemovePatient extends Fragment implements View.OnClickList
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
+
+        db = FirebaseFirestore.getInstance();
+
         View view = inflater.inflate(R.layout.fragment_caretaker_remove_patient, container, false);
 
         yesButton = view.findViewById(R.id.yesButton);
@@ -34,23 +47,36 @@ public class CaretakerRemovePatient extends Fragment implements View.OnClickList
         Fragment nextFragment = null;
         int buttonId = v.getId();
         if (buttonId == R.id.yesButton) {
-            nextFragment = new CaretakerPatientList();
+            DocumentReference patientRef = db.collection("patients").document(viewModel.getSelectedPatient().getFullName());
+            patientRef
+                    .update("caretakerID", FieldValue.delete())
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override public void onSuccess(Void aVoid) {
+                            Context context = getActivity();
+                            CharSequence text = "Patient removed successfully!";
+                            int duration = Toast.LENGTH_SHORT;
 
-            Context context = getActivity();
-            CharSequence text = "Patient removed successfully!";
-            int duration = Toast.LENGTH_SHORT;
+                            Toast patientRemoved = Toast.makeText(context, text, duration);
+                            patientRemoved.show();
 
-            Toast patientRemoved = Toast.makeText(context, text, duration);
-            patientRemoved.show();
+                            MainActivity mainActivity = (MainActivity) getActivity();
+                            try {
+                                mainActivity.replaceFragments(new CaretakerPatientList());
+                            }catch (NullPointerException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
         }
         else if (buttonId == R.id.noButton) {
             nextFragment = new CaretakerHomeScreen();
+            MainActivity mainActivity = (MainActivity) getActivity();
+            try {
+                mainActivity.replaceFragments(nextFragment);
+            }catch (NullPointerException e) {
+                e.printStackTrace();
+            }
         }
-        MainActivity mainActivity = (MainActivity) getActivity();
-        try {
-            mainActivity.replaceFragments(nextFragment);
-        }catch (NullPointerException e) {
-            e.printStackTrace();
-        }
+
     }
 }

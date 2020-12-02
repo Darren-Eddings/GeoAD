@@ -73,53 +73,70 @@ public class CaretakerRegistration extends Fragment implements View.OnClickListe
     }
 
     @Override public void onClick(View v) {
-        Random rnd = new Random();
-        int caretakerID = 100000 + rnd.nextInt(900000);
-
-        caretaker = new Caretaker(Integer.toString(caretakerID), fullName.getText().toString(), dateOfBirth.getText().toString(), password.getText().toString(), phone.getText().toString());
-
-        viewModel.setCaretaker(caretaker);
-
-        CollectionReference caretakers = db.collection("caretakers");
-
-        caretakers.document(fullName.getText().toString())
-                .set(caretaker)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Context context = getActivity();
-                        CharSequence text = "Registration Successful!";
-                        int duration = Toast.LENGTH_SHORT;
-
-                        Toast registrationSuccessful = Toast.makeText(context, text, duration);
-                        registrationSuccessful.show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Context context = getActivity();
-                        CharSequence text = "Error Adding Document!";
-                        int duration = Toast.LENGTH_SHORT;
-
-                        Toast registrationFail = Toast.makeText(context, text, duration);
-                        registrationFail.show();
-                    }
-                });
-
         Fragment nextFragment = null;
         int buttonId = v.getId();
+
         if (buttonId == R.id.caretakerRegistrationButton) {
-            nextFragment = new CaretakerRegistrationSuccess();
+
+            Random rnd = new Random();
+            int caretakerID = 100000 + rnd.nextInt(900000);
+
+            caretaker = new Caretaker(Integer.toString(caretakerID), fullName.getText().toString(), dateOfBirth.getText().toString(), password.getText().toString(), phone.getText().toString());
+
+            viewModel.setCaretaker(caretaker);
+
+            CollectionReference caretakers = db.collection("caretakers");
+            if (!fullName.getText().toString().isEmpty()) {
+                caretakers.document(fullName.getText().toString())
+                        .set(caretaker)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Context context = getActivity();
+                                CharSequence text = "Registration Successful!";
+                                int duration = Toast.LENGTH_SHORT;
+
+                                Toast registrationSuccessful = Toast.makeText(context, text, duration);
+                                registrationSuccessful.show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Context context = getActivity();
+                                CharSequence text = "Error Adding Document!";
+                                int duration = Toast.LENGTH_SHORT;
+
+                                Toast registrationFail = Toast.makeText(context, text, duration);
+                                registrationFail.show();
+                            }
+                        });
+                nextFragment = new CaretakerRegistrationSuccess();
+                MainActivity mainActivity = (MainActivity) getActivity();
+                try {
+                    mainActivity.replaceFragments(nextFragment);
+                }catch (NullPointerException e) {
+                    e.printStackTrace();
+                }
+            }
+            else {
+                Context context = getActivity();
+                CharSequence text = "Some fields are left blank!!";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast blankError = Toast.makeText(context, text, duration);
+                blankError.show();
+            }
+
         }
         else if (buttonId == R.id.inkLogin) {
             nextFragment = new CaretakerLogin();
-        }
-        MainActivity mainActivity = (MainActivity) getActivity();
-        try {
-            mainActivity.replaceFragments(nextFragment);
-        }catch (NullPointerException e) {
-            e.printStackTrace();
+            MainActivity mainActivity = (MainActivity) getActivity();
+            try {
+                mainActivity.replaceFragments(nextFragment);
+            }catch (NullPointerException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

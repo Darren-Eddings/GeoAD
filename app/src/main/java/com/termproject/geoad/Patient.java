@@ -1,6 +1,7 @@
 package com.termproject.geoad;
 
 public class Patient {
+    private String address;
     private String caretakerID;
     private String dateOfBirth;
     private String fullName;
@@ -8,7 +9,8 @@ public class Patient {
     private String patientID;
     private String phone;
 
-    public Patient(String caretakerID, String dateOfBirth, String fullName, String password, String patientID, String phone) {
+    public Patient(String address, String caretakerID, String dateOfBirth, String fullName, String password, String patientID, String phone) {
+        this.address = address;
         this.caretakerID = caretakerID;
         this.dateOfBirth = dateOfBirth;
         this.fullName = fullName;
@@ -22,6 +24,10 @@ public class Patient {
     }
 
     //Getter
+    public String getAddress() {
+        return address;
+    }
+
     public String getCaretakerID() {
         return caretakerID;
     }
@@ -47,6 +53,10 @@ public class Patient {
     }
 
     //Setter
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public void setCaretakerID(String caretakerID) {
         this.caretakerID = caretakerID;
     }

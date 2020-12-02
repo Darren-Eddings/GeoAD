@@ -1,25 +1,27 @@
 package com.termproject.geoad;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class PatientRegister extends Fragment implements View.OnClickListener{
@@ -36,6 +38,7 @@ public class PatientRegister extends Fragment implements View.OnClickListener{
     private EditText dateOfBirth;
     private EditText phone;
     private EditText password;
+    private EditText address;
     private Patient patient;
 
     @Nullable
@@ -53,6 +56,7 @@ public class PatientRegister extends Fragment implements View.OnClickListener{
         dateOfBirth = view.findViewById(R.id.dateOfBirthTextBox);
         phone = view.findViewById(R.id.newPhoneTextBox);
         password = view.findViewById(R.id.passwordTextBox);
+        address = view.findViewById(R.id.addressTextBox);
 
         submitButton.setOnClickListener(this);
         goToLogin.setOnClickListener(this);
@@ -76,23 +80,36 @@ public class PatientRegister extends Fragment implements View.OnClickListener{
         Random rnd = new Random();
         int patientID = 100000 + rnd.nextInt(900000);
 
-        patient = new Patient(null, fullName.getText().toString(), dateOfBirth.getText().toString(), password.getText().toString(), Integer.toString(patientID), phone.getText().toString());
+        patient = new Patient(address.getText().toString(), null, dateOfBirth.getText().toString(), fullName.getText().toString(), password.getText().toString(), Integer.toString(patientID), phone.getText().toString());
 
-        viewModel.setPatientID(patientID);
-
-        Map<String, Object> patient = new HashMap<>();
-        patient.put("patientID", patientID);
-        patient.put("fullName", fullName.getText().toString());
-        patient.put("dateOfBirth", dateOfBirth.getText().toString());
-        patient.put("phone", phone.getText().toString());
-        patient.put("password", password.getText().toString());
+        viewModel.setPatient(patient);
 
         CollectionReference patients = db.collection("patients");
 
         patients.document(fullName.getText().toString())
                 .set(patient)
-                .addOnSuccessListener(documentReference -> Log.d(TAG, "Document saved!"))
-                .addOnFailureListener(e -> Log.w(TAG, "Error adding document.", e));
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Context context = getActivity();
+                        CharSequence text = "Registration Successful!";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast registrationSuccessful = Toast.makeText(context, text, duration);
+                        registrationSuccessful.show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Context context = getActivity();
+                        CharSequence text = "Error Adding Document!";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast registrationFail = Toast.makeText(context, text, duration);
+                        registrationFail.show();
+                    }
+                });
 
         Fragment newFragment = null;
         int buttonID = v.getId();

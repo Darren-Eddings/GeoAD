@@ -10,8 +10,10 @@ import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 public class CaretakerPatientInformation extends Fragment implements View.OnClickListener {
+    private CaretakerViewModel viewModel;
 
     private ArrayAdapter<CharSequence> patientInformationFieldsAdapter;
     private ArrayAdapter<CharSequence> patientInformationListAdapter;
@@ -22,10 +24,17 @@ public class CaretakerPatientInformation extends Fragment implements View.OnClic
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
+
         View view = inflater.inflate(R.layout.fragment_caretaker_patient_information, container, false);
 
         patientInformationFieldsAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.patient_information_fields, android.R.layout.simple_list_item_1);
-        patientInformationListAdapter = ArrayAdapter.createFromResource(getActivity(), R. array.patient_information_list_dummy, android.R.layout.simple_list_item_1);
+
+        patientInformationListAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1);
+        patientInformationListAdapter.add(viewModel.getSelectedPatient().getFullName());
+        patientInformationListAdapter.add(viewModel.getSelectedPatient().getDateOfBirth());
+        patientInformationListAdapter.add(viewModel.getSelectedPatient().getPhone());
+        patientInformationListAdapter.add(viewModel.getSelectedPatient().getAddress());
 
         patientInformationFields = view.findViewById(R.id.patientInformationFields);
         patientInformationList = view.findViewById(R.id.patientInformationList);

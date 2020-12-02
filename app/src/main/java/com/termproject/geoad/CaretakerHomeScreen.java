@@ -17,19 +17,24 @@ public class CaretakerHomeScreen extends Fragment implements View.OnClickListene
     private ImageButton checkPatientLocation;
     private ImageButton manageGeofence;
     private ImageButton removePatient;
+    private Button returnPatientList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_caretaker_home_screen, container, false);
+
         patientInformation = view.findViewById(R.id.patientInformationButton);
         checkPatientLocation = view.findViewById(R.id.checkPatientLocationButton);
         manageGeofence = view.findViewById(R.id.manageGeofenceButton);
         removePatient = view.findViewById(R.id.removePatientButton);
+        returnPatientList = view.findViewById(R.id.returnPatientListButton);
+
         patientInformation.setOnClickListener(this);
         checkPatientLocation.setOnClickListener(this);
         manageGeofence.setOnClickListener(this);
         removePatient.setOnClickListener(this);
+        returnPatientList.setOnClickListener(this);
 
         return view;
     }
@@ -49,6 +54,9 @@ public class CaretakerHomeScreen extends Fragment implements View.OnClickListene
         }
         else if (buttonId == R.id.removePatientButton) {
             nextFragment = new CaretakerRemovePatient();
+        }
+        else if (buttonId == R.id.returnPatientListButton) {
+            nextFragment = new CaretakerPatientList();
         }
         MainActivity mainActivity = (MainActivity) getActivity();
         try {

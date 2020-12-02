@@ -117,24 +117,24 @@
         />
 
     <TextView
-        android:id="@+id/caretakerIdText"
+        android:id="@+id/addressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordTextBox"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="@string/caretaker_id_text"
+        android:text="@string/address_text"
         android:textColor="@color/light_grey"
         />
 
     <EditText
-        android:id="@+id/caretakerIdTextBox"
+        android:id="@+id/addressTextBox"
         android:layout_width="275sp"
         android:layout_height="55sp"
-        android:layout_below="@id/caretakerIdText"
+        android:layout_below="@id/addressText"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:hint="@string/new_caretaker_text"
+        android:hint="@string/new_address_text"
         android:inputType="number"
         android:textColor="@color/light_grey"
         android:backgroundTint="@color/light_grey"
@@ -145,7 +145,7 @@
         android:id="@+id/accountRegisterButton"
         android:layout_width="150sp"
         android:layout_height="60sp"
-        android:layout_below="@id/caretakerIdTextBox"
+        android:layout_below="@id/addressTextBox"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30sp"
         android:text="@string/register_text"

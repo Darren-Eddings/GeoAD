@@ -20,7 +20,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class CaretakerLogin extends Fragment implements View.OnClickListener{
-    private CaretakerViewModel viewModel;
 
     private FirebaseFirestore db;
 
@@ -38,8 +37,6 @@ public class CaretakerLogin extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         db = FirebaseFirestore.getInstance();
-
-        viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
 
         View view = inflater.inflate(R.layout.fragment_caretaker_login, container, false);
 
@@ -61,18 +58,19 @@ public class CaretakerLogin extends Fragment implements View.OnClickListener{
             caretakerIdValue =  caretakerId.getText().toString();
             passwordValue = password.getText().toString();
 
-            Query caretaker = db.collection("caretakers")
+            Query caretakerQuery = db.collection("caretakers")
                     .whereEqualTo("caretakerID", caretakerIdValue)
                     .whereEqualTo("password", passwordValue);
 
-            caretaker.get()
+            caretakerQuery.get()
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             QuerySnapshot snapshot = task.getResult();
                             if (!snapshot.isEmpty()) {
+                                CaretakerViewModel viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
                                 for (QueryDocumentSnapshot document : snapshot) {
-                                    Caretaker caretaker1 = document.toObject(Caretaker.class);
-                                    viewModel.setCaretaker(caretaker1);
+                                    Caretaker caretaker = document.toObject(Caretaker.class);
+                                    viewModel.setCaretaker(caretaker);
                                 }
                                 Context context = getActivity();
                                 CharSequence text = "Login Successful!";
