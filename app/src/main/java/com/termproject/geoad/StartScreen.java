@@ -39,7 +39,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class StartScreen extends Fragment implements View.OnClickListener {
-    private PatientViewModel viewModel;
+    private PatientViewModel viewModelPatient;
+    private CaretakerViewModel viewModelCaretaker;
 
     private FirebaseFirestore db;
 
@@ -51,72 +52,114 @@ public class StartScreen extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        viewModel = new ViewModelProvider(requireActivity()).get(PatientViewModel.class);
 
         db = FirebaseFirestore.getInstance();
 
         FileInputStream fIn = null;
         try {
-            fIn = new FileInputStream(new File(getActivity().getFilesDir() + "/Session.txt"));
+            File fileSession = new File(getActivity().getFilesDir() + "/Session.txt");
+            fIn = new FileInputStream(fileSession);
             InputStreamReader isr = new InputStreamReader(fIn);
             try {
                 BufferedReader reader = new BufferedReader(isr);
                 String line = reader.readLine();
                 String[] credentials = line.split(",");
 
-                if(credentials[0] == "Patient") {
+                if(credentials[0].equals("Patient")) {
                     session = db.collection("patients")
                             .whereEqualTo("patientID", credentials[1])
                             .whereEqualTo("password", credentials[2]);
+
+                    viewModelPatient = new ViewModelProvider(requireActivity()).get(PatientViewModel.class);
+
+                    session.get()
+                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        QuerySnapshot snapshot = task.getResult();
+                                        if (!snapshot.isEmpty()) {
+                                            for (QueryDocumentSnapshot document: snapshot) {
+                                                Patient patient1 = document.toObject(Patient.class);
+                                                viewModelPatient.setPatient(patient1);
+                                            }
+                                            Context context = getActivity();
+                                            CharSequence text = "Login Successful!";
+                                            int duration = Toast.LENGTH_SHORT;
+
+                                            Toast loginSuccessful = Toast.makeText(context, text, duration);
+                                            loginSuccessful.show();
+
+                                            MainActivity mainActivity = (MainActivity) getActivity();
+                                            try {
+                                                mainActivity.replaceFragments(new PatientHomeScreen());
+                                            }catch (NullPointerException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                        else {
+                                            Context context = getActivity();
+                                            CharSequence text = "Session data error...";
+                                            int duration = Toast.LENGTH_SHORT;
+
+                                            Toast loginFailed = Toast.makeText(context, text, duration);
+                                            loginFailed.show();
+                                        }
+                                    }
+                                }
+                            });
                 }
-                else if(credentials[0] == "Caretaker") {
+                else if(credentials[0].equals("Caretaker")) {
                     session = db.collection("caretakers")
                         .whereEqualTo("caretakerID", credentials[1])
                         .whereEqualTo("password", credentials[2]);
-                    }
-                session.get()
-                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    QuerySnapshot snapshot = task.getResult();
-                                    if (!snapshot.isEmpty()) {
-                                        for (QueryDocumentSnapshot document: snapshot) {
-                                            Patient patient1 = document.toObject(Patient.class);
-                                            viewModel.setPatient(patient1);
+
+                    viewModelCaretaker = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
+
+                    session.get()
+                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        QuerySnapshot snapshot = task.getResult();
+                                        if (!snapshot.isEmpty()) {
+                                            for (QueryDocumentSnapshot document: snapshot) {
+                                                Caretaker caretaker1 = document.toObject(Caretaker.class);
+                                                viewModelCaretaker.setCaretaker(caretaker1);
+                                            }
+                                            Context context = getActivity();
+                                            CharSequence text = "Login Successful!";
+                                            int duration = Toast.LENGTH_SHORT;
+
+                                            Toast loginSuccessful = Toast.makeText(context, text, duration);
+                                            loginSuccessful.show();
+
+                                            MainActivity mainActivity = (MainActivity) getActivity();
+                                            try {
+                                                mainActivity.replaceFragments(new CaretakerPatientList());
+                                            }catch (NullPointerException e) {
+                                                e.printStackTrace();
+                                            }
                                         }
-                                        Context context = getActivity();
-                                        CharSequence text = "Login Successful!";
-                                        int duration = Toast.LENGTH_SHORT;
+                                        else {
+                                            Context context = getActivity();
+                                            CharSequence text = "Session data error...";
+                                            int duration = Toast.LENGTH_SHORT;
 
-                                        Toast loginSuccessful = Toast.makeText(context, text, duration);
-                                        loginSuccessful.show();
-
-                                        MainActivity mainActivity = (MainActivity) getActivity();
-                                        try {
-                                            mainActivity.replaceFragments(new PatientHomeScreen());
-                                        }catch (NullPointerException e) {
-                                            e.printStackTrace();
+                                            Toast loginFailed = Toast.makeText(context, text, duration);
+                                            loginFailed.show();
                                         }
-                                    }
-                                    else {
-                                        Context context = getActivity();
-                                        CharSequence text = "Session data error...";
-                                        int duration = Toast.LENGTH_SHORT;
-
-                                        Toast loginFailed = Toast.makeText(context, text, duration);
-                                        loginFailed.show();
                                     }
                                 }
-                            }
-                        });
+                            });
+                }
+
             } catch (IOException io) {
                 io.printStackTrace();
             }
         } catch(FileNotFoundException e) {
             e.printStackTrace();
         }
-
         //create a view to display UI objects
         View view = inflater.inflate(R.layout.fragment_start_screen, container, false);
 

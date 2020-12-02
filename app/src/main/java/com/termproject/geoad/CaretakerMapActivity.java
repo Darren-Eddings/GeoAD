@@ -89,7 +89,6 @@ public class CaretakerMapActivity extends FragmentActivity implements OnMapReady
         geofencingClient = LocationServices.getGeofencingClient(this);
         geofenceHelper = new GeofenceHelper(this);
 
-
     }
 
     /**

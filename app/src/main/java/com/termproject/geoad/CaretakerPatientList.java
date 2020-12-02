@@ -61,6 +61,9 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         db = FirebaseFirestore.getInstance();
 
+        viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
+        caretaker = viewModel.getCaretaker();
+
         FileInputStream fInSession = null;
         try {
             File fileSession = new File(getActivity().getFilesDir() + "/Session.txt");
@@ -72,7 +75,7 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
                 fOut = new FileOutputStream(new File(getActivity().getFilesDir() + "/Session.txt"));
                 OutputStreamWriter osw = new OutputStreamWriter(fOut);
                 try {
-                    osw.write("Caretaker" + "," + viewModel.getCaretaker().getCaretakerID() + "," + viewModel.getCaretaker().getPassword());
+                    osw.write("Caretaker" + "," + caretaker.getCaretakerID() + "," + caretaker.getPassword());
                     osw.close();
                     fOut.close();
                 } catch (IOException ioException) {
@@ -84,9 +87,6 @@ public class CaretakerPatientList extends Fragment implements View.OnClickListen
             }
         }
         //creates a view to display UI objects
-
-        viewModel = new ViewModelProvider(requireActivity()).get(CaretakerViewModel.class);
-        caretaker = viewModel.getCaretaker();
 
         Query patientQuery = db.collection("patients")
                 .whereEqualTo("caretakerID", caretaker.getCaretakerID());
