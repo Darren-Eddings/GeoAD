@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,16 +19,19 @@ public class CaretakerAddGeofence extends Fragment implements View.OnClickListen
     private ArrayAdapter<CharSequence> geofenceSizeUnitAdapter;
     private Spinner geofenceType;
     private Spinner geofenceSizeUnit;
-    private Button addButton;
-    private Button cancelButton;
+    private ImageButton addButton;
+    private ImageButton cancelButton;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_caretaker_add_geofence, container, false);
 
-        geofenceTypeAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_list, android.R.layout.simple_spinner_dropdown_item);
-        geofenceSizeUnitAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_size_unit_with_select, android.R.layout.simple_spinner_dropdown_item);
+        geofenceTypeAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_list, R.layout.color_spinner_layout);
+        geofenceSizeUnitAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.geofence_size_unit_with_select, R.layout.color_spinner_layout);
+
+        geofenceTypeAdapter.setDropDownViewResource(R.layout.spinner_dropdown_color);
+        geofenceSizeUnitAdapter.setDropDownViewResource(R.layout.spinner_dropdown_color);
 
         geofenceType = view.findViewById(R.id.typeSpinner);
         geofenceSizeUnit = view.findViewById(R.id.sizeUnitSpinner);

@@ -62,6 +62,7 @@
     </GridLayout>
 
     <GridLayout
+        android:id="@+id/iconGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="2"
@@ -111,6 +112,27 @@
             android:backgroundTint="@color/orange"
             />
     </GridLayout>
+
+    <TextView
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:textColor="@color/light_grey"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/iconGrid"
+        android:layout_marginTop="30sp"
+        android:text="@string/return_button_text"/>
+
+    <ImageButton
+        android:id="@+id/returnToPatientList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/iconGrid"
+        android:layout_marginTop="45sp"
+        android:contentDescription="@string/return_button_text"
+        android:src="@drawable/ic_return_button"/>
 
 
 </RelativeLayout>

@@ -126,7 +126,7 @@
         android:layout_marginTop="40sp"
         android:layout_centerHorizontal="true"
         android:text="@string/register_text"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/dark_grey"
         android:backgroundTint="@color/orange"
         />
 

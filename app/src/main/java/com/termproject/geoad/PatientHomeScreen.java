@@ -17,8 +17,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-
 import androidx.fragment.app.Fragment;
+
 
 public class PatientHomeScreen extends Fragment implements View.OnClickListener{
 
@@ -28,6 +28,7 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
     private ImageButton emergencyButton;
     private ImageButton careButton;
     private ImageButton requestButton;
+    private ImageButton logoutButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,12 +41,14 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
         emergencyButton = view.findViewById(R.id.emergencyButton);
         careButton = view.findViewById(R.id.careButton);
         requestButton = view.findViewById(R.id.requestButton);
+        logoutButton = view.findViewById(R.id.logoutButton);
 
         //set all buttons to listen for clicks
         mapButton.setOnClickListener(this);
         emergencyButton.setOnClickListener(this);
         careButton.setOnClickListener(this);
         requestButton.setOnClickListener(this);
+        logoutButton.setOnClickListener(this);
 
         return view;
     }
@@ -83,6 +86,12 @@ public class PatientHomeScreen extends Fragment implements View.OnClickListener{
 
             //if request button was pressed set nextFragment to the requests page
             nextFragment = new RequestChangeOrNew();
+        }
+
+        //if patient presses logout button nextFragment sends them to logout confirm
+        else if (buttonId == R.id.logoutButton){
+
+            nextFragment = new PatientLogoutConfirm();
         }
 
         MainActivity mainActivity = (MainActivity) getActivity();

@@ -62,6 +62,7 @@
     </GridLayout>
 
     <GridLayout
+        android:id="@+id/buttonGrid"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="125sp"
         android:layout_width="wrap_content"
@@ -78,7 +79,7 @@
             android:backgroundTint="@color/orange"
             android:textColor="@color/dark_grey"
             android:layout_margin="30sp"
-            />
+            android:contentDescription="@string/guide_me_home" />
 
         <ImageButton
             android:id="@+id/emergencyButton"
@@ -88,7 +89,7 @@
             android:backgroundTint="@color/orange"
             android:textColor="@color/dark_grey"
             android:layout_margin="30sp"
-            />
+            android:contentDescription="@string/call_emergency_services" />
 
         <ImageButton
             android:id="@+id/careButton"
@@ -98,6 +99,7 @@
             android:backgroundTint="@color/orange"
             android:textColor="@color/dark_grey"
             android:layout_margin="30sp"
+            android:contentDescription="@string/call_caretaker"
             />
 
         <ImageButton
@@ -108,8 +110,30 @@
             android:backgroundTint="@color/orange"
             android:textColor="@color/dark_grey"
             android:layout_margin="30sp"
+            android:contentDescription="@string/request_text"
             />
 
     </GridLayout>
+    
+    <TextView
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:text="@string/logout_text"
+        android:textColor="@color/light_grey"
+        android:layout_below="@id/buttonGrid"
+        android:layout_marginTop="30sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"/>
+
+    <ImageButton
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logout_text"
+        android:src="@drawable/ic_logout"
+        android:backgroundTint="@color/orange"
+        android:layout_below="@id/buttonGrid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45sp"/>
 
 </RelativeLayout>

@@ -87,6 +87,7 @@
         android:layout_marginTop="10sp"
         android:text="@string/type_text"
         android:textColor="@color/light_grey"
+
         />
 
     <Spinner
@@ -97,6 +98,7 @@
         android:layout_centerHorizontal="true"
         android:textColor="@color/light_grey"
         android:backgroundTint="@color/light_grey"
+        android:entries="@array/change_type"
         />
 
     <TextView
@@ -124,28 +126,34 @@
         android:textColorHint="@color/light_grey"
         />
 
-    <Button
-        android:id="@+id/saveChangesButton"
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:orientation="horizontal"
         android:layout_below="@id/addressTextBox"
-        android:layout_marginTop="40sp"
         android:layout_centerHorizontal="true"
-        android:text="@string/save_changes_button_text"
-        android:textColor="@color/dark_grey"
-        android:backgroundTint="@color/orange"
-        />
+        android:layout_marginTop="20sp">
 
-    <Button
-        android:id="@+id/cancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/saveChangesButton"
-        android:layout_marginTop="20sp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/cancel_button_text"
-        android:textColor="@color/dark_grey"
-        android:backgroundTint="@color/orange"
-        />
+        <ImageButton
+            android:id="@+id/yesButtonEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check_mark"
+            android:backgroundTint="@color/orange"
+            android:layout_margin="40sp"
+            />
+
+        <ImageButton
+            android:id="@+id/noButtonEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_x_symbol"
+            android:backgroundTint="@color/orange"
+            android:layout_margin="40sp"
+            />
+
+    </GridLayout>
 
 </RelativeLayout>

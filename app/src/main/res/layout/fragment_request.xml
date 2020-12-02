@@ -20,25 +20,59 @@
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:rowCount="2"
-        android:columnCount="1"
+        android:columnCount="2"
+        android:rowCount="1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="240sp">
+        android:layout_below="@id/requestText"
+        android:layout_marginTop="110sp"
+        >
+        <TextView
+            android:id="@+id/edit_label"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:text="@string/request_change"
+            android:textColor="@color/light_grey"
+            android:layout_margin="45sp"
+            android:gravity="center_horizontal"
+        />
 
-        <Button
+        <TextView
+            android:id="@+id/add_label"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:text="@string/request_new_text"
+            android:textColor="@color/light_grey"
+            android:layout_margin="45sp"
+            android:gravity="center_horizontal"
+            />
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rowCount="1"
+        android:columnCount="2"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/requestText"
+        android:layout_marginTop="125sp">
+
+        <ImageButton
             android:id="@+id/requestChange"
-            android:layout_width="275sp"
-            android:layout_height="60sp"
-            android:text="@string/request_change_text"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:contentDescription="@string/request_change_text"
+            android:src="@drawable/ic_edit_large"
             android:layout_margin="45sp"
             android:backgroundTint="@color/orange"
             android:textColor="@color/dark_grey"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/requestNew"
-            android:layout_width="275sp"
-            android:layout_height="60sp"
-            android:text="@string/request_new_text"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:contentDescription="@string/request_new_text"
+            android:src="@drawable/ic_add_large"
             android:layout_margin="45sp"
             android:backgroundTint="@color/orange"
             android:textColor="@color/dark_grey"/>

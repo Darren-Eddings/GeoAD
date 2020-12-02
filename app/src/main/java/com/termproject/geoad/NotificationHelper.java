@@ -1,3 +1,12 @@
+/*
+ * Written by Yuhong Chen
+ *
+ * Some code was automatically generated
+ * upon fragment creation
+ *
+ * Displays a notification when a patient exits
+ * a geofence
+ */
 package com.termproject.geoad;
 
 import android.app.Notification;

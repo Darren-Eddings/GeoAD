@@ -112,7 +112,6 @@
         <item>Doctor\'s Office</item>
     </string-array>
     <string-array name="change_type">
-        <item>Select</item>
         <item>Name</item>
         <item>Size</item>
         <item>Type</item>
@@ -145,15 +144,15 @@
         <item>Name</item>
         <item>Size</item>
         <item>Type</item>
+        <item>Time</item>
         <item>Address</item>
-        <item >Time</item>
     </string-array>
     <string-array name="geofence_information_list_dummy">
         <item>Trinity Western University</item>
         <item>10 km radius</item>
         <item>Home</item>
-        <item>22500 University Drive, Langley, BC, Canada | V2Y 1Y1</item>
         <item>Not Timed</item>
+        <item>22500 University Drive, Langley, BC, Canada | V2Y 1Y1</item>
     </string-array>
     <string-array name="geofence_list_without_select">
         <item>Home</item>
@@ -172,4 +171,11 @@
     </string-array>
     <string name="title_activity_caretaker_map">Map</string>
     <string name="title_activity_patient_location">Map</string>
+    <string name="enter_change_here">Enter Change Here</string>
+    <string name="request_change">Request Change</string>
+    <string name="set_attributes">Set Attributes</string>
+    <string name="guide_me_home">guide me home</string>
+    <string name="select_text">Select</string>
+    <string name="logout_text">Logout</string>
+    <string name="logout_warning_text">Are you sure you want to logout?</string>
 </resources>

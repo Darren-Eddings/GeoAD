@@ -1,3 +1,15 @@
+/*
+ * Written by Kieffer Lystoyo
+ *
+ * Commented by Darren Eddings
+ *
+ * Some code was automatically generated
+ * upon fragment creation
+ *
+ * Fragment acts as a confirmation page
+ * to ensure that a caretaker does not
+ * accidentally remove a patient
+ */
 package com.termproject.geoad;
 
 import android.content.Context;
@@ -5,7 +17,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -13,43 +25,68 @@ import androidx.fragment.app.Fragment;
 
 public class CaretakerRemovePatient extends Fragment implements View.OnClickListener {
 
-    private Button yesButton;
-    private Button noButton;
+    //initialize two ImageButton objects
+    private ImageButton yesButton;
+    private ImageButton noButton;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        //create a page to display UI objects
         View view = inflater.inflate(R.layout.fragment_caretaker_remove_patient, container, false);
 
-        yesButton = view.findViewById(R.id.yesButton);
-        noButton = view.findViewById(R.id.noButton);
+        //link ImageButton objects to corresponding objects in xml file
+        yesButton = view.findViewById(R.id.yesButtonRemove);
+        noButton = view.findViewById(R.id.noButtonRemove);
 
+        //have both buttons listen for a click
         yesButton.setOnClickListener(this);
         noButton.setOnClickListener(this);
 
         return view;
     }
 
-    @Override public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
+
+        //when one of the buttons is clicked create a temporary fragment that is equal to null
         Fragment nextFragment = null;
         int buttonId = v.getId();
-        if (buttonId == R.id.yesButton) {
+
+        //if the user pressed the button with ID == yesButton
+        if (buttonId == R.id.yesButtonRemove) {
+
+            //set nextFragment equal to CaretakerPatientList fragment
             nextFragment = new CaretakerPatientList();
 
+            //create a toast that tells the caretaker that the patient was removed successfully
             Context context = getActivity();
             CharSequence text = "Patient removed successfully!";
             int duration = Toast.LENGTH_SHORT;
 
+            //display the toast
             Toast patientRemoved = Toast.makeText(context, text, duration);
             patientRemoved.show();
         }
-        else if (buttonId == R.id.noButton) {
+
+        //if the user pressed the button with ID == noButton
+        else if (buttonId == R.id.noButtonRemove) {
+
+            //set nextFragment to equal the CaretakerHomeScreen fragment
             nextFragment = new CaretakerHomeScreen();
         }
+
         MainActivity mainActivity = (MainActivity) getActivity();
+
+        //if nextFragment isn't null replace current fragment in main activity with nextFragment
         try {
+
             mainActivity.replaceFragments(nextFragment);
-        }catch (NullPointerException e) {
+        }
+
+        //if nextFragment is null throw an error
+        catch (NullPointerException e) {
             e.printStackTrace();
         }
     }

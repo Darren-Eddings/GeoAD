@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50sp"
         android:textStyle="bold"
-        android:text="Set Attributes"
+        android:text="@string/set_attributes"
         android:textSize="36sp"
         android:textColor="@color/dark_grey"/>
     <TextView
@@ -66,15 +66,15 @@
         android:valueTo="100"
         android:backgroundTint="@color/orange"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/saveButton"
-        android:layout_width="275sp"
-        android:layout_height="60sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="55sp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/sizeSlider"
-        android:text="@string/save_text"
+        android:src="@drawable/ic_check_mark"
         android:backgroundTint="@color/orange"
-        android:textColor="@color/dark_grey"/>
+        android:contentDescription="@string/save_text"/>
 
 </RelativeLayout>
